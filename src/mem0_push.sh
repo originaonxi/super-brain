@@ -8,7 +8,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 source "${SCRIPT_DIR}/config/.env" 2>/dev/null || true
 
-MEM0_API_KEY="${MEM0_API_KEY:-REDACTED_MEM0_KEY}"
+MEM0_API_KEY="${MEM0_API_KEY:?Error: MEM0_API_KEY not set. Source config/.env or export it.}"
 MEM0_URL="https://api.mem0.ai/v1/memories/"
 USER_ID="${MEM0_USER_ID:-anmol-super-brain}"
 

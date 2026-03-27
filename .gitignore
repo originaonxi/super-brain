@@ -3,3 +3,6 @@ config/.env
 __pycache__/
 .DS_Store
 *.log
+
+# Added by ggshield
+.cache_ggshield

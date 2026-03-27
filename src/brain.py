@@ -29,9 +29,9 @@ class SuperBrain:
         user_id: str = "anmol-super-brain",
         base_url: str = "https://api.mem0.ai/v1",
     ):
-        self.api_key = api_key or os.environ.get(
-            "MEM0_API_KEY", "REDACTED_MEM0_KEY"
-        )
+        self.api_key = api_key or os.environ.get("MEM0_API_KEY")
+        if not self.api_key:
+            raise ValueError("MEM0_API_KEY not set. Export it or pass api_key parameter.")
         self.user_id = user_id
         self.base_url = base_url
 
