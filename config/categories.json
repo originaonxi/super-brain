@@ -1,0 +1,61 @@
+{
+  "categories": {
+    "super-brain-index": {
+      "description": "Architecture, connections, profile, cross-project relationships",
+      "auto_tag": false,
+      "retention": "permanent"
+    },
+    "agent": {
+      "description": "Agent projects — paths, capabilities, schedules, configs",
+      "auto_tag": true,
+      "retention": "permanent",
+      "keywords": ["agent", "bot", "automation", "cron"]
+    },
+    "aonxi-ecosystem": {
+      "description": "Aria, memcollab, router, safeguard, site, profiles",
+      "auto_tag": true,
+      "retention": "permanent",
+      "keywords": ["aonxi", "aria", "memcollab", "router", "safeguard"]
+    },
+    "research": {
+      "description": "ML papers, replications, studies, experiments",
+      "auto_tag": true,
+      "retention": "permanent",
+      "keywords": ["paper", "replication", "study", "experiment", "arxiv", "neurips"]
+    },
+    "gtm-engine": {
+      "description": "Go-to-market engines and sales automation",
+      "auto_tag": true,
+      "retention": "permanent",
+      "keywords": ["gtm", "sales", "pipeline", "leads", "hubspot"]
+    },
+    "ci-report": {
+      "description": "Competitive intelligence report outputs",
+      "auto_tag": true,
+      "retention": "90d",
+      "keywords": ["competitive", "CI_", "CompIntel"]
+    },
+    "ad-intel-report": {
+      "description": "Ad analysis and strategy reports",
+      "auto_tag": true,
+      "retention": "90d",
+      "keywords": ["AdIntel", "FacebookStrategy", "ad hooks", "ad strategy"]
+    },
+    "system-config": {
+      "description": "Infrastructure — cron jobs, wrappers, email, SMTP",
+      "auto_tag": true,
+      "retention": "permanent",
+      "keywords": ["cron", "wrapper", "smtp", "config", "env"]
+    },
+    "live-session": {
+      "description": "Auto-captured from Claude Code sessions via hook",
+      "auto_tag": false,
+      "retention": "30d"
+    },
+    "dream-insight": {
+      "description": "V4 — Connections discovered by the dream engine",
+      "auto_tag": false,
+      "retention": "permanent"
+    }
+  }
+}

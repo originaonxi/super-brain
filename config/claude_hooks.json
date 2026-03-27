@@ -1,0 +1,16 @@
+{
+  "_comment": "Copy the 'hooks' section into ~/.claude/settings.json to enable auto-learning",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/anmolsam/super-brain/src/mem0_hook.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
