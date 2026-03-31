@@ -78,8 +78,29 @@ table.tbl{width:100%;border-collapse:separate;border-spacing:0 2px;min-width:640
 .box{padding:20px 24px;background:var(--gd);border:1px solid var(--gb);border-radius:8px}
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}.reveal.vis{opacity:1;transform:translateY(0)}
 
-@media(max-width:1024px){.g4,.g3{grid-template-columns:1fr 1fr}.arch-grid,.fam-g{grid-template-columns:1fr}.hstats{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){nav{padding:12px 20px}.nav-l{display:none}section,.hero{padding:64px 20px}.g4,.g3,.g2,.ga,.hstats{grid-template-columns:1fr}footer{flex-direction:column;text-align:center;gap:10px;padding:24px 20px}}
+/* mac mini visual */
+.mac{position:relative;width:280px;height:280px;margin:0 auto}
+.mac-body{width:200px;height:30px;background:linear-gradient(180deg,#e8e8ed 0%,#c8c8cc 100%);border-radius:16px;position:absolute;bottom:40px;left:50%;transform:translateX(-50%);box-shadow:0 2px 20px rgba(0,0,0,.4)}
+.mac-base{width:240px;height:8px;background:linear-gradient(180deg,#a0a0a5,#88888c);border-radius:0 0 6px 6px;position:absolute;bottom:33px;left:50%;transform:translateX(-50%)}
+.mac-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;position:absolute;bottom:46px;left:50%;transform:translateX(-50%);box-shadow:0 0 12px var(--gold),0 0 30px rgba(240,180,41,.3);animation:pulse 2s infinite}
+.mac-glow{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:300px;height:60px;background:radial-gradient(ellipse,rgba(240,180,41,.08),transparent);pointer-events:none}
+.mac-label{position:absolute;bottom:0;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim);text-align:center;white-space:nowrap}
+.mac-float{animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* versus table */
+.vs{width:100%;border-collapse:separate;border-spacing:0 3px}
+.vs th{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:12px 16px;text-align:left}
+.vs th:first-child{color:var(--muted)}
+.vs th:nth-child(2){color:var(--red)}
+.vs th:last-child{color:var(--gold)}
+.vs td{font-size:13px;padding:13px 16px;font-weight:500}
+.vs td:first-child{background:var(--s2);color:var(--text);font-weight:600;border-radius:6px 0 0 6px}
+.vs td:nth-child(2){background:var(--s1);color:var(--red);font-family:'JetBrains Mono',monospace;font-size:12px}
+.vs td:last-child{background:var(--s1);color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;border-radius:0 6px 6px 0}
+
+@media(max-width:1024px){.g4,.g3{grid-template-columns:1fr 1fr}.arch-grid,.fam-g,.prod-grid{grid-template-columns:1fr}.hstats{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){nav{padding:12px 20px}.nav-l{display:none}section,.hero{padding:64px 20px}.g4,.g3,.g2,.ga,.hstats{grid-template-columns:1fr}.prod-grid{grid-template-columns:1fr}footer{flex-direction:column;text-align:center;gap:10px;padding:24px 20px}}
 </style>
 </head>
 <body>
@@ -107,6 +128,79 @@ table.tbl{width:100%;border-collapse:separate;border-spacing:0 2px;min-width:640
 <div class="tick"><div class="tick-t">
 <div class="tk"><span class="tk-d"></span>Replaces $4K/mo SaaS</div><div class="tk"><span class="tk-d"></span>Creates its own tools</div><div class="tk"><span class="tk-d"></span>Tests with experiments</div><div class="tk"><span class="tk-d"></span>Agents teach agents</div><div class="tk"><span class="tk-d"></span>559x RPDC</div><div class="tk"><span class="tk-d"></span>GDPR + HIPAA safe</div><div class="tk"><span class="tk-d"></span>Login from anywhere</div><div class="tk"><span class="tk-d"></span>Data never leaves</div><div class="tk"><span class="tk-d"></span>Replaces $4K/mo SaaS</div><div class="tk"><span class="tk-d"></span>Creates its own tools</div><div class="tk"><span class="tk-d"></span>Tests with experiments</div><div class="tk"><span class="tk-d"></span>Agents teach agents</div><div class="tk"><span class="tk-d"></span>559x RPDC</div><div class="tk"><span class="tk-d"></span>GDPR + HIPAA safe</div><div class="tk"><span class="tk-d"></span>Login from anywhere</div><div class="tk"><span class="tk-d"></span>Data never leaves</div>
 </div></div>
+
+<!-- ═══════ THE PRODUCT ═══════ -->
+<section class="reveal" style="background:var(--s1);text-align:center;padding:100px 48px 80px">
+  <div class="tag">The product</div>
+  <h2 style="max-width:700px;margin:0 auto 20px">This is a <em>$499 Mac Mini.</em><br>It replaces <i>$175,000</i> in 3 years.</h2>
+  <p style="font-size:17px;color:var(--muted);max-width:560px;margin:0 auto 48px;line-height:1.8;font-weight:300">Smaller than a book. Quieter than a whisper. Runs 50+ AI agents 24/7 on $2/month electricity. <b style="color:var(--text)">Everyone is smart now. By default.</b></p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;align-items:center;max-width:900px;margin:0 auto 56px" class="prod-grid">
+    <!-- Mac Mini -->
+    <div>
+      <div class="mac mac-float">
+        <div class="mac-body"></div><div class="mac-base"></div><div class="mac-dot"></div><div class="mac-glow"></div>
+      </div>
+      <div style="text-align:center;margin-top:-20px"><div style="font-size:22px;font-weight:900;color:var(--gold)">$499</div><div style="font-size:11px;color:var(--dim)">Mac Mini M4 16GB</div><div style="font-size:11px;color:var(--dim)">1-2 agents | $2/mo</div></div>
+    </div>
+    <!-- Mac Mini Pro -->
+    <div>
+      <div class="mac mac-float" style="animation-delay:-2s">
+        <div class="mac-body" style="width:210px;background:linear-gradient(180deg,#d4d4d8,#a8a8ad)"></div><div class="mac-base" style="width:250px"></div><div class="mac-dot"></div><div class="mac-glow"></div>
+      </div>
+      <div style="text-align:center;margin-top:-20px"><div style="font-size:22px;font-weight:900;color:var(--gold)">$1,399</div><div style="font-size:11px;color:var(--dim)">Mac Mini M4 Pro 24GB</div><div style="font-size:11px;color:var(--dim)">3-5 agents | $4/mo</div></div>
+    </div>
+    <!-- Mac Studio -->
+    <div>
+      <div class="mac mac-float" style="animation-delay:-4s">
+        <div class="mac-body" style="width:220px;height:55px;border-radius:18px;background:linear-gradient(180deg,#c8c8cc,#98989c);bottom:45px"></div><div class="mac-base" style="width:260px;bottom:38px"></div><div class="mac-dot" style="bottom:58px"></div><div class="mac-glow" style="bottom:25px"></div>
+      </div>
+      <div style="text-align:center;margin-top:-20px"><div style="font-size:22px;font-weight:900;color:var(--gold)">$2,499</div><div style="font-size:11px;color:var(--dim)">Mac Studio M4 Max 64GB</div><div style="font-size:11px;color:var(--dim)">Full fleet | $12/mo</div></div>
+    </div>
+  </div>
+
+  <div style="font-size:14px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.8;font-weight:300">Plug it in. Connect to WiFi. We deploy everything remotely. Your AI is running in hours, not months. <b style="color:var(--text)">Your business is unique. Your AI should be too.</b></div>
+</section>
+
+<!-- ═══════ US vs EVERYONE ═══════ -->
+<section class="reveal divider">
+  <div class="tag">Us vs the $1 trillion AI industry</div>
+  <h2>They charge monthly.<br>We charge <em>once.</em><br><i>Your data stays.</i></h2>
+  <p class="sub">Every frontier lab, every SaaS company, every cloud provider wants your data on their servers and your credit card on file. <b>We want you to own everything and never pay again.</b></p>
+
+  <div style="overflow-x:auto;margin-bottom:32px">
+    <table class="vs">
+      <thead><tr><th style="width:25%">What matters</th><th style="width:37%">$1B+ AI companies</th><th style="width:38%">AONXI (your Mac Mini)</th></tr></thead>
+      <tbody>
+        <tr><td>Where your data lives</td><td>Their servers (US-WEST-2, Azure, GCP)</td><td>Your desk. Physically yours.</td></tr>
+        <tr><td>Monthly cost (25 people)</td><td>$3,000-$15,000/month forever</td><td>$12/month electricity. Forever.</td></tr>
+        <tr><td>Do they train on your data?</td><td>Read the fine print. Usually yes.</td><td>Impossible. Data never leaves.</td></tr>
+        <tr><td>What happens if you cancel</td><td>Everything gone. Start over.</td><td>Nothing. It's YOUR hardware.</td></tr>
+        <tr><td>Does it learn YOUR patterns?</td><td>No. Same model for everyone.</td><td>Yes. Custom to YOUR business.</td></tr>
+        <tr><td>Can your CRM see your helpdesk?</td><td>No. Siloed. Buy more integrations.</td><td>Yes. One brain. All data connected.</td></tr>
+        <tr><td>Who owns the intelligence?</td><td>They do. You're renting it.</td><td>You do. It's on your hardware.</td></tr>
+        <tr><td>GDPR / HIPAA compliance</td><td>Complex BAAs, DPAs, audits</td><td>Automatic. Data never leaves.</td></tr>
+        <tr><td>Agents that teach each other</td><td>Not possible (siloed products)</td><td>13 causal links. Automatic.</td></tr>
+        <tr><td>Can you see the code?</td><td>No. Black box.</td><td>Yes. Fully open source.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:10px;overflow:hidden;margin-bottom:32px">
+    <div style="background:var(--s1);padding:32px 28px">
+      <div style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px">What $1B+ companies sell you</div>
+      <div style="font-size:14px;color:var(--muted);line-height:1.8">A subscription to intelligence you'll never own. Your prompts, your data, your patterns — all stored on their infrastructure, training their models, making their product better for their next customer. You pay monthly. You build nothing. You own nothing. Cancel and it's like you were never there.</div>
+    </div>
+    <div style="background:var(--s2);padding:32px 28px;border-left:2px solid var(--gold)">
+      <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px">What AONXI gives you</div>
+      <div style="font-size:14px;color:var(--muted);line-height:1.8">A Mac Mini on your desk with YOUR intelligence on it. Your outreach patterns, your sales playbook, your support knowledge, your financial patterns — all local, all private, all yours. Cancel us? Fine. The hardware stays. The models stay. The data stays. <b style="color:var(--text)">The intelligence you built is yours forever.</b></div>
+    </div>
+  </div>
+
+  <div class="box" style="text-align:center;font-size:16px;font-weight:700;color:var(--gold);line-height:1.8">
+    Every SaaS subscription is a bet that they'll keep their prices low and their terms fair. <span style="color:var(--text);font-weight:400">AONXI is a bet on yourself. The hardware is $499. The intelligence is priceless. And it's all yours.</span>
+  </div>
+</section>
 
 <!-- ═══════ THE FULL ARCHITECTURE ═══════ -->
 <section id="arch" class="reveal">
