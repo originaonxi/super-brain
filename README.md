@@ -107,6 +107,23 @@ See [ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full deep dive.
 
 ---
 
+## Sales Page (`index.html`)
+
+The `index.html` file is a self-contained, deploy-anywhere sales page built as a 10-section no-brainer funnel:
+
+1. **Hero** — headline + live stats (50+ agents, $0/query, 90%+ margin)
+2. **ROI Calculator** — interactive sliders: input your team's current AI spend, see break-even and 3-year savings
+3. **Day-1 Experience** — what happens after purchase (setup timeline, first-hour walkthrough)
+4. **Outcome Cards (The Agent Family)** — every agent type with what it does and the KPI it moves
+5. **The Family Effect** — how agents cross-pollinate and improve each other over time
+6. **Live Proof** — real query results from the brain with relevance scores
+7. **Compliance & Data Sovereignty** — GDPR/HIPAA, data never leaves, zero-trust by default
+8. **Comparison Table (The Real Math)** — AONXI vs ChatGPT Team vs Copilot vs Claude Pro (cost, privacy, memory)
+9. **Building Model Case Study** — the WeWork/coworking deployment: 500 members, $500/month, 97% margin
+10. **Pricing + Guarantee** — four tiers (Micro $1,999 to Enterprise $24,900) with hardware specs
+
+---
+
 ## Quick Start
 
 ### Memory (V1)
@@ -145,6 +162,26 @@ python3 src/brain.py report
 python3 src/orchestrator.py dashboard
 ```
 
+### Evals (new)
+```bash
+# Run full eval suite across all agent types
+python3 src/evals.py run-all
+
+# Eval a specific agent type
+python3 src/evals.py run --agent outreach
+python3 src/evals.py run --agent delivery
+python3 src/evals.py run --agent research
+
+# View compound intelligence score
+python3 src/evals.py score
+
+# Week-over-week improvement tracking
+python3 src/evals.py weekly-report
+
+# Compare two weeks
+python3 src/evals.py compare --week 2026-W12 --week 2026-W13
+```
+
 ### Company (new)
 ```bash
 # Morning CEO brief
@@ -170,11 +207,12 @@ python3 src/company.py log-csat CLIENT_ID 9.5 "Agents are saving us 4hrs/day"
 ```
 super-brain/
 ├── README.md                       # You are here
-├── index.html                      # AONXI sales page (deploy anywhere)
+├── index.html                      # AONXI sales page — 10-section no-brainer funnel
 ├── src/
 │   ├── brain.py                    # V2: Memory + orchestration SDK
 │   ├── orchestrator.py             # Ecosystem scan + improvement engine
 │   ├── company.py                  # Automated company: sales + delivery + CSAT
+│   ├── evals.py                    # Agent evaluation framework — compound intelligence scoring
 │   ├── local_brain.py              # MemoryMesh local memory layer
 │   ├── mem0_push.sh                # Push memories to Mem0 cloud
 │   ├── mem0_search.sh              # Search the brain
