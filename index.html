@@ -419,8 +419,8 @@ table.tbl{width:100%;border-collapse:separate;border-spacing:0 2px;min-width:640
 <footer style="padding:40px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center"><div style="font-size:20px;font-weight:900;color:var(--gold)">AONXI</div><div style="font-size:12px;color:var(--dim)">Built by Anmol Sam &middot; CTO, Aonxi &middot; github.com/originaonxi</div></footer>
 
 <script>
-new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06}).observe(document.querySelectorAll?undefined:undefined);
-document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06}).observe(el));
+const _obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>_obs.observe(el));
 </script>
 </body>
 </html>
