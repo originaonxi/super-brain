@@ -401,51 +401,182 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify
   </div>
 </section>
 
-<!-- 3 YEAR COMPARISON -->
+<!-- FULL TRANSPARENT COST BREAKDOWN -->
 <section class="reveal divider">
-  <div class="stag">Three-year truth</div>
-  <h2>SaaS vs <em>AONXI.</em><br>The math doesn't <span class="it">lie.</span></h2>
-  <div class="tbl-wrap">
+  <div class="stag">Full transparency</div>
+  <h2>Every dollar.<br><em>Accounted for.</em></h2>
+  <p class="sub">No hidden costs. No surprise fees. Here's exactly what you pay, what it costs to run, and what you save. <strong>We show you everything because the math sells itself.</strong></p>
+
+  <!-- Cloud AI inference comparison -->
+  <h3 style="font-size:18px;font-weight:800;margin-bottom:20px">Inference cost: Cloud API vs Your Mac Mini</h3>
+  <div class="tbl-wrap" style="margin-bottom:48px">
     <table class="tbl">
-      <thead><tr><th>What you get</th><th>SaaS (annual)</th><th>AONXI (one-time)</th></tr></thead>
+      <thead><tr><th>Provider</th><th>Model</th><th>Input / 1M tokens</th><th>Output / 1M tokens</th><th>1,000 queries/day cost</th></tr></thead>
       <tbody>
-        <tr><td>AI for 10 employees</td><td class="bad">$3,600/yr</td><td class="good">included</td></tr>
-        <tr><td>CRM + sales (5 seats)</td><td class="bad">$4,800/yr</td><td class="good">included</td></tr>
-        <tr><td>Support + helpdesk (5 seats)</td><td class="bad">$3,300/yr</td><td class="good">included</td></tr>
-        <tr><td>SEO + ads + marketing</td><td class="bad">$25,440/yr</td><td class="good">included</td></tr>
-        <tr><td>Accounting + PM + email + HR</td><td class="bad">$3,360/yr</td><td class="good">included</td></tr>
-        <tr><td>Cross-tool intelligence</td><td class="bad">Impossible</td><td class="good">Built-in</td></tr>
-        <tr><td>Data stays on your hardware</td><td class="bad">No</td><td class="good">Always</td></tr>
-        <tr><td>Year 2 cost</td><td class="bad">Same again</td><td class="good">$180 electricity</td></tr>
-        <tr class="total"><td>3-Year Total</td><td class="bad">$121,500</td><td class="good">$13,260</td></tr>
+        <tr><td>Cloud API</td><td class="bad">Claude Sonnet</td><td class="bad">$3.00</td><td class="bad">$15.00</td><td class="bad">~$18/day = $540/mo</td></tr>
+        <tr><td>Cloud API</td><td class="bad">Claude Opus</td><td class="bad">$15.00</td><td class="bad">$75.00</td><td class="bad">~$90/day = $2,700/mo</td></tr>
+        <tr><td>Cloud API</td><td class="bad">GPT-4o</td><td class="bad">$2.50</td><td class="bad">$10.00</td><td class="bad">~$12.50/day = $375/mo</td></tr>
+        <tr><td style="color:var(--gold);font-weight:700">Your Mac Mini</td><td class="good">Qwen 72B (local)</td><td class="good">$0.00</td><td class="good">$0.00</td><td class="good">~$0.15/day = $4.60/mo</td></tr>
       </tbody>
     </table>
   </div>
+  <div style="padding:16px 20px;background:var(--gold-dim);border:1px solid var(--gold-b);border-radius:8px;font-size:13px;color:var(--gold);font-weight:500;margin-bottom:48px;text-align:center">Local inference cost is electricity only: Mac Studio M4 Max draws ~100W under load. At $0.16/kWh, that's $0.15/day for unlimited queries. Cloud API for the same load: $375-$2,700/month.</div>
+
+  <!-- 3-year comparison with REAL numbers -->
+  <h3 style="font-size:18px;font-weight:800;margin-bottom:20px">3-year total cost: SaaS stack vs AONXI (25-person company)</h3>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <thead><tr><th>Line item</th><th>SaaS (annual)</th><th>AONXI</th></tr></thead>
+      <tbody>
+        <tr><td>AI assistants (25 seats @ $30/mo)</td><td class="bad">$9,000/yr</td><td class="good">$0 (local Qwen 72B)</td></tr>
+        <tr><td>CRM platform (10 seats @ $80/mo)</td><td class="bad">$9,600/yr</td><td class="good">$0 (Sales Agent)</td></tr>
+        <tr><td>Helpdesk (10 seats @ $55/mo)</td><td class="bad">$6,600/yr</td><td class="good">$0 (Support Agent)</td></tr>
+        <tr><td>Marketing + SEO + Ads</td><td class="bad">$25,440/yr</td><td class="good">$0 (Omni-Outreach)</td></tr>
+        <tr><td>Accounting + PM + HR + Email</td><td class="bad">$3,360/yr</td><td class="good">$0 (Finance/HR/QA Agents)</td></tr>
+        <tr><td>Cloud API inference (1K queries/day)</td><td class="bad">$4,500/yr</td><td class="good">$0 (local inference)</td></tr>
+        <tr><td>Hardware (Mac Studio M4 Max 64GB)</td><td>$0 (not applicable)</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600">$2,499 one-time</td></tr>
+        <tr><td>AONXI setup + deployment fee</td><td>$0</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600">$2,500 one-time</td></tr>
+        <tr><td>Electricity (Mac Studio 24/7)</td><td>$0 (included in cloud)</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600">$140/yr ($12/mo)</td></tr>
+        <tr><td>Cloudflare Tunnel (global access)</td><td>$0</td><td class="good">$0 (free tier)</td></tr>
+        <tr><td>Year 2 &amp; 3 recurring cost</td><td class="bad">Same $58,500/yr</td><td class="good">$140/yr electricity only</td></tr>
+        <tr class="total"><td>3-Year Total</td><td class="bad">$175,500</td><td class="good">$5,279</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top:20px;font-size:14px;color:var(--muted);text-align:center;font-weight:500">3-year savings: <span style="color:var(--gold);font-weight:800;font-size:18px">$170,221</span> &mdash; and you own the hardware, the data, and the intelligence.</div>
 </section>
 
-<!-- HARDWARE -->
+<!-- HARDWARE — REAL APPLE PRICES -->
 <section class="reveal divider" id="hardware">
-  <div class="stag">Hardware</div>
-  <h2>The right box for<br><em>every</em> business.</h2>
-  <p class="sub">A $599 Mac Mini runs 2 agents. A $1,999 Mac Studio runs the full fleet and replaces every SaaS tool. <strong>Scale when you're ready.</strong></p>
+  <div class="stag">Hardware — real Apple prices</div>
+  <h2>Actual specs.<br><em>Actual</em> prices.</h2>
+  <p class="sub">These are real Apple retail prices. No markup. We charge a separate setup fee for deployment, not inflated hardware costs. <strong>You could buy the Mac yourself &mdash; we just make it smart.</strong></p>
   <div class="grid grid-4">
-    <div class="hw"><div class="hw-name">Mac Mini M4</div><div class="hw-price">From $599</div><div class="hw-specs"><div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">16GB</span></div><div class="hw-row"><span class="hw-k">Model</span><span class="hw-v">Qwen 14B</span></div><div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">1-2</span></div><div class="hw-row"><span class="hw-k">Monthly</span><span class="hw-v hw-vg">~$8</span></div></div></div>
-    <div class="hw"><div class="hw-name">Mac Mini M4 Pro</div><div class="hw-price">From $799</div><div class="hw-specs"><div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">24GB</span></div><div class="hw-row"><span class="hw-k">Model</span><span class="hw-v">Qwen 32B</span></div><div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">3-4</span></div><div class="hw-row"><span class="hw-k">Monthly</span><span class="hw-v hw-vg">~$10</span></div></div></div>
-    <div class="hw best"><div class="hw-tag">POPULAR</div><div class="hw-name">Mac Studio M4 Max</div><div class="hw-price">From $1,999</div><div class="hw-specs"><div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v hw-vg">64GB</span></div><div class="hw-row"><span class="hw-k">Model</span><span class="hw-v hw-vg">Qwen 72B</span></div><div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v hw-vg">Full fleet</span></div><div class="hw-row"><span class="hw-k">Monthly</span><span class="hw-v hw-vg">~$15</span></div></div></div>
-    <div class="hw"><div class="hw-name">Enterprise Cluster</div><div class="hw-price">Custom</div><div class="hw-specs"><div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">128GB+</span></div><div class="hw-row"><span class="hw-k">Model</span><span class="hw-v">Fine-tuned</span></div><div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">Unlimited</span></div><div class="hw-row"><span class="hw-k">Monthly</span><span class="hw-v hw-vg">Electricity</span></div></div></div>
+    <div class="hw">
+      <div class="hw-name">Mac Mini M4</div><div class="hw-price">$499 &mdash; Apple retail</div>
+      <div class="hw-specs">
+        <div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">16GB unified</span></div>
+        <div class="hw-row"><span class="hw-k">Storage</span><span class="hw-v">256GB SSD</span></div>
+        <div class="hw-row"><span class="hw-k">Best model</span><span class="hw-v">Qwen 7B-14B Q4</span></div>
+        <div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">1-2 agents</span></div>
+        <div class="hw-row"><span class="hw-k">Power draw</span><span class="hw-v">~18W avg</span></div>
+        <div class="hw-row"><span class="hw-k">Electricity</span><span class="hw-v hw-vg">~$2/mo</span></div>
+      </div>
+    </div>
+    <div class="hw">
+      <div class="hw-name">Mac Mini M4 Pro</div><div class="hw-price">$1,399-$1,799 &mdash; Apple retail</div>
+      <div class="hw-specs">
+        <div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">24-48GB unified</span></div>
+        <div class="hw-row"><span class="hw-k">Storage</span><span class="hw-v">512GB SSD</span></div>
+        <div class="hw-row"><span class="hw-k">Best model</span><span class="hw-v">Qwen 32B (24GB) / 72B Q4 (48GB)</span></div>
+        <div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">3-5 agents</span></div>
+        <div class="hw-row"><span class="hw-k">Power draw</span><span class="hw-v">~45W avg</span></div>
+        <div class="hw-row"><span class="hw-k">Electricity</span><span class="hw-v hw-vg">~$4/mo</span></div>
+      </div>
+    </div>
+    <div class="hw best">
+      <div class="hw-tag">RECOMMENDED</div>
+      <div class="hw-name">Mac Studio M4 Max</div><div class="hw-price">$2,499 (64GB) &mdash; Apple retail</div>
+      <div class="hw-specs">
+        <div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v hw-vg">64GB unified</span></div>
+        <div class="hw-row"><span class="hw-k">Storage</span><span class="hw-v">1TB SSD</span></div>
+        <div class="hw-row"><span class="hw-k">Best model</span><span class="hw-v hw-vg">Qwen 72B / Llama 70B Q4</span></div>
+        <div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v hw-vg">Full fleet (6+)</span></div>
+        <div class="hw-row"><span class="hw-k">Power draw</span><span class="hw-v">~100W under load</span></div>
+        <div class="hw-row"><span class="hw-k">Electricity</span><span class="hw-v hw-vg">~$12/mo</span></div>
+      </div>
+    </div>
+    <div class="hw">
+      <div class="hw-name">Mac Studio M4 Ultra</div><div class="hw-price">$3,999 (192GB) &mdash; Apple retail</div>
+      <div class="hw-specs">
+        <div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">192GB unified</span></div>
+        <div class="hw-row"><span class="hw-k">Storage</span><span class="hw-v">1TB SSD</span></div>
+        <div class="hw-row"><span class="hw-k">Best model</span><span class="hw-v">Any model, any size, full precision</span></div>
+        <div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">Unlimited + multi-model</span></div>
+        <div class="hw-row"><span class="hw-k">Power draw</span><span class="hw-v">~150W under load</span></div>
+        <div class="hw-row"><span class="hw-k">Electricity</span><span class="hw-v hw-vg">~$18/mo</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRICING — FULLY TRANSPARENT -->
 <section class="reveal divider" id="pricing">
-  <div class="stag">Own it</div>
-  <h2>One payment.<br><em>Forever.</em></h2>
-  <p class="sub">Hardware + every agent + every tool replacement + Super Brain. <strong>No subscription. No per-seat. No limits.</strong></p>
+  <div class="stag">Pricing &mdash; fully transparent</div>
+  <h2>What you pay.<br><em>Exactly.</em></h2>
+  <p class="sub">Hardware at Apple retail. Setup fee for our work. Electricity for running. <strong>That's it. No hidden costs. No recurring fees. No per-seat pricing.</strong></p>
   <div class="grid grid-4">
-    <div class="pc"><div class="pc-tier">MICRO</div><div class="pc-amt">$1,999</div><div class="pc-per">one-time</div><div class="pc-hw">Mac Mini M4 16GB</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>1-2 agents</div><div class="pf"><span class="pf-ok">+</span>1-2 SaaS tools replaced</div><div class="pf"><span class="pf-ok">+</span>Super Brain</div><div class="pf"><span class="pf-ok">+</span>Global access</div><div class="pf"><span class="pf-ok">+</span>30-day guarantee</div></div><a href="#start" class="pc-btn secondary">Get started</a></div>
-    <div class="pc"><div class="pc-tier">STARTER</div><div class="pc-amt">$4,999</div><div class="pc-per">one-time</div><div class="pc-hw">Mac Mini M4 Pro 24GB</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>3-4 agents</div><div class="pf"><span class="pf-ok">+</span>4-5 SaaS tools replaced</div><div class="pf"><span class="pf-ok">+</span>Cross-agent memory</div><div class="pf"><span class="pf-ok">+</span>Tool learning engine</div><div class="pf"><span class="pf-ok">+</span>Weekly reports</div><div class="pf"><span class="pf-ok">+</span>30-day guarantee</div></div><a href="#start" class="pc-btn secondary">Get started</a></div>
-    <div class="pc feat"><div class="pc-tag">RECOMMENDED</div><div class="pc-tier">BUSINESS</div><div class="pc-amt">$12,900</div><div class="pc-per">one-time</div><div class="pc-hw">Mac Studio M4 Max 64GB</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>Full agent fleet</div><div class="pf"><span class="pf-ok">+</span>ALL SaaS replaced</div><div class="pf"><span class="pf-ok">+</span>Experiment attribution</div><div class="pf"><span class="pf-ok">+</span>Self-evolving</div><div class="pf"><span class="pf-ok">+</span>Custom agents</div><div class="pf"><span class="pf-ok">+</span>30-day guarantee</div></div><a href="#start" class="pc-btn primary">Get started</a></div>
-    <div class="pc"><div class="pc-tier">ENTERPRISE</div><div class="pc-amt">$24,900</div><div class="pc-per">one-time</div><div class="pc-hw">Multi-node cluster</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>Unlimited agents</div><div class="pf"><span class="pf-ok">+</span>Department-siloed AI</div><div class="pf"><span class="pf-ok">+</span>Custom models</div><div class="pf"><span class="pf-ok">+</span>On-site deployment</div><div class="pf"><span class="pf-ok">+</span>Source code access</div><div class="pf"><span class="pf-ok">+</span>Priority support</div></div><a href="#start" class="pc-btn secondary">Contact us</a></div>
+    <div class="pc">
+      <div class="pc-tier">SOLO</div>
+      <div class="pc-amt">$1,999</div><div class="pc-per">one-time total</div>
+      <div class="pc-div"></div>
+      <div class="pc-feats">
+        <div class="pf"><span class="pf-ok">=</span>Mac Mini M4 16GB ($499)</div>
+        <div class="pf"><span class="pf-ok">=</span>AONXI setup + deploy ($1,500)</div>
+        <div class="pf"><span class="pf-ok">+</span>1-2 agents deployed</div>
+        <div class="pf"><span class="pf-ok">+</span>Qwen 7B-14B local</div>
+        <div class="pf"><span class="pf-ok">+</span>Cloudflare Tunnel (free)</div>
+        <div class="pf"><span class="pf-ok">+</span>Super Brain connected</div>
+        <div class="pf"><span class="pf-ok">+</span>30-day money-back</div>
+      </div>
+      <div style="font-size:11px;color:var(--dim);margin-bottom:12px;font-family:'JetBrains Mono',monospace">Ongoing: ~$2/mo electricity</div>
+      <a href="#start" class="pc-btn secondary">Get started</a>
+    </div>
+    <div class="pc">
+      <div class="pc-tier">STARTUP</div>
+      <div class="pc-amt">$3,899</div><div class="pc-per">one-time total</div>
+      <div class="pc-div"></div>
+      <div class="pc-feats">
+        <div class="pf"><span class="pf-ok">=</span>Mac Mini M4 Pro 24GB ($1,399)</div>
+        <div class="pf"><span class="pf-ok">=</span>AONXI setup + deploy ($2,500)</div>
+        <div class="pf"><span class="pf-ok">+</span>3-5 agents deployed</div>
+        <div class="pf"><span class="pf-ok">+</span>Qwen 32B local</div>
+        <div class="pf"><span class="pf-ok">+</span>Cross-agent memory</div>
+        <div class="pf"><span class="pf-ok">+</span>Tool learning engine</div>
+        <div class="pf"><span class="pf-ok">+</span>30-day money-back</div>
+      </div>
+      <div style="font-size:11px;color:var(--dim);margin-bottom:12px;font-family:'JetBrains Mono',monospace">Ongoing: ~$4/mo electricity</div>
+      <a href="#start" class="pc-btn secondary">Get started</a>
+    </div>
+    <div class="pc feat">
+      <div class="pc-tag">BEST VALUE</div>
+      <div class="pc-tier">BUSINESS</div>
+      <div class="pc-amt">$7,499</div><div class="pc-per">one-time total</div>
+      <div class="pc-div"></div>
+      <div class="pc-feats">
+        <div class="pf"><span class="pf-ok">=</span>Mac Studio M4 Max 64GB ($2,499)</div>
+        <div class="pf"><span class="pf-ok">=</span>AONXI setup + deploy ($5,000)</div>
+        <div class="pf"><span class="pf-ok">+</span>Full agent fleet (6+)</div>
+        <div class="pf"><span class="pf-ok">+</span>Qwen 72B / Llama 70B local</div>
+        <div class="pf"><span class="pf-ok">+</span>ALL SaaS tools replaced</div>
+        <div class="pf"><span class="pf-ok">+</span>Experiment attribution</div>
+        <div class="pf"><span class="pf-ok">+</span>Custom agent development</div>
+        <div class="pf"><span class="pf-ok">+</span>30-day money-back</div>
+      </div>
+      <div style="font-size:11px;color:var(--dim);margin-bottom:12px;font-family:'JetBrains Mono',monospace">Ongoing: ~$12/mo electricity</div>
+      <a href="#start" class="pc-btn primary">Get started</a>
+    </div>
+    <div class="pc">
+      <div class="pc-tier">ENTERPRISE</div>
+      <div class="pc-amt">$14,999+</div><div class="pc-per">one-time total</div>
+      <div class="pc-div"></div>
+      <div class="pc-feats">
+        <div class="pf"><span class="pf-ok">=</span>Mac Studio M4 Ultra 192GB ($3,999+)</div>
+        <div class="pf"><span class="pf-ok">=</span>AONXI setup + deploy ($11,000+)</div>
+        <div class="pf"><span class="pf-ok">+</span>Unlimited agents</div>
+        <div class="pf"><span class="pf-ok">+</span>Any model, any size</div>
+        <div class="pf"><span class="pf-ok">+</span>Department-siloed AI</div>
+        <div class="pf"><span class="pf-ok">+</span>On-site deployment</div>
+        <div class="pf"><span class="pf-ok">+</span>Source code access</div>
+        <div class="pf"><span class="pf-ok">+</span>Priority support</div>
+      </div>
+      <div style="font-size:11px;color:var(--dim);margin-bottom:12px;font-family:'JetBrains Mono',monospace">Ongoing: ~$18/mo electricity</div>
+      <a href="#start" class="pc-btn secondary">Contact us</a>
+    </div>
+  </div>
+  <div style="margin-top:28px;padding:20px 24px;background:var(--s2);border:1px solid var(--border2);border-radius:8px">
+    <div style="font-size:14px;font-weight:700;margin-bottom:8px">What's in the setup fee?</div>
+    <div style="font-size:13px;color:var(--muted);line-height:1.8">Remote SSH deployment of Ollama + models + AONXI gateway + Cloudflare Tunnel + agent fleet + Super Brain + MemoryMesh + per-employee AI profiles + SaaS tool observation + all integrations. Takes 2-4 hours. You watch if you want. We handle everything. Hardware ships directly from Apple to you.</div>
   </div>
 </section>
 
@@ -470,7 +601,7 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 const T=[{id:'ai',p:30},{id:'crm',p:80},{id:'help',p:55},{id:'other',p:1,flat:1}];
 function fmt(n){return Math.abs(n).toLocaleString('en-US')}
 function calc(){let a=0,u=0;T.forEach(t=>{const s=document.getElementById('s-'+t.id),v=document.getElementById('v-'+t.id);if(!s||!v)return;const c=+s.value;v.textContent=t.flat?'$'+c:c;a+=t.flat?c*12:c*t.p*12;u+=t.flat?1:c});
-let cost=u<=5?1999:u<=15?4999:u<=50?12900:24900,ms=a/12-15,be=ms>0?Math.ceil(cost/ms):0,sv=a*3-cost-540;
+let cost=u<=5?1999:u<=15?3899:u<=50?7499:14999,ms=a/12-12,be=ms>0?Math.ceil(cost/ms):0,sv=a*3-cost-540;
 document.getElementById('c-annual').textContent=fmt(a);document.getElementById('c-once').textContent=fmt(cost);document.getElementById('c-break').textContent=be||'--';document.getElementById('c-save').textContent=fmt(Math.max(0,sv));
 const m=document.getElementById('c-msg');if(!a||be<=0)m.innerHTML='Move the sliders to see your savings.';else if(be<=6)m.innerHTML='Break even in <strong>'+be+' months</strong>. No-brainer. <strong>$'+fmt(sv)+'</strong> saved over 3 years.';else if(be<=12)m.innerHTML='Break even in <strong>'+be+' months</strong>. Then free forever. 3-year savings: <strong>$'+fmt(sv)+'</strong>.';else m.innerHTML='Break-even: <strong>'+be+' months</strong>. Start with Micro ($1,999) and scale up.'}
 document.querySelectorAll('input[type=range]').forEach(s=>s.addEventListener('input',calc));calc();
