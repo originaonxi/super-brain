@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AONXI — The Self-Evolving AI Operating System | Own Your Intelligence</title>
+<meta name="description" content="AONXI: 50+ AI agents running on Mac Mini M4 hardware you own. Self-evolving. Self-improving. Human QC'd. Zero cloud cost. $200K proved. The family of agents that makes every business smarter — permanently.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#020304;--s1:#080a0f;--s2:#0c0e14;--s3:#10131a;
+  --border:rgba(255,255,255,0.05);--border2:rgba(255,255,255,0.09);
+  --text:#f4f2ed;--muted:rgba(244,242,237,0.5);--dim:rgba(244,242,237,0.2);
+  --g:#00ff94;--g2:#00cc76;--g-dim:rgba(0,255,148,0.06);--g-b:rgba(0,255,148,0.16);
+  --red:#ff4757;--amber:#ffc312;--blue:#00b4d8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--bg);color:var(--text);font-family:'Bricolage Grotesque',sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:14px 56px;background:rgba(2,3,4,0.92);backdrop-filter:blur(24px);border-bottom:.5px solid var(--border)}
+.logo{font-size:18px;font-weight:800;color:var(--g);letter-spacing:.06em}
+.logo span{color:var(--text);opacity:.35;font-weight:300;font-size:10px;margin-left:8px;letter-spacing:.14em;text-transform:uppercase}
+.nav-r{display:flex;gap:10px;align-items:center}
+.nav-r a{font-family:'JetBrains Mono',monospace;font-size:11px;padding:9px 16px;border-radius:4px;transition:all .2s}
+.nav-gh{color:var(--muted);border:.5px solid var(--border2)}
+.nav-gh:hover{color:var(--text);border-color:var(--muted)}
+.nav-cta{color:var(--bg);background:var(--g);font-weight:500;letter-spacing:.04em}
+.nav-cta:hover{background:#33ffaa;transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:100px 56px 80px;position:relative;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 10%,transparent 100%);pointer-events:none}
+.hero-glow{position:absolute;top:15%;right:0;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,255,148,0.04) 0%,transparent 70%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 520px;gap:64px;align-items:center;position:relative;z-index:2}
+
+.badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;background:var(--g-dim);border:.5px solid var(--g-b);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);letter-spacing:.1em;margin-bottom:24px}
+.pulse{width:6px;height:6px;background:var(--g);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+
+.hero h1{font-size:clamp(44px,6vw,84px);font-weight:800;line-height:.94;letter-spacing:-.04em;margin-bottom:28px}
+.hero h1 .serif{font-family:'Instrument Serif',serif;font-style:italic;color:var(--g);font-weight:400}
+.hero h1 .dim{color:var(--muted);font-weight:300}
+.hero-sub{font-size:clamp(15px,1.6vw,19px);color:var(--muted);max-width:560px;line-height:1.75;margin-bottom:36px}
+.hero-sub strong{color:var(--text);font-weight:500}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
+.btn-g{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--bg);background:var(--g);padding:14px 28px;border-radius:4px;transition:all .2s;letter-spacing:.04em}
+.btn-g:hover{background:#33ffaa;transform:translateY(-2px)}
+.btn-o{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);padding:14px 20px;border:.5px solid var(--border2);border-radius:4px;transition:all .2s}
+.btn-o:hover{color:var(--text);border-color:var(--muted)}
+
+.h-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;max-width:620px}
+.hs{background:var(--s1);padding:18px 16px}
+.hs-n{font-size:28px;font-weight:800;color:var(--g);line-height:1;margin-bottom:3px}
+.hs-l{font-size:10px;color:var(--dim);line-height:1.4}
+
+/* SECTIONS */
+section{padding:96px 56px;border-bottom:.5px solid var(--border);position:relative;z-index:1}
+.stag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+section h2{font-size:clamp(32px,4vw,60px);font-weight:800;letter-spacing:-.03em;line-height:1.0;margin-bottom:14px}
+section h2 em{font-style:normal;color:var(--g)}
+section h2 .serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.section-sub{max-width:640px;font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:48px}
+.section-sub strong{color:var(--text);font-weight:500}
+
+/* LIVE ECOSYSTEM */
+.eco-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border);border-radius:8px;overflow:hidden}
+.eco-card{background:var(--s1);padding:24px 20px;transition:background .2s;position:relative}
+.eco-card:hover{background:var(--s2)}
+.eco-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.eco-name{font-size:15px;font-weight:700;letter-spacing:-.01em}
+.eco-badge{font-family:'JetBrains Mono',monospace;font-size:9px;padding:3px 9px;border-radius:100px;letter-spacing:.06em}
+.eco-live{background:var(--g-dim);border:.5px solid var(--g-b);color:var(--g)}
+.eco-core{background:rgba(0,180,216,.07);border:.5px solid rgba(0,180,216,.2);color:var(--blue)}
+.eco-cat{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:.08em;margin-bottom:8px}
+.eco-desc{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:10px}
+.eco-stats{display:flex;gap:12px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim)}
+.eco-stat-g{color:var(--g)}
+
+/* LIVE BRAIN VISUAL */
+.brain-visual{margin:48px 0;padding:40px;background:var(--s1);border-radius:12px;border:.5px solid var(--border2);position:relative;overflow:hidden}
+.brain-visual::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(0,255,148,.03),transparent);pointer-events:none}
+
+/* TERMINAL */
+.terminal{background:#0a0c10;border:1px solid #1a1d24;border-radius:8px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:12px;max-width:100%}
+.terminal-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#0f1117;border-bottom:1px solid #1a1d24}
+.terminal-dot{width:10px;height:10px;border-radius:50%}
+.terminal-title{font-size:11px;color:var(--dim);margin-left:8px}
+.terminal-body{padding:16px;line-height:1.8;max-height:400px;overflow-y:auto}
+.terminal-body .prompt{color:var(--g)}
+.terminal-body .cmd{color:var(--text)}
+.terminal-body .output{color:var(--muted)}
+.terminal-body .highlight{color:var(--g)}
+.terminal-body .category{color:var(--blue)}
+.terminal-body .warn{color:var(--amber)}
+
+/* PATTERN GRID */
+.pattern-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-top:48px}
+.pattern-card{background:var(--s1);padding:28px 22px}
+.pattern-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.pattern-card .num{font-size:36px;font-weight:800;color:var(--g);margin-bottom:4px}
+.pattern-card p{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* HARDWARE */
+.hw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-top:48px}
+.hw-card{background:var(--s1);padding:28px 22px;position:relative}
+.hw-card.best{background:var(--s2);border-top:2px solid var(--g)}
+.hw-best-tag{position:absolute;top:0;right:16px;background:var(--g);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:500;padding:3px 10px;border-radius:0 0 6px 6px;letter-spacing:.1em}
+.hw-name{font-size:17px;font-weight:700;margin-bottom:4px}
+.hw-price{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--g);margin-bottom:16px}
+.hw-specs{display:flex;flex-direction:column;gap:8px}
+.hw-spec{display:flex;justify-content:space-between;font-size:12px;padding-bottom:8px;border-bottom:.5px solid var(--border)}
+.hw-spec:last-child{border-bottom:none}
+.hw-k{color:var(--muted)}
+.hw-v{font-family:'JetBrains Mono',monospace;font-size:11px}
+.hw-v-g{color:var(--g)}
+
+/* FLYWHEEL */
+.flywheel{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.fw-steps{display:flex;flex-direction:column;gap:0}
+.fw-step{display:flex;gap:16px;padding:20px 0;border-bottom:.5px solid var(--border)}
+.fw-step:last-child{border-bottom:none}
+.fw-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--g);opacity:.6;min-width:24px;padding-top:2px}
+.fw-content h4{font-size:14px;font-weight:600;margin-bottom:4px}
+.fw-content p{font-size:12px;color:var(--muted);line-height:1.65}
+
+/* PROOF */
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-top:48px}
+.proof-card{background:var(--s1);padding:36px 24px;position:relative;overflow:hidden}
+.proof-num{font-size:48px;font-weight:800;color:var(--g);line-height:1;margin-bottom:8px}
+.proof-label{font-size:13px;font-weight:600;margin-bottom:6px}
+.proof-desc{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-top:48px}
+.pc{background:var(--s1);padding:32px 24px;display:flex;flex-direction:column;position:relative}
+.pc.feat{background:var(--s2);border-top:2px solid var(--g)}
+.pc-rec{position:absolute;top:0;right:16px;background:var(--g);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:500;padding:3px 10px;border-radius:0 0 6px 6px;letter-spacing:.1em}
+.pc-tier{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--g);letter-spacing:.15em;margin-bottom:10px}
+.pc-price{margin-bottom:16px}
+.pc-price .amt{font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.pc-price .cur{font-size:18px;font-weight:800;vertical-align:super}
+.pc-price .per{font-size:11px;color:var(--muted);margin-left:4px}
+.pc-hw{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);opacity:.7;margin-bottom:4px}
+.pc-monthly{font-size:12px;color:var(--muted);margin-bottom:18px}
+.pc-div{height:.5px;background:var(--border);margin-bottom:14px}
+.pc-feats{flex:1;display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.pf{display:flex;gap:8px;font-size:11px;color:var(--muted);line-height:1.5}
+.pf-ok{color:var(--g);flex-shrink:0;font-size:11px;margin-top:1px}
+.pc-btn{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-align:center;padding:11px;border-radius:4px;transition:all .2s;letter-spacing:.05em;display:block;margin-top:auto}
+.pc-btn.ga{background:var(--g);color:var(--bg)}
+.pc-btn.ga:hover{background:#33ffaa}
+.pc-btn.oa{border:.5px solid var(--border2);color:var(--muted)}
+.pc-btn.oa:hover{border-color:var(--muted);color:var(--text)}
+
+/* CTA */
+.cta-sec{text-align:center;padding:120px 56px;background:var(--s1);position:relative;overflow:hidden}
+.cta-sec::before{content:'';position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse at center bottom,rgba(0,255,148,.05),transparent 70%);pointer-events:none}
+.cta-sec h2{font-size:clamp(44px,7vw,88px);font-weight:800;letter-spacing:-.04em;line-height:.93;margin-bottom:20px}
+.cta-sec h2 .serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--g)}
+.cta-sec p{font-size:17px;color:var(--muted);max-width:480px;margin:0 auto 40px;line-height:1.7}
+.email-row{display:flex;max-width:420px;margin:0 auto;border:.5px solid var(--border2);border-radius:4px;overflow:hidden}
+.email-inp{flex:1;padding:14px 16px;background:var(--s2);border:none;color:var(--text);font-family:'Bricolage Grotesque',sans-serif;font-size:14px;outline:none}
+.email-inp::placeholder{color:var(--dim)}
+.email-sub{padding:14px 20px;background:var(--g);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;border:none;cursor:pointer;letter-spacing:.06em;transition:background .2s}
+.email-sub:hover{background:#33ffaa}
+
+/* FOOTER */
+footer{padding:32px 56px;border-top:.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.fl{font-size:18px;font-weight:800;color:var(--g)}
+.fc{font-size:11px;color:var(--dim)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+
+/* MARQUEE */
+.marquee{border-top:.5px solid var(--border);border-bottom:.5px solid var(--border);padding:12px 0;overflow:hidden;background:var(--s1)}
+.marquee-track{display:flex;gap:0;animation:mqrun 35s linear infinite;white-space:nowrap}
+.mq-item{display:flex;align-items:center;gap:24px;padding:0 24px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.mq-dot{width:4px;height:4px;border-radius:50%;background:var(--g);flex-shrink:0}
+@keyframes mqrun{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* TYPING ANIMATION */
+@keyframes typing{from{width:0}to{width:100%}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.typing-cursor::after{content:'_';color:var(--g);animation:blink 1s infinite}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-inner,.flywheel{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .hw-grid,.price-grid{grid-template-columns:1fr 1fr}
+  .pattern-grid{grid-template-columns:1fr 1fr}
+  .proof-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  nav{padding:12px 20px}
+  section,.hero,.cta-sec{padding:64px 20px}
+  .eco-grid,.hw-grid,.price-grid,.pattern-grid,.proof-grid{grid-template-columns:1fr}
+  .h-stats{grid-template-columns:repeat(2,1fr)}
+  footer{flex-direction:column;text-align:center;gap:12px;padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">AONXI <span>Own Your Intelligence</span></div>
+  <div class="nav-r">
+    <a href="https://github.com/originaonxi" class="nav-gh">GitHub</a>
+    <a href="#pricing" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<!-- ══════ HERO ══════ -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="badge"><span class="pulse"></span>50 AGENTS LIVE &mdash; SELF-EVOLVING &mdash; $200K PROVED</div>
+      <h1>
+        A Family of<br>
+        <span class="serif">AI Agents</span><br>
+        <span class="dim">You Own Forever.</span>
+      </h1>
+      <p class="hero-sub">
+        <strong>50+ autonomous agents</strong> running on Mac Mini M4 hardware you own. They learn from each other. They improve each other. They compound intelligence every day. <strong>Human QC'd. Zero cloud cost. Self-evolving.</strong>
+      </p>
+      <div class="hero-btns">
+        <a href="#ecosystem" class="btn-g">See the live ecosystem</a>
+        <a href="#pricing" class="btn-o">From $1,999</a>
+        <a href="https://github.com/originaonxi/super-brain" class="btn-o">GitHub</a>
+      </div>
+      <div class="h-stats">
+        <div class="hs"><div class="hs-n">50+</div><div class="hs-l">Live agents in production</div></div>
+        <div class="hs"><div class="hs-n">$200K</div><div class="hs-l">Revenue proved by agent v1</div></div>
+        <div class="hs"><div class="hs-n">$0</div><div class="hs-l">Per-query cost after setup</div></div>
+        <div class="hs"><div class="hs-n">330M</div><div class="hs-l">Businesses that need this</div></div>
+      </div>
+    </div>
+
+    <!-- HERO VISUAL: Live Agent Network -->
+    <div class="hero-visual" style="position:relative;height:480px;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <radialGradient id="cg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00ff94" stop-opacity=".12"/><stop offset="100%" stop-color="#00ff94" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle cx="240" cy="240" r="100" fill="url(#cg)"/>
+        <!-- pulse -->
+        <circle cx="240" cy="240" r="75" fill="none" stroke="#00ff94" stroke-width=".6" opacity=".12"><animate attributeName="r" from="75" to="180" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" from=".12" to="0" dur="4s" repeatCount="indefinite"/></circle>
+        <circle cx="240" cy="240" r="75" fill="none" stroke="#00ff94" stroke-width=".6" opacity=".12"><animate attributeName="r" from="75" to="180" dur="4s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" from=".12" to="0" dur="4s" begin="2s" repeatCount="indefinite"/></circle>
+
+        <!-- connection lines -->
+        <line x1="210" y1="216" x2="60" y2="60" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2s" repeatCount="indefinite"/></line>
+        <line x1="270" y1="216" x2="420" y2="60" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.7s" repeatCount="indefinite"/></line>
+        <line x1="200" y1="240" x2="40" y2="200" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2.2s" repeatCount="indefinite"/></line>
+        <line x1="280" y1="240" x2="440" y2="200" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.5s" repeatCount="indefinite"/></line>
+        <line x1="200" y1="260" x2="40" y2="340" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2.4s" repeatCount="indefinite"/></line>
+        <line x1="280" y1="260" x2="440" y2="340" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.9s" repeatCount="indefinite"/></line>
+        <line x1="240" y1="210" x2="240" y2="42" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2.6s" repeatCount="indefinite"/></line>
+        <line x1="240" y1="270" x2="240" y2="438" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2.1s" repeatCount="indefinite"/></line>
+
+        <!-- data packets -->
+        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2s" repeatCount="indefinite" path="M240,240 L60,60"/><animate attributeName="opacity" values="0;.8;0" dur="2s" repeatCount="indefinite"/></circle>
+        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="1.7s" repeatCount="indefinite" path="M240,240 L420,60"/><animate attributeName="opacity" values="0;.8;0" dur="1.7s" repeatCount="indefinite"/></circle>
+        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2.2s" repeatCount="indefinite" path="M240,240 L40,200"/><animate attributeName="opacity" values="0;.8;0" dur="2.2s" repeatCount="indefinite"/></circle>
+        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="1.5s" repeatCount="indefinite" path="M240,240 L440,200"/><animate attributeName="opacity" values="0;.8;0" dur="1.5s" repeatCount="indefinite"/></circle>
+        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2.4s" repeatCount="indefinite" path="M240,240 L40,340"/><animate attributeName="opacity" values="0;.8;0" dur="2.4s" repeatCount="indefinite"/></circle>
+        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="1.9s" repeatCount="indefinite" path="M240,240 L440,340"/><animate attributeName="opacity" values="0;.8;0" dur="1.9s" repeatCount="indefinite"/></circle>
+        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2.6s" repeatCount="indefinite" path="M240,240 L240,42"/><animate attributeName="opacity" values="0;.8;0" dur="2.6s" repeatCount="indefinite"/></circle>
+        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2.1s" repeatCount="indefinite" path="M240,240 L240,438"/><animate attributeName="opacity" values="0;.8;0" dur="2.1s" repeatCount="indefinite"/></circle>
+
+        <!-- CENTRE: Super Brain -->
+        <rect x="178" y="204" width="124" height="72" rx="10" fill="#030806" stroke="#00ff94" stroke-width="1"/>
+        <rect x="178" y="204" width="124" height="72" rx="10" fill="none" stroke="#00ff94" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;.25;0" dur="2.5s" repeatCount="indefinite"/></rect>
+        <text x="240" y="226" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="#00ff94" text-anchor="middle" letter-spacing=".14em">SUPER BRAIN</text>
+        <text x="240" y="241" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,255,148,.55)" text-anchor="middle">50 repos connected</text>
+        <text x="240" y="254" font-family="'JetBrains Mono',monospace" font-size="6.5" fill="rgba(0,255,148,.55)" text-anchor="middle">Mem0 + MemoryMesh</text>
+        <text x="240" y="267" font-family="'JetBrains Mono',monospace" font-size="6" fill="rgba(0,255,148,.3)" text-anchor="middle">M4 Max 64GB | $0/query</text>
+
+        <!-- Agent nodes (8 around) -->
+        <rect x="12" y="34" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.3)" stroke-width=".7"/>
+        <text x="62" y="52" font-family="'Bricolage Grotesque'" font-size="9" font-weight="700" fill="#f4f2ed" text-anchor="middle">AROS</text>
+        <text x="62" y="64" font-family="'JetBrains Mono'" font-size="6.5" fill="#00ff94" text-anchor="middle">Revenue Core</text>
+        <circle cx="12" cy="56" r="3" fill="#00ff94"><animate attributeName="opacity" values=".8;.2;.8" dur="1.8s" repeatCount="indefinite"/></circle>
+
+        <rect x="370" y="34" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.3)" stroke-width=".7"/>
+        <text x="420" y="52" font-family="'Bricolage Grotesque'" font-size="9" font-weight="700" fill="#f4f2ed" text-anchor="middle">ARIA</text>
+        <text x="420" y="64" font-family="'JetBrains Mono'" font-size="6.5" fill="#00ff94" text-anchor="middle">Capital Core</text>
+        <circle cx="470" cy="56" r="3" fill="#00ff94"><animate attributeName="opacity" values=".8;.2;.8" dur="2.1s" repeatCount="indefinite"/></circle>
+
+        <rect x="-8" y="178" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.25)" stroke-width=".7"/>
+        <text x="42" y="196" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="#f4f2ed" text-anchor="middle">Outreach</text>
+        <text x="42" y="208" font-family="'JetBrains Mono'" font-size="6.5" fill="#00ff94" text-anchor="middle">$200K proved</text>
+
+        <rect x="388" y="178" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.25)" stroke-width=".7"/>
+        <text x="438" y="196" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="#f4f2ed" text-anchor="middle">GTM Engines</text>
+        <text x="438" y="208" font-family="'JetBrains Mono'" font-size="6.5" fill="rgba(0,255,148,.6)" text-anchor="middle">6 verticals</text>
+
+        <rect x="-8" y="318" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.2)" stroke-width=".7"/>
+        <text x="42" y="336" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="rgba(244,242,237,.7)" text-anchor="middle">Research</text>
+        <text x="42" y="348" font-family="'JetBrains Mono'" font-size="6.5" fill="rgba(0,255,148,.5)" text-anchor="middle">15 papers</text>
+
+        <rect x="388" y="318" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.2)" stroke-width=".7"/>
+        <text x="438" y="336" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="rgba(244,242,237,.7)" text-anchor="middle">QA Systems</text>
+        <text x="438" y="348" font-family="'JetBrains Mono'" font-size="6.5" fill="rgba(0,255,148,.5)" text-anchor="middle">Self-healing</text>
+
+        <rect x="190" y="16" width="100" height="36" rx="6" fill="#050808" stroke="rgba(0,255,148,.2)" stroke-width=".7"/>
+        <text x="240" y="32" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="rgba(244,242,237,.7)" text-anchor="middle">Daily Fleet</text>
+        <text x="240" y="44" font-family="'JetBrains Mono'" font-size="6.5" fill="rgba(0,255,148,.5)" text-anchor="middle">5 agents on cron</text>
+
+        <rect x="190" y="428" width="100" height="36" rx="6" fill="#050808" stroke="rgba(0,255,148,.15)" stroke-width=".7"/>
+        <text x="240" y="444" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="rgba(244,242,237,.5)" text-anchor="middle">MemoryMesh</text>
+        <text x="240" y="456" font-family="'JetBrains Mono'" font-size="6.5" fill="rgba(0,255,148,.4)" text-anchor="middle">local + private</text>
+
+        <!-- Memory bar -->
+        <rect x="170" y="290" width="140" height="22" rx="4" fill="rgba(0,255,148,.04)" stroke="rgba(0,255,148,.1)" stroke-width=".5"/>
+        <text x="240" y="305" font-family="'JetBrains Mono'" font-size="6.5" fill="rgba(0,255,148,.45)" text-anchor="middle" letter-spacing=".1em">MEM0 + QDRANT + SQLITE</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="mq-item"><span class="mq-dot"></span>50+ live agents</div><div class="mq-item"><span class="mq-dot"></span>Self-evolving</div><div class="mq-item"><span class="mq-dot"></span>Human QC gates</div><div class="mq-item"><span class="mq-dot"></span>$200K proved</div><div class="mq-item"><span class="mq-dot"></span>Mac Mini M4</div><div class="mq-item"><span class="mq-dot"></span>Zero cloud cost</div><div class="mq-item"><span class="mq-dot"></span>Your data stays yours</div><div class="mq-item"><span class="mq-dot"></span>Agents teach agents</div><div class="mq-item"><span class="mq-dot"></span>MemoryMesh local</div><div class="mq-item"><span class="mq-dot"></span>6 GTM engines</div><div class="mq-item"><span class="mq-dot"></span>15 research papers</div><div class="mq-item"><span class="mq-dot"></span>GDPR + HIPAA safe</div><div class="mq-item"><span class="mq-dot"></span>50+ live agents</div><div class="mq-item"><span class="mq-dot"></span>Self-evolving</div><div class="mq-item"><span class="mq-dot"></span>Human QC gates</div><div class="mq-item"><span class="mq-dot"></span>$200K proved</div><div class="mq-item"><span class="mq-dot"></span>Mac Mini M4</div><div class="mq-item"><span class="mq-dot"></span>Zero cloud cost</div>
+  </div>
+</div>
+
+<!-- ══════ LIVE ECOSYSTEM ══════ -->
+<section id="ecosystem" class="reveal">
+  <div class="stag">Live ecosystem</div>
+  <h2>Every Agent is <em>Real.</em><br>Every Repo is <span class="serif">Live.</span></h2>
+  <p class="section-sub">This is not a mockup. These are <strong>50+ production repos</strong> on GitHub, running daily, making each other better. Every agent shares memory through Super Brain. Every pattern detected becomes a data point for the next improvement.</p>
+
+  <div class="eco-grid">
+    <!-- AONXI CORE -->
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">Super Brain</span><span class="eco-badge eco-core">BRAIN</span></div>
+      <div class="eco-cat">MEMORY</div>
+      <div class="eco-desc">The living memory connecting all 50+ repos. Dependency graph, health checks, pattern detection, cross-repo learning. Mem0 + MemoryMesh.</div>
+      <div class="eco-stats"><span class="eco-stat-g">63+ memories</span><span>9 categories</span><span>V2 live</span></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">AROS</span><span class="eco-badge eco-live">LIVE</span></div>
+      <div class="eco-cat">REVENUE CORE</div>
+      <div class="eco-desc">Autonomous Revenue Operating System. Finds new revenue opportunities across every connected channel. One of two permanent intelligence cores.</div>
+      <div class="eco-stats"><span class="eco-stat-g">Critical</span><span>5 upstream deps</span></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">ARIA</span><span class="eco-badge eco-live">LIVE</span></div>
+      <div class="eco-cat">CAPITAL CORE</div>
+      <div class="eco-desc">Autonomous Relationship Intelligence Agent. Finds capital and investor relationships. Learns from AROS. Both share the same brain.</div>
+      <div class="eco-stats"><span class="eco-stat-g">Critical</span><span>3 upstream deps</span></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">Outreach Agent v8</span><span class="eco-badge eco-live">$200K</span></div>
+      <div class="eco-cat">REVENUE GENERATION</div>
+      <div class="eco-desc">Self-correcting revenue intelligence. Finds companies, writes personalized emails with real-time signals, gets better every day it runs.</div>
+      <div class="eco-stats"><span class="eco-stat-g">$200K proved</span><span>v8</span></div>
+    </div>
+
+    <!-- GTM ENGINES -->
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">NOVA GTM</span><span class="eco-badge eco-live">LIVE</span></div>
+      <div class="eco-cat">GTM ENGINE</div>
+      <div class="eco-desc">17-agent progressive autonomy engine. Trust-scored. Built for SimpleNursing's 4.38M nursing student market. $2M ARR in 60 days.</div>
+      <div class="eco-stats"><span class="eco-stat-g">17 agents</span><span>Trust-scored</span></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">TechM Intel</span><span class="eco-badge eco-live">LIVE</span></div>
+      <div class="eco-cat">ENTERPRISE INTEL</div>
+      <div class="eco-desc">Multi-agent F500 signal detection. Maps C-suite leadership, scores buying signals in real-time, delivers briefs before competitors know.</div>
+      <div class="eco-stats"><span class="eco-stat-g">Fortune 500</span><span>Real-time</span></div>
+    </div>
+
+    <!-- KERNEL MODULES -->
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">Router</span><span class="eco-badge eco-core">KERNEL</span></div>
+      <div class="eco-cat">AONXI CORE</div>
+      <div class="eco-desc">Intelligence routing layer. Every prompt goes to the best model for that exact task. Shared by AROS, ARIA, Outreach, and 5 more agents.</div>
+      <div class="eco-stats"><span class="eco-stat-g">8 consumers</span><span>Critical</span></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">Safeguard</span><span class="eco-badge eco-core">KERNEL</span></div>
+      <div class="eco-cat">AONXI CORE</div>
+      <div class="eco-desc">Circuit-level behavioral integrity. Finds the 0.42% of patterns that break things. Protects the 99.6% that makes money.</div>
+      <div class="eco-stats"><span>Safety layer</span><span>Critical</span></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">MemCollab</span><span class="eco-badge eco-core">KERNEL</span></div>
+      <div class="eco-cat">AONXI CORE</div>
+      <div class="eco-desc">Cross-agent shared memory. Every win by AROS teaches ARIA. Every ARIA insight teaches Outreach. Collective intelligence. No cold starts.</div>
+      <div class="eco-stats"><span class="eco-stat-g">Compounds forever</span></div>
+    </div>
+
+    <!-- DAILY FLEET -->
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">Daily Fleet</span><span class="eco-badge eco-live">5 AGENTS</span></div>
+      <div class="eco-cat">DAILY EMAIL AGENTS</div>
+      <div class="eco-desc">5 autonomous agents on cron: News Briefing (6:30am), Echo (7:05am), AGI Possible (8:00am), Space Wonder, Stock Analyst. Every morning.</div>
+      <div class="eco-stats"><span class="eco-stat-g">Every day</span><span>Zero intervention</span></div>
+    </div>
+
+    <!-- RESEARCH -->
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">Research Lab</span><span class="eco-badge eco-live">15 REPOS</span></div>
+      <div class="eco-cat">ML RESEARCH</div>
+      <div class="eco-desc">15 ML research repos: ASM (NeurIPS 2026), alignment auditing, reward model blindness, MoE efficiency, PRM replication. Research feeds product.</div>
+      <div class="eco-stats"><span class="eco-stat-g">NeurIPS 2026</span><span>2 product links</span></div>
+    </div>
+    <div class="eco-card">
+      <div class="eco-header"><span class="eco-name">MemoryMesh</span><span class="eco-badge eco-live">PIP</span></div>
+      <div class="eco-cat">OPEN SOURCE</div>
+      <div class="eco-desc">One shared memory for all AI tools. Claude, Ollama, GPT — one brain. Local. Private. Zero cloud. pip install memorymesh.</div>
+      <div class="eco-stats"><span class="eco-stat-g">pip installable</span><span>SQLite + FTS5</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ LIVE TERMINAL — REAL OUTPUT ══════ -->
+<section class="reveal" id="brain">
+  <div class="stag">Live proof</div>
+  <h2>The Brain is <em>Running</em><br>Right Now.</h2>
+  <p class="section-sub">These are <strong>real commands, real output</strong> from the Super Brain V2 orchestrator. Not mockups. Not screenshots. This is what the system actually does.</p>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="terminal-dot" style="background:#ff5f57"></div>
+      <div class="terminal-dot" style="background:#ffbd2e"></div>
+      <div class="terminal-dot" style="background:#28c840"></div>
+      <div class="terminal-title">super-brain &mdash; brain.py registry</div>
+    </div>
+    <div class="terminal-body">
+<span class="prompt">$</span> <span class="cmd">python3 brain.py registry</span>
+<br><br>
+<span class="output">============================================================</span>
+<span class="category">  AGENT (12 repos)</span>
+<span class="output">============================================================</span>
+<span class="output">  [<span class="highlight">critical</span>] aros-agent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Autonomous Revenue Operating System</span>
+<span class="output">  [<span class="highlight">critical</span>] aria &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Autonomous Relationship Intelligence Agent</span>
+<span class="output">  [<span class="highlight">critical</span>] aonxi-outreach-agent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $200K proved revenue intelligence</span>
+<br>
+<span class="output">============================================================</span>
+<span class="category">  AONXI-CORE (7 repos)</span>
+<span class="output">============================================================</span>
+<span class="output">  [<span class="highlight">critical</span>] aonxi-router &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Intelligence routing layer</span>
+<span class="output">  [<span class="highlight">critical</span>] aonxi-safeguard &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Circuit-level behavioral integrity</span>
+<span class="output">  [<span class="highlight">critical</span>] aonxi-memcollab &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cross-agent shared memory</span>
+<br>
+<span class="output">============================================================</span>
+<span class="category">  GTM-ENGINE (6 repos)</span>
+<span class="output">============================================================</span>
+<span class="output">  [<span class="highlight">critical</span>] nova-gtm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17-agent progressive autonomy engine</span>
+<span class="output">  [<span class="highlight">&nbsp;&nbsp;&nbsp;high</span>] techm-intel &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enterprise F500 signal detection</span>
+<br>
+<span class="output">  <span class="highlight">Total: 50 repos | 9 categories | All connected via Super Brain</span></span>
+    </div>
+  </div>
+
+  <div style="height:24px"></div>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="terminal-dot" style="background:#ff5f57"></div>
+      <div class="terminal-dot" style="background:#ffbd2e"></div>
+      <div class="terminal-dot" style="background:#28c840"></div>
+      <div class="terminal-title">super-brain &mdash; brain.py graph aros-agent</div>
+    </div>
+    <div class="terminal-body">
+<span class="prompt">$</span> <span class="cmd">python3 brain.py graph aros-agent</span>
+<br><br>
+<span class="output">  <span class="highlight">aros-agent</span></span>
+<span class="output">  Category: agent</span>
+<span class="output">  Purpose: Autonomous Revenue Operating System &mdash; finds new revenue</span>
+<br>
+<span class="output">  Upstream (depends on):</span>
+<span class="output">    &lt;- <span class="highlight">aonxi-router</span></span>
+<span class="output">    &lt;- <span class="highlight">aonxi-safeguard</span></span>
+<span class="output">    &lt;- <span class="highlight">aonxi-memcollab</span></span>
+<span class="output">    &lt;- <span class="highlight">aonxi-pkm</span></span>
+<span class="output">    &lt;- <span class="highlight">memorymesh</span></span>
+<br>
+<span class="output">  Downstream (depended by):</span>
+<span class="output">    -&gt; <span class="highlight">aria</span></span>
+    </div>
+  </div>
+
+  <div style="height:24px"></div>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="terminal-dot" style="background:#ff5f57"></div>
+      <div class="terminal-dot" style="background:#ffbd2e"></div>
+      <div class="terminal-dot" style="background:#28c840"></div>
+      <div class="terminal-title">super-brain &mdash; brain.py patterns</div>
+    </div>
+    <div class="terminal-body">
+<span class="prompt">$</span> <span class="cmd">python3 brain.py patterns</span>
+<br><br>
+<span class="output">  <span class="highlight">ECOSYSTEM PATTERNS</span></span>
+<span class="output">  ==================================================</span>
+<br>
+<span class="output">  <span class="category">Kernel Consumers (8):</span></span>
+<span class="output">    aros-agent uses <span class="highlight">router, safeguard, memcollab, pkm</span></span>
+<span class="output">    aria uses <span class="highlight">router, safeguard, memcollab</span></span>
+<span class="output">    nova-gtm uses <span class="highlight">router, memcollab</span></span>
+<span class="output">    techm-intel uses <span class="highlight">router, safeguard, memcollab</span></span>
+<br>
+<span class="output">  <span class="category">Daily Email Fleet (5):</span></span>
+<span class="output">    news-briefing @ <span class="highlight">6:30 AM</span></span>
+<span class="output">    echo @ <span class="highlight">7:05 AM</span></span>
+<span class="output">    agi-possible @ <span class="highlight">8:00 AM</span></span>
+<br>
+<span class="output">  <span class="category">Research &rarr; Product (2):</span></span>
+<span class="output">    llm-calibration-study &rarr; <span class="highlight">aonxi-outreach-agent</span></span>
+<span class="output">    llm-evals-arena &rarr; <span class="highlight">aonxi-router</span></span>
+<br>
+<span class="output">  <span class="warn">Every pattern detected is a data point for the next improvement.</span></span>
+    </div>
+  </div>
+
+  <!-- Pattern Stats -->
+  <div class="pattern-grid">
+    <div class="pattern-card">
+      <div class="num">8</div>
+      <h3>Kernel Consumers</h3>
+      <p>Agents that share the same routing, safety, and memory infrastructure. Change one kernel module, every agent improves.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="num">6</div>
+      <h3>GTM Engines</h3>
+      <p>Go-to-market systems for real clients: SimpleNursing, BRE Group, Attentive.ai, myHQ, TechM. Each learns from all.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="num">5</div>
+      <h3>Daily Agents</h3>
+      <p>Autonomous email agents firing on cron every morning. News, AI papers, stocks, space, insights. Zero human intervention.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="num">15</div>
+      <h3>Research Repos</h3>
+      <p>ML research that feeds directly into product. Calibration studies improve outreach. Eval frameworks improve routing.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="num">3</div>
+      <h3>QA Systems</h3>
+      <p>Self-healing quality assurance. Reads Jira, generates tests, executes, files bugs, learns from every failure. 24/7.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="num">&infin;</div>
+      <h3>Compound Loop</h3>
+      <p>Every agent teaches every other agent. Research improves agents. Agents generate data. Data improves research. Forever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ HOW IT SELF-EVOLVES ══════ -->
+<section class="reveal">
+  <div class="stag">Self-evolution</div>
+  <h2>The System Gets<br><span class="serif">Smarter</span> <em>Every Day.</em></h2>
+  <div class="flywheel">
+    <div class="fw-steps">
+      <div class="fw-step"><div class="fw-num">01</div><div class="fw-content"><h4>Orchestrator scans every repo daily</h4><p>Health checks, dependency analysis, staleness detection, pattern extraction. Every repo gets scored. Every connection gets mapped.</p></div></div>
+      <div class="fw-step"><div class="fw-num">02</div><div class="fw-content"><h4>Cross-repo patterns become data points</h4><p>When AROS learns that Tuesday healthcare leads convert 3x, that insight flows to ARIA, to Outreach, to every GTM engine. Shared memory. No cold starts.</p></div></div>
+      <div class="fw-step"><div class="fw-num">03</div><div class="fw-content"><h4>Research feeds product automatically</h4><p>The LLM calibration study improves the outreach agent's confidence scoring. The eval arena improves the router's model selection. Research has ROI.</p></div></div>
+      <div class="fw-step"><div class="fw-num">04</div><div class="fw-content"><h4>Improvement suggestions generated</h4><p>The orchestrator detects: "simplenursing-gtm is missing safeguard". Or: "bre-gtm could use memcollab for shared memory". Actionable, specific.</p></div></div>
+      <div class="fw-step"><div class="fw-num">05</div><div class="fw-content"><h4>Human QC gate before any change ships</h4><p>Nothing deploys without human approval. Like Bitcoin mining where humans validate the block. The AI proposes. The human approves. Trust is earned.</p></div></div>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg" style="max-width:300px;width:100%">
+        <defs><radialGradient id="fw-glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00ff94" stop-opacity=".08"/><stop offset="100%" stop-color="#00ff94" stop-opacity="0"/></radialGradient></defs>
+        <circle cx="170" cy="170" r="120" fill="url(#fw-glow)"/>
+        <circle cx="170" cy="170" r="118" fill="none" stroke="rgba(0,255,148,.08)" stroke-width="1"/>
+        <circle cx="170" cy="170" r="80" fill="none" stroke="rgba(0,255,148,.06)" stroke-width="1"/>
+        <circle cx="170" cy="170" r="118" fill="none" stroke="#00ff94" stroke-width="1" stroke-dasharray="10 18" opacity=".25"><animateTransform attributeName="transform" type="rotate" from="0 170 170" to="360 170 170" dur="25s" repeatCount="indefinite"/></circle>
+        <circle cx="170" cy="52" r="20" fill="#080a0f" stroke="rgba(0,255,148,.2)" stroke-width=".7"/><text x="170" y="49" font-family="'JetBrains Mono'" font-size="6.5" fill="#00ff94" text-anchor="middle">SCAN</text><text x="170" y="58" font-family="'JetBrains Mono'" font-size="5.5" fill="rgba(0,255,148,.5)" text-anchor="middle">50 repos</text>
+        <circle cx="282" cy="120" r="20" fill="#080a0f" stroke="rgba(0,255,148,.2)" stroke-width=".7"/><text x="282" y="117" font-family="'JetBrains Mono'" font-size="6.5" fill="#00ff94" text-anchor="middle">LEARN</text><text x="282" y="126" font-family="'JetBrains Mono'" font-size="5.5" fill="rgba(0,255,148,.5)" text-anchor="middle">Patterns</text>
+        <circle cx="255" cy="250" r="20" fill="#080a0f" stroke="rgba(0,255,148,.2)" stroke-width=".7"/><text x="255" y="247" font-family="'JetBrains Mono'" font-size="6.5" fill="#00ff94" text-anchor="middle">SHARE</text><text x="255" y="256" font-family="'JetBrains Mono'" font-size="5.5" fill="rgba(0,255,148,.5)" text-anchor="middle">Memory</text>
+        <circle cx="85" cy="250" r="20" fill="#080a0f" stroke="rgba(0,255,148,.2)" stroke-width=".7"/><text x="85" y="247" font-family="'JetBrains Mono'" font-size="6.5" fill="#00ff94" text-anchor="middle">BUILD</text><text x="85" y="256" font-family="'JetBrains Mono'" font-size="5.5" fill="rgba(0,255,148,.5)" text-anchor="middle">Improve</text>
+        <circle cx="58" cy="120" r="20" fill="#080a0f" stroke="rgba(0,255,148,.2)" stroke-width=".7"/><text x="58" y="117" font-family="'JetBrains Mono'" font-size="6.5" fill="#00ff94" text-anchor="middle">QC</text><text x="58" y="126" font-family="'JetBrains Mono'" font-size="5.5" fill="rgba(0,255,148,.5)" text-anchor="middle">Human</text>
+        <circle cx="170" cy="170" r="40" fill="#030806" stroke="#00ff94" stroke-width=".8"/>
+        <circle cx="170" cy="170" r="40" fill="none" stroke="#00ff94" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;.2;0" dur="2.5s" repeatCount="indefinite"/></circle>
+        <text x="170" y="165" font-family="'JetBrains Mono'" font-size="7.5" fill="#00ff94" text-anchor="middle" letter-spacing=".08em">SELF</text>
+        <text x="170" y="178" font-family="'JetBrains Mono'" font-size="7.5" fill="#00ff94" text-anchor="middle" letter-spacing=".08em">EVOLVING</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PROOF ══════ -->
+<section class="reveal" style="background:var(--s1)">
+  <div class="stag">Proof</div>
+  <h2>Numbers That<br><em>Don't Lie.</em></h2>
+  <div class="proof-grid">
+    <div class="proof-card"><div class="proof-num">$200K</div><div class="proof-label">Revenue by agent v1</div><div class="proof-desc">Outreach agent running autonomously. Finding leads, writing emails, booking meetings. Fully automated.</div></div>
+    <div class="proof-card"><div class="proof-num">50+</div><div class="proof-label">Live repos in production</div><div class="proof-desc">Agents, GTM engines, research repos, QA systems, kernel modules. All connected via Super Brain.</div></div>
+    <div class="proof-card"><div class="proof-num">$0</div><div class="proof-label">Per-query cost on-prem</div><div class="proof-desc">Every AI query costs exactly zero after hardware setup. Electricity only. ~$15/month for the full fleet.</div></div>
+    <div class="proof-card"><div class="proof-num">0%</div><div class="proof-label">Data leaving your building</div><div class="proof-desc">Full data sovereignty. Every conversation, every lead, every model weight stays on your hardware. GDPR + HIPAA safe.</div></div>
+  </div>
+</section>
+
+<!-- ══════ HARDWARE ══════ -->
+<section class="reveal" id="hardware">
+  <div class="stag">Hardware</div>
+  <h2>The Right Box for<br><em>Every Business.</em></h2>
+  <p class="section-sub">A $599 Mac Mini runs agents that outperform GPT-3.5. A $1,999 Mac Studio runs the full 50-agent fleet. Scale hardware only when you scale agents.</p>
+
+  <div class="hw-grid">
+    <div class="hw-card">
+      <div class="hw-name">Mac Mini M4</div>
+      <div class="hw-price">From $599</div>
+      <div class="hw-specs">
+        <div class="hw-spec"><span class="hw-k">RAM</span><span class="hw-v">16GB unified</span></div>
+        <div class="hw-spec"><span class="hw-k">Model</span><span class="hw-v">Qwen2.5-14B Q8</span></div>
+        <div class="hw-spec"><span class="hw-k">Agents</span><span class="hw-v">1-2 agents</span></div>
+        <div class="hw-spec"><span class="hw-k">Monthly</span><span class="hw-v hw-v-g">~$8 electricity</span></div>
+        <div class="hw-spec"><span class="hw-k">For</span><span class="hw-v">Solo / Freelancer</span></div>
+      </div>
+    </div>
+    <div class="hw-card">
+      <div class="hw-name">Mac Mini M4 Pro</div>
+      <div class="hw-price">From $799</div>
+      <div class="hw-specs">
+        <div class="hw-spec"><span class="hw-k">RAM</span><span class="hw-v">24GB unified</span></div>
+        <div class="hw-spec"><span class="hw-k">Model</span><span class="hw-v">Qwen2.5-32B Q4</span></div>
+        <div class="hw-spec"><span class="hw-k">Agents</span><span class="hw-v">3 agents</span></div>
+        <div class="hw-spec"><span class="hw-k">Monthly</span><span class="hw-v hw-v-g">~$10 electricity</span></div>
+        <div class="hw-spec"><span class="hw-k">For</span><span class="hw-v">Small business</span></div>
+      </div>
+    </div>
+    <div class="hw-card best">
+      <div class="hw-best-tag">MOST POPULAR</div>
+      <div class="hw-name">Mac Studio M4 Max</div>
+      <div class="hw-price">From $1,999</div>
+      <div class="hw-specs">
+        <div class="hw-spec"><span class="hw-k">RAM</span><span class="hw-v hw-v-g">64GB unified</span></div>
+        <div class="hw-spec"><span class="hw-k">Model</span><span class="hw-v hw-v-g">Qwen2.5-72B Q4</span></div>
+        <div class="hw-spec"><span class="hw-k">Agents</span><span class="hw-v hw-v-g">Full fleet (6+)</span></div>
+        <div class="hw-spec"><span class="hw-k">Monthly</span><span class="hw-v hw-v-g">~$15 electricity</span></div>
+        <div class="hw-spec"><span class="hw-k">For</span><span class="hw-v hw-v-g">Full department</span></div>
+      </div>
+    </div>
+    <div class="hw-card">
+      <div class="hw-name">Enterprise Cluster</div>
+      <div class="hw-price">Custom</div>
+      <div class="hw-specs">
+        <div class="hw-spec"><span class="hw-k">RAM</span><span class="hw-v">128GB+ unified</span></div>
+        <div class="hw-spec"><span class="hw-k">Model</span><span class="hw-v">Custom fine-tuned</span></div>
+        <div class="hw-spec"><span class="hw-k">Agents</span><span class="hw-v">Unlimited</span></div>
+        <div class="hw-spec"><span class="hw-k">Monthly</span><span class="hw-v hw-v-g">Electricity only</span></div>
+        <div class="hw-spec"><span class="hw-k">For</span><span class="hw-v">Full org intel</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ PRICING ══════ -->
+<section class="reveal" id="pricing">
+  <div class="stag">Own it</div>
+  <h2>One Payment.<br><em>Forever.</em></h2>
+  <p class="section-sub">Hardware + setup + agent deployment + Super Brain. <strong>No subscription. No per-seat pricing. No usage limits.</strong> Your business intelligence belongs to you.</p>
+
+  <div class="price-grid">
+    <div class="pc">
+      <div class="pc-tier">MICRO</div>
+      <div class="pc-price"><span class="cur">$</span><span class="amt">1,999</span><span class="per">one-time</span></div>
+      <div class="pc-hw">Mac Mini M4 16GB included</div>
+      <div class="pc-monthly">~$8/mo electricity after setup</div>
+      <div class="pc-div"></div>
+      <div class="pc-feats">
+        <div class="pf"><span class="pf-ok">+</span>1-2 agents deployed</div>
+        <div class="pf"><span class="pf-ok">+</span>Super Brain connected</div>
+        <div class="pf"><span class="pf-ok">+</span>MemoryMesh local memory</div>
+        <div class="pf"><span class="pf-ok">+</span>Outreach or Support agent</div>
+        <div class="pf"><span class="pf-ok">+</span>Remote setup included</div>
+      </div>
+      <a href="#demo" class="pc-btn oa">Get started</a>
+    </div>
+    <div class="pc">
+      <div class="pc-tier">STARTER</div>
+      <div class="pc-price"><span class="cur">$</span><span class="amt">4,999</span><span class="per">one-time</span></div>
+      <div class="pc-hw">Mac Mini M4 Pro 24GB included</div>
+      <div class="pc-monthly">~$10/mo electricity after setup</div>
+      <div class="pc-div"></div>
+      <div class="pc-feats">
+        <div class="pf"><span class="pf-ok">+</span>3 agents deployed</div>
+        <div class="pf"><span class="pf-ok">+</span>Full kernel: Router + Safeguard</div>
+        <div class="pf"><span class="pf-ok">+</span>Cross-agent memory sharing</div>
+        <div class="pf"><span class="pf-ok">+</span>Outreach + HR + IT Helpdesk</div>
+        <div class="pf"><span class="pf-ok">+</span>Weekly health report</div>
+        <div class="pf"><span class="pf-ok">+</span>On-site or remote setup</div>
+      </div>
+      <a href="#demo" class="pc-btn oa">Get started</a>
+    </div>
+    <div class="pc feat">
+      <div class="pc-rec">RECOMMENDED</div>
+      <div class="pc-tier">BUSINESS</div>
+      <div class="pc-price"><span class="cur">$</span><span class="amt">12,900</span><span class="per">one-time</span></div>
+      <div class="pc-hw">Mac Studio M4 Max 64GB included</div>
+      <div class="pc-monthly">~$15/mo electricity after setup</div>
+      <div class="pc-div"></div>
+      <div class="pc-feats">
+        <div class="pf"><span class="pf-ok">+</span>6+ agents, full fleet</div>
+        <div class="pf"><span class="pf-ok">+</span>Full AONXI kernel stack</div>
+        <div class="pf"><span class="pf-ok">+</span>Super Brain V2 orchestrator</div>
+        <div class="pf"><span class="pf-ok">+</span>Self-evolving automation</div>
+        <div class="pf"><span class="pf-ok">+</span>Daily health + improvement reports</div>
+        <div class="pf"><span class="pf-ok">+</span>Custom agent development</div>
+        <div class="pf"><span class="pf-ok">+</span>Quarterly fine-tuning</div>
+      </div>
+      <a href="#demo" class="pc-btn ga">Get started</a>
+    </div>
+    <div class="pc">
+      <div class="pc-tier">ENTERPRISE</div>
+      <div class="pc-price"><span class="cur">$</span><span class="amt">24,900</span><span class="per">one-time</span></div>
+      <div class="pc-hw">Multi-node cluster</div>
+      <div class="pc-monthly">Electricity only</div>
+      <div class="pc-div"></div>
+      <div class="pc-feats">
+        <div class="pf"><span class="pf-ok">+</span>Unlimited agents</div>
+        <div class="pf"><span class="pf-ok">+</span>Custom fine-tuned models</div>
+        <div class="pf"><span class="pf-ok">+</span>Full AONXI OS deployed</div>
+        <div class="pf"><span class="pf-ok">+</span>Industry network intelligence</div>
+        <div class="pf"><span class="pf-ok">+</span>On-site deployment team</div>
+        <div class="pf"><span class="pf-ok">+</span>Priority support forever</div>
+        <div class="pf"><span class="pf-ok">+</span>Source code access</div>
+      </div>
+      <a href="#demo" class="pc-btn oa">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CTA ══════ -->
+<section class="cta-sec" id="demo">
+  <h2>Own Your <span class="serif">Intelligence</span><br>Before It's Sold.</h2>
+  <p>330 million businesses will own their AI. The question is whether you're first or last. Every day you wait, your competitors get smarter with your data on someone else's servers.</p>
+  <div class="email-row">
+    <input type="email" class="email-inp" placeholder="you@company.com">
+    <button class="email-sub">GET STARTED</button>
+  </div>
+  <div style="margin-top:14px;font-size:11px;color:var(--dim)">Book a 15-min demo. See the live agents. Decide in one call.</div>
+</section>
+
+<footer>
+  <div class="fl">AONXI</div>
+  <div class="fc">Built by Anmol Sam | CTO, Aonxi | github.com/originaonxi</div>
+</footer>
+
+<script>
+// Reveal on scroll
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('vis') });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

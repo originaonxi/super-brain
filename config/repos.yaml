@@ -1,0 +1,612 @@
+# ============================================================================
+# SUPER BRAIN — COMPLETE REPO REGISTRY
+# Every repo on originaonxi, categorized, linked, and scored.
+# This is the single source of truth for the entire Aonxi ecosystem.
+# ============================================================================
+# Updated: 2026-03-31
+# Total repos: 50+
+# Categories: aonxi-core, agent, gtm-engine, research, qa, memory, product, utility
+# ============================================================================
+
+# ── AONXI CORE MODULES ──────────────────────────────────────────────────────
+# These are the shared infrastructure that every agent inherits from.
+# Think of them as the "kernel" of the Aonxi OS.
+
+aonxi-router:
+  path: ~/aonxi-router
+  github: originaonxi/aonxi-router
+  category: aonxi-core
+  purpose: "Intelligence routing layer — routes prompts to the best model for the task"
+  role: kernel
+  depends_on: []
+  depended_by: [aros-agent, aria, aonxi-outreach-agent, techm-intel]
+  status: live
+  priority: critical
+
+aonxi-safeguard:
+  path: ~/aonxi-safeguard
+  github: originaonxi/aonxi-safeguard
+  category: aonxi-core
+  purpose: "Circuit-level behavioral integrity — finds the 0.42% of patterns that break things"
+  role: kernel
+  depends_on: []
+  depended_by: [aros-agent, aria, aonxi-outreach-agent]
+  status: live
+  priority: critical
+
+aonxi-memcollab:
+  path: ~/aonxi-memcollab
+  github: originaonxi/aonxi-memcollab
+  category: aonxi-core
+  purpose: "Cross-agent shared memory — every win by AROS teaches ARIA"
+  role: kernel
+  depends_on: [memorymesh]
+  depended_by: [aros-agent, aria, aonxi-outreach-agent, techm-intel]
+  status: live
+  priority: critical
+
+aonxi-claw:
+  path: ~/aonxi-claw
+  github: originaonxi/aonxi-claw
+  category: aonxi-core
+  purpose: "Living agent orchestrator — where all Aonxi agents live, talk, and self-optimize"
+  role: kernel
+  depends_on: [aonxi-router, aonxi-safeguard, aonxi-memcollab]
+  depended_by: []
+  status: live
+  priority: critical
+
+aonxi-pkm:
+  path: ~/aonxi-pkm
+  github: originaonxi/aonxi-pkm
+  category: aonxi-core
+  purpose: "Personal Knowledge Management + Content Flywheel — feeds AROS, ARIA, and Outreach"
+  role: kernel
+  depends_on: []
+  depended_by: [aros-agent, aria, aonxi-outreach-agent, pkm-analyzer]
+  status: live
+  priority: high
+
+aonxi-persona-evals:
+  path: ~/aonxi-persona-evals
+  github: originaonxi/aonxi-persona-evals
+  category: aonxi-core
+  purpose: "Persona evaluation framework for agent quality"
+  role: kernel
+  depends_on: []
+  depended_by: [aonxi-outreach-agent]
+  status: live
+  priority: medium
+
+aonxi-site:
+  path: ~/aonxi-site
+  github: originaonxi/originaonxi.github.io
+  category: aonxi-core
+  purpose: "Aonxi public website — originaonxi.github.io"
+  role: frontend
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: high
+
+# ── INTELLIGENCE AGENTS ──────────────────────────────────────────────────────
+# Autonomous agents that run daily or on-demand.
+
+aros-agent:
+  path: ~/aros-agent
+  github: originaonxi/aros-agent
+  category: agent
+  purpose: "Autonomous Revenue Operating System — finds new revenue"
+  role: revenue-core
+  depends_on: [aonxi-router, aonxi-safeguard, aonxi-memcollab, aonxi-pkm]
+  depended_by: [aria]
+  status: live
+  priority: critical
+
+aria:
+  path: ~/aria
+  github: originaonxi/ARIA
+  category: agent
+  purpose: "Autonomous Relationship Intelligence Agent — finds capital"
+  role: capital-core
+  depends_on: [aonxi-router, aonxi-safeguard, aonxi-memcollab]
+  depended_by: [aros-agent]
+  status: live
+  priority: critical
+
+aonxi-outreach-agent:
+  path: ~/aonxi-outreach-agent
+  github: originaonxi/aonxi-outreach-agent
+  category: agent
+  purpose: "Self-correcting revenue intelligence — finds companies, writes personalized emails. V8. $200K generated."
+  role: revenue
+  depends_on: [aonxi-router, aonxi-safeguard, aonxi-memcollab, aonxi-pkm]
+  depended_by: []
+  status: live
+  priority: critical
+
+echo:
+  path: ~/echo
+  github: originaonxi/echo
+  category: agent
+  purpose: "Daily email agent — curated AI insights every morning at 7:05 AM PST"
+  role: daily-email
+  depends_on: []
+  depended_by: []
+  cron: "05 7 * * *"
+  status: live
+  priority: medium
+
+news-briefing-agent:
+  path: ~/news-briefing-agent
+  github: originaonxi/news-briefing-agent
+  category: agent
+  purpose: "Bias-aware news briefing — top AI + startup stories at 6:30 AM PST daily"
+  role: daily-email
+  depends_on: []
+  depended_by: []
+  cron: "30 6 * * *"
+  status: live
+  priority: medium
+
+agi-possible-agent:
+  path: ~/agi-possible-agent
+  github: originaonxi/agi-possible-agent
+  category: agent
+  purpose: "Daily AGI Possible — 5 most AGI-relevant ML papers at 8:00 AM PST"
+  role: daily-email
+  depends_on: []
+  depended_by: []
+  cron: "00 8 * * *"
+  status: live
+  priority: medium
+
+space-wonder-agent:
+  path: ~/space-wonder-agent
+  github: originaonxi/space-wonder-agent
+  category: agent
+  purpose: "Daily space/astronomy wonder email"
+  role: daily-email
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: low
+
+stock-analyst-agent:
+  path: ~/stock-analyst-agent
+  github: originaonxi/stock-analyst-agent
+  category: agent
+  purpose: "Daily stock analysis and market intelligence email"
+  role: daily-email
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+frontier-agent:
+  path: ~/frontier-agent
+  github: originaonxi/frontier-agent
+  category: agent
+  purpose: "Frontier AGI research agent — daily paper implementation pipeline"
+  role: research-agent
+  depends_on: []
+  depended_by: [frontier-agi-journey]
+  status: live
+  priority: high
+
+job-hunt-agent:
+  path: ~/job-hunt-agent
+  github: originaonxi/job-hunt-agent
+  category: agent
+  purpose: "Autonomous 5-agent job pipeline — finds funded companies, discovers CTOs, writes cold emails. 12 emails in 34 mins, $0.04 cost."
+  role: career
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+simplenursing-agent:
+  path: ~/simplenursing-agent
+  github: originaonxi/simplenursing-agent
+  category: agent
+  purpose: "Real-time competitive intelligence for simplenursing.com via Firehose SSE + Supabase"
+  role: client-agent
+  depends_on: []
+  depended_by: [simplenursing-gtm-engine]
+  status: live
+  priority: high
+
+FundingScanner:
+  path: ~/FundingScanner
+  github: originaonxi/b2b-funding-scanner
+  category: agent
+  purpose: "Real-time B2B seed funding intelligence — scrapes TechCrunch, Crunchbase, PR Newswire every 30 min"
+  role: lead-gen
+  depends_on: []
+  depended_by: [aonxi-outreach-agent]
+  status: live
+  priority: high
+
+# ── GTM ENGINES ──────────────────────────────────────────────────────────────
+# Go-to-market intelligence engines for specific clients/verticals.
+
+nova-gtm:
+  path: ~/nova-gtm
+  github: colibri-group-healthcare-b2b/nova-gtm-
+  category: gtm-engine
+  purpose: "17-agent progressive autonomy GTM engine for SimpleNursing #WhyNursingMoment. Trust-scored."
+  role: client-gtm
+  depends_on: [aonxi-router, aonxi-memcollab]
+  depended_by: []
+  status: live
+  priority: critical
+
+simplenursing-gtm-engine:
+  path: ~/simplenursing-gtm-engine
+  github: originaonxi/simplenursing-gtm-engine
+  category: gtm-engine
+  purpose: "GTM system that drove $2M ARR in 60 days — rebuilt for SimpleNursing's 4.38M nursing student TAM"
+  role: client-gtm
+  depends_on: [simplenursing-agent]
+  depended_by: []
+  status: live
+  priority: high
+
+attentive-gtm-agent:
+  path: ~/attentive-gtm-agent
+  github: originaonxi/attentive-gtm-agent
+  category: gtm-engine
+  purpose: "AI-powered outbound pipeline for Attentive.ai — 5 agents, 5 verticals, intent-scored"
+  role: client-gtm
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+bre-gtm-engine:
+  path: ~/bre-gtm-engine
+  github: originaonxi/bre-gtm-engine
+  category: gtm-engine
+  purpose: "GTM intelligence for BRE Group — £50B+ global green building certification market"
+  role: client-gtm
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+myhq-gtm-engine:
+  path: ~/myhq-gtm-engine
+  github: originaonxi/myhq-gtm-engine
+  category: gtm-engine
+  purpose: "India's AI-powered outreach for workspace sales — 25+ demand signals, PKM-calibrated, 5 channels"
+  role: client-gtm
+  depends_on: [aonxi-pkm]
+  depended_by: []
+  status: live
+  priority: medium
+
+techm-intel:
+  path: ~/techm-intel
+  github: originaonxi/techm-intel
+  category: gtm-engine
+  purpose: "Enterprise account intelligence — multi-agent F500 signal detection, C-suite mapping, real-time scoring"
+  role: enterprise-intel
+  depends_on: [aonxi-router, aonxi-safeguard, aonxi-memcollab]
+  depended_by: []
+  status: live
+  priority: high
+
+# ── RESEARCH REPOS ───────────────────────────────────────────────────────────
+# ML/AI research replications and original studies. NeurIPS 2026 pipeline.
+
+frontier-agi-journey:
+  path: ~/frontier-agi-journey
+  github: originaonxi/frontier-agi-journey
+  category: research
+  purpose: "365-day daily AGI research log — 5 papers/day, implement, push, LinkedIn, lab email"
+  role: research-log
+  depends_on: [frontier-agent]
+  depended_by: []
+  status: live
+  priority: critical
+
+asm-replication:
+  path: ~/asm-replication
+  github: originaonxi/asm-replication
+  category: research
+  purpose: "Anchored State Memory for Multi-Session Autonomous Revenue Agents — NeurIPS 2026 submission"
+  role: paper
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: critical
+
+attention-from-scratch:
+  path: ~/attention-from-scratch
+  github: originaonxi/attention-from-scratch
+  category: research
+  purpose: "Complete Transformer attention in pure PyTorch — every matrix multiplication explicit"
+  role: implementation
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+llm-calibration-study:
+  path: ~/llm-calibration-study
+  github: originaonxi/llm-calibration-study
+  category: research
+  purpose: "Are LLMs well-calibrated when predicting B2B sales email quality?"
+  role: study
+  depends_on: []
+  depended_by: [aonxi-outreach-agent]
+  status: live
+  priority: high
+
+llm-evals-arena:
+  path: ~/llm-evals-arena
+  github: originaonxi/llm-evals-arena
+  category: research
+  purpose: "Production eval framework benchmarking LLMs on real B2B sales reasoning"
+  role: eval-framework
+  depends_on: []
+  depended_by: [aonxi-router]
+  status: live
+  priority: high
+
+moe-efficiency-study:
+  path: ~/moe-efficiency-study
+  github: originaonxi/moe-efficiency-study
+  category: research
+  purpose: "Empirical study of MoE routing strategies, motivated by Grok-1 architecture"
+  role: study
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+prm-replication:
+  path: ~/prm-replication
+  github: originaonxi/prm-replication
+  category: research
+  purpose: "Proved AI can grade its own reasoning steps without human labels"
+  role: paper
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: high
+
+reversion-study:
+  path: ~/reversion-study
+  github: originaonxi/reversion-study
+  category: research
+  purpose: "External-state pattern study based on Anthropic Nov 2025 post"
+  role: study
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+reward-model-blindness:
+  path: ~/reward-model-blindness
+  github: originaonxi/reward-model-blindness
+  category: research
+  purpose: "RLHF reward models predict human ratings, but humans rate for wrong reasons. Measures how wrong."
+  role: paper
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: high
+
+rewardflow-replication:
+  path: ~/rewardflow-replication
+  github: originaonxi/rewardflow-replication
+  category: research
+  purpose: "State graph + BFS decay + PageRank propagation for distributing reward across reasoning steps"
+  role: paper
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+tdad-replication:
+  path: ~/tdad-replication
+  github: originaonxi/tdad-replication
+  category: research
+  purpose: "TDAD experiment replication with real numbers"
+  role: paper
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+information-architecture-thesis:
+  path: ~/information-architecture-thesis
+  github: originaonxi/information-architecture-thesis
+  category: research
+  purpose: "The gap between today's AI agents and AGI is not a model problem — it's an architecture problem"
+  role: thesis
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: high
+
+alignment-auditor:
+  path: ~/alignment-auditor
+  github: originaonxi/alignment-auditor
+  category: research
+  purpose: "Open-source tool testing whether LLMs fake alignment under observation"
+  role: tool
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: high
+
+glassbox-agents:
+  path: ~/glassbox-agents
+  github: originaonxi/glassbox-agents
+  category: research
+  purpose: "Measure Anthropic's agent pattern — found two failure modes they didn't name"
+  role: study
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: high
+
+realtime-reasoning-engine:
+  path: ~/realtime-reasoning-engine
+  github: originaonxi/realtime-reasoning-engine
+  category: research
+  purpose: "Making AI reasoning transparent, auditable, and observable — every inference explicit"
+  role: engine
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: high
+
+# ── QA SYSTEMS ───────────────────────────────────────────────────────────────
+
+claude-qa-agent:
+  path: ~/claude-qa-agent
+  github: colibri-group-healthcare-b2b/colibri-qa-agent-sam
+  category: qa
+  purpose: "Self-evolving AI QA engine v9 — confidence-routed autonomy, 35 TCs across 4 Jira stories"
+  role: qa-engine
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: high
+
+colibri-qa-agent:
+  path: ~/colibri-qa-agent
+  github: originaonxi/colibri-qa-agent
+  category: qa
+  purpose: "QA system replacing entire QA team for Colibri Group — Jira to tests to bugs, 24/7"
+  role: qa-engine
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: high
+
+blueprint-trust-engine:
+  path: ~/blueprint-trust-engine
+  github: originaonxi/blueprint-trust-engine
+  category: qa
+  purpose: "QA layer for Attentive.ai — routes takeoffs by trust score instead of manual review"
+  role: trust-engine
+  depends_on: []
+  depended_by: [attentive-gtm-agent]
+  status: live
+  priority: medium
+
+# ── MEMORY & BRAIN ───────────────────────────────────────────────────────────
+
+super-brain:
+  path: ~/super-brain
+  github: originaonxi/super-brain
+  category: memory
+  purpose: "The living, learning memory system connecting all 55+ projects. Mem0 backbone."
+  role: brain
+  depends_on: [memorymesh]
+  depended_by: ["*"]  # everything depends on the brain
+  status: live
+  priority: critical
+
+memorymesh:
+  path: ~/memorymesh
+  github: originaonxi/memorymesh
+  category: memory
+  purpose: "One shared memory for all AI tools — Claude, Ollama, GPT. Local. Private. Zero cloud. pip install memorymesh."
+  role: memory-layer
+  depends_on: []
+  depended_by: [super-brain, aonxi-memcollab]
+  status: live
+  priority: critical
+
+# ── PRODUCTS & UTILITIES ─────────────────────────────────────────────────────
+
+ai-crypto-exchange:
+  path: ~/ai-crypto-exchange
+  github: originaonxi/ai-crypto-exchange
+  category: product
+  purpose: "First open-source exchange with institutional-grade settlement, circuit breakers, AI surveillance"
+  role: product
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+pkm-analyzer:
+  path: ~/pkm-analyzer
+  github: originaonxi/pkm-analyzer
+  category: product
+  purpose: "Self-improving persuasion intelligence system — every analysis makes next one smarter"
+  role: product
+  depends_on: [aonxi-pkm]
+  depended_by: [aonxi-outreach-agent]
+  status: live
+  priority: high
+
+system-design-mastery:
+  path: ~/system-design-mastery
+  github: originaonxi/system-design-mastery
+  category: product
+  purpose: "200-lesson system design email course — pre-gen HTML, cron every 3hrs, 19 systems + AI/SMB"
+  role: education
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+# ── COMPETITIVE INTELLIGENCE ─────────────────────────────────────────────────
+
+agents-ci:
+  path: ~/agents
+  github: originaonxi/competitive-intelligence-agents
+  category: utility
+  purpose: "Competitive intelligence agent framework — generates CI reports"
+  role: intel
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: medium
+
+# ── PROFILE ──────────────────────────────────────────────────────────────────
+
+originaonxi:
+  path: ~/originaonxi
+  github: originaonxi/originaonxi
+  category: profile
+  purpose: "GitHub profile README — the public face of the entire ecosystem"
+  role: profile
+  depends_on: []
+  depended_by: []
+  status: live
+  priority: high
+
+# ============================================================================
+# ECOSYSTEM PATTERNS (cross-cutting)
+# ============================================================================
+#
+# Pattern 1: AONXI KERNEL
+#   router + safeguard + memcollab + pkm → every revenue agent inherits these
+#
+# Pattern 2: DAILY EMAIL FLEET
+#   5 agents on cron: news(6:30), echo(7:05), agi-possible(8:00), space, stocks
+#   All use ~/wrappers/run_*.sh + wake_guard.sh
+#
+# Pattern 3: GTM ENGINE TEMPLATE
+#   Signal detection → Lead enrichment → Persona scoring → Outreach generation
+#   Used by: nova-gtm, simplenursing-gtm, bre-gtm, myhq-gtm, attentive-gtm
+#
+# Pattern 4: RESEARCH → PRODUCT PIPELINE
+#   Paper replication → Original study → Tool/Engine → Product feature
+#   e.g., llm-calibration → pkm-analyzer → aonxi-outreach-agent
+#
+# Pattern 5: MEMORY HIERARCHY
+#   memorymesh (local, pip) → aonxi-memcollab (cross-agent) → super-brain (Mem0 cloud)
+#
+# Pattern 6: TRUST & SAFETY
+#   safeguard (behavioral) + blueprint-trust-engine (QA) + alignment-auditor (research)
+#
+# ============================================================================
