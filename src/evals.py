@@ -4,8 +4,8 @@ from __future__ import annotations
 AONXI OS — Agent Evaluation & Experiment Attribution Engine
 ============================================================
 
-Superior to Benchspan. Here's why:
-  Benchspan benchmarks models in a lab. We benchmark OUTCOMES in production.
+Why this is different from every eval framework on the market:
+  They benchmark models in a lab. We benchmark OUTCOMES in production.
   They measure "which model is better." We measure "which CHANGE made the
   agent generate more revenue per dollar spent."
 
@@ -960,7 +960,7 @@ USAGE = textwrap.dedent("""\
       agents                                       List all agents and metrics
 
     The ONE metric: RPDC = Revenue / (Inference Cost + Human QC Cost)
-    Superior to Benchspan: we benchmark OUTCOMES, not models.
+    We benchmark OUTCOMES, not models. That's the difference.
 """)
 
 

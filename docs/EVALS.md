@@ -1,7 +1,6 @@
 # AONXI OS — Evaluation & Experiment Attribution Architecture
 
 > **"How do you know your agent is getting better at that task without evals?"**
-> — Ritesh Malpani, Co-founder @Benchspan (YC P26)
 >
 > **Our answer:** Revenue Per Dollar Spent on Inference + Human Oversight.
 > Fully attributable. End-to-end. Every change is an experiment.
@@ -10,21 +9,73 @@
 
 ---
 
-## Why This Is Superior to Benchspan
+## Why Existing Eval Approaches Fall Short
 
-| | Benchspan | AONXI Evals |
+The industry has five categories of AI evaluation tools. None of them
+measure what actually matters for autonomous agents: **did this change
+make the business more money per dollar spent?**
+
+### Category 1: Model Benchmarking Platforms
+Tools that compare LLMs on standardized benchmarks (MMLU, HumanEval,
+GSM8K, GPQA, etc.). YC-backed startups, research labs, leaderboard sites.
+
+**What they measure:** Model quality in lab conditions.
+**What they miss:** A model that scores 2% higher on MMLU doesn't mean
+your outreach agent books more meetings. Lab performance ≠ production
+outcomes. Zero revenue attribution.
+
+### Category 2: LLM Observability Platforms
+Tools that trace prompts, log token usage, track latency, and visualize
+LLM call chains. Think: logging dashboards for AI.
+
+**What they measure:** Operational health — latency, error rates, cost per token.
+**What they miss:** They tell you the system is running. They don't tell you
+if it's running *better*. No experiment tracking. No before/after. No
+attribution of which change drove which improvement.
+
+### Category 3: Agent Framework Evals
+Built-in evaluation suites inside agent frameworks (LangChain, CrewAI,
+AutoGen). Test harnesses for prompt quality and tool-calling accuracy.
+
+**What they measure:** Did the agent use the right tool? Did it follow
+the prompt? Task completion rate in synthetic scenarios.
+**What they miss:** Single-agent focus. No cross-agent causality.
+No revenue weighting. No concept of agents improving each other.
+
+### Category 4: MLOps Experiment Trackers
+Platforms for tracking ML experiments — hyperparameters, training runs,
+model versions, dataset versions.
+
+**What they measure:** Which model version performed best on which dataset.
+**What they miss:** Built for training loops, not production agents.
+No concept of RPDC. No cross-agent lift. No concept of a "family"
+of agents that compound each other's intelligence.
+
+### Category 5: Business Intelligence Dashboards
+Metabase, Tableau, Looker, custom dashboards. Track KPIs and metrics.
+
+**What they measure:** Business outcomes (revenue, churn, CSAT).
+**What they miss:** No link between agent changes and business outcomes.
+They show you revenue went up. They can't tell you *which agent change*
+caused it. No experiment isolation. No attribution chain.
+
+### What AONXI Evals Does Differently
+
+| Dimension | Industry Standard | AONXI Evals |
 |---|---|---|
-| **What it measures** | Model quality in lab conditions | Agent outcomes in production |
-| **Core metric** | Benchmark scores (MMLU, HumanEval) | RPDC — Revenue Per Dollar of Cost |
-| **Attribution** | "This model is 3% better on math" | "This code change added $4,200/month" |
-| **Cross-agent** | N/A (single model focus) | 13 causal links between agents |
-| **Experiment tracking** | Model comparisons | Full before/after with rollback |
-| **Revenue tied** | No | Every metric weighted by revenue impact |
-| **Runs where** | Cloud benchmarks | Live production, on your hardware |
+| **What it measures** | Model quality OR operational health OR business KPIs | All three, linked end-to-end |
+| **Core metric** | Benchmark scores / latency / revenue (pick one) | RPDC — Revenue Per Dollar of Cost (unified) |
+| **Attribution** | "Model X is 3% better on math" | "This code change added $4,200/month to outreach" |
+| **Cross-agent** | N/A (single model/agent focus) | 13 causal links between 9 agent types |
+| **Experiment tracking** | ML training runs (not production agents) | Full before/after on live production agents |
+| **Revenue tied** | Separate system (if at all) | Every metric has a revenue weight (0.0-1.0) |
+| **Runs where** | Cloud benchmarks / SaaS dashboards | Live production, on your hardware, $0/query |
+| **Compound intelligence** | Not measured | CIS — one score for the whole agent family |
 
-**Benchspan benchmarks models. We benchmark outcomes.**
+**The industry benchmarks models. We benchmark outcomes.**
 They tell you which model is better. We tell you which CHANGE made your
-business generate more revenue per dollar spent.
+business generate more revenue per dollar spent. And we measure whether
+that improvement rippled across your entire agent family.
 
 ---
 
@@ -370,6 +421,135 @@ WEEKLY (automated report):
 
 ---
 
+---
+
+## Full System Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                    AONXI EVALUATION ARCHITECTURE                        │
+│         From Code Change → Metric Movement → Revenue Impact             │
+└─────────────────────────────────────────────────────────────────────────┘
+
+LAYER 1: EXPERIMENT TRACKING
+  Every change = an experiment. No exceptions.
+  ┌────────────────────────────────────────────────────────────────────┐
+  │  experiment start                                                  │
+  │    → snapshot ALL current metrics as baseline                      │
+  │    → assign experiment ID                                          │
+  │    → all subsequent metrics tagged to this experiment               │
+  │                                                                    │
+  │  agent runs with the change...                                     │
+  │                                                                    │
+  │  experiment end                                                    │
+  │    → snapshot ALL current metrics as 'after'                       │
+  │    → calculate deltas for every metric                             │
+  │    → calculate RPDC before vs after                                │
+  │    → identify cross-agent ripple effects                           │
+  │    → store full attribution chain                                  │
+  └────────────────────────────────────────────────────────────────────┘
+
+LAYER 2: METRIC COLLECTION (45 metrics across 9 agents)
+  ┌────────────────────────────────────────────────────────────────────┐
+  │  Every metric has:                                                 │
+  │    • direction (up = better / down = better)                       │
+  │    • unit (count, %, $, min, days)                                 │
+  │    • revenue_weight (0.0 - 1.0): how much it drives revenue        │
+  │                                                                    │
+  │  Stored in: SQLite (evals.db)                                      │
+  │  Indexed by: agent + metric + timestamp + week                     │
+  │  Queryable by: experiment, time range, agent                       │
+  └────────────────────────────────────────────────────────────────────┘
+
+LAYER 3: RPDC ENGINE (Revenue Per Dollar of Cost)
+  ┌────────────────────────────────────────────────────────────────────┐
+  │  RPDC = Revenue / (Inference Cost + Human QC Cost)                 │
+  │                                                                    │
+  │  Revenue:                                                          │
+  │    • Direct: revenue_generated (outreach, sales)                   │
+  │    • Estimated: meetings * avg_deal * close_rate (pipeline)        │
+  │    • Proxy: tickets_resolved * $25, bugs_found * $200 (support/QA) │
+  │                                                                    │
+  │  Cost:                                                             │
+  │    • Inference: $0.0001/query (local Ollama, electricity only)     │
+  │    • Human QC: human_qc_minutes * ($50/hr)                         │
+  │                                                                    │
+  │  Target: > 10x (every $1 generates $10+ revenue)                   │
+  │  Outreach Agent actual: 559x ($14K revenue / $25 cost)             │
+  └────────────────────────────────────────────────────────────────────┘
+
+LAYER 4: CROSS-AGENT CAUSALITY (13 causal links)
+  ┌────────────────────────────────────────────────────────────────────┐
+  │                                                                    │
+  │  outreach.leads_found ──────→ sales.pipeline_value                 │
+  │  outreach.meetings_booked ──→ sales.close_rate                     │
+  │  outreach.reply_rate ───────→ sales.avg_deal_size                  │
+  │  qa.bugs_found ─────────────→ support.resolution_rate              │
+  │  qa.tests_passed ───────────→ it_helpdesk.auto_resolve_rate        │
+  │  brain.search_relevance ────→ outreach.reply_rate                  │
+  │  brain.insights_shared ─────→ outreach.meetings_booked             │
+  │  brain.patterns_detected ───→ qa.regression_catch_rate             │
+  │  hr.time_per_hire ──────────→ it_helpdesk.tickets_resolved         │
+  │  daily_fleet.open_rate ─────→ outreach.reply_rate                  │
+  │  finance.forecast_accuracy ─→ sales.pipeline_value                 │
+  │  support.csat_score ────────→ sales.close_rate                     │
+  │  support.churn_prevented ───→ finance.forecast_accuracy            │
+  │                                                                    │
+  │  When source improves and target also improves = causal lift       │
+  │  Conservative estimate: min(source_change, target_change)          │
+  └────────────────────────────────────────────────────────────────────┘
+
+LAYER 5: COMPOUND INTELLIGENCE SCORE (CIS)
+  ┌────────────────────────────────────────────────────────────────────┐
+  │                                                                    │
+  │  CIS = (0.35 × Individual Agent Improvement)                       │
+  │       + (0.25 × Cross-Agent Causal Lift)                           │
+  │       + (0.20 × Experiment Velocity)                               │
+  │       + (0.20 × Memory Compound Rate)                              │
+  │                                                                    │
+  │  Scale: -100 (catastrophic) to +100 (exponential compounding)      │
+  │                                                                    │
+  │  ACCELERATING (+20 to +100): agents compounding each other         │
+  │  IMPROVING    (+5 to +20):   steady gains                          │
+  │  STABLE       (-5 to +5):    no change                             │
+  │  DECLINING    (-20 to -5):   investigate                           │
+  │  CRITICAL     (-100 to -20): intervene immediately                 │
+  │                                                                    │
+  └────────────────────────────────────────────────────────────────────┘
+
+LAYER 6: EXPERIMENT LEADERBOARD
+  ┌────────────────────────────────────────────────────────────────────┐
+  │  Every completed experiment ranked by RPDC delta.                   │
+  │                                                                    │
+  │  Rank  RPDC Delta  Agent      Change                               │
+  │  ────  ──────────  ─────      ──────                               │
+  │  1     +23.80x     outreach   switched to 1-paragraph emails       │
+  │  2     +12.40x     outreach   added Tuesday healthcare timing      │
+  │  3     +8.20x      sales      pre-call company brief injection     │
+  │  4     +5.10x      helpdesk   added VPN auto-diagnosis             │
+  │  5     -2.30x      hr         removed phone screen step            │
+  │                                                                    │
+  │  This is the answer to: "which changes actually worked?"           │
+  │  No opinions. No guesses. Hard numbers. Ranked.                    │
+  └────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Why No Other System Can Do This
+
+1. **Model benchmarking** tools measure lab performance. We measure production revenue.
+2. **LLM observability** tools measure operational health. We measure business outcomes.
+3. **Agent framework evals** test single agents in isolation. We measure 9 agents teaching each other across 13 causal links.
+4. **MLOps experiment trackers** track training runs. We track live production experiments with revenue attribution.
+5. **BI dashboards** show that revenue went up. We show WHICH agent change caused it.
+
+No tool in the market combines experiment tracking + revenue attribution +
+cross-agent causality + compound intelligence scoring in one system.
+We know because we looked.
+
+---
+
 *Built for production outcomes, not lab benchmarks.*
 *Revenue Per Dollar of Cost. Fully attributable. End-to-end.*
-*Superior to Benchspan because we measure what matters: money.*
+*The only eval system that measures what matters: money.*
