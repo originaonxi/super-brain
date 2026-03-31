@@ -1,22 +1,33 @@
-# Super Brain
+# Super Brain — The Aonxi OS
 
-**A living, learning memory system that connects 55+ autonomous projects into one unified intelligence layer.**
+**A self-evolving company operating system. 50+ autonomous agents. All connected. All learning from each other. Human QC'd. $0/query on-prem.**
 
 Built by [Anmol Sam](https://github.com/originaonxi) | CTO, Aonxi
 
 ---
 
-## What Is This?
+## What This Is
 
-Super Brain is a persistent, queryable memory architecture that sits on top of every project, agent, and system on your machine. It uses [Mem0](https://mem0.ai) as its long-term memory backbone, Claude Code hooks for real-time learning, and a set of CLI tools for instant brain access from any terminal.
+This is not just a memory system. This is a **company running on automation**.
 
-Think of it as **the connective tissue between all your projects** — it knows what you built, why you built it, how things relate, and it learns more every time you work.
+Every repo is a team member. Every agent has a job. Every pattern detected becomes a data point for the next improvement. The system wakes up daily, scans every repo, detects what's working, cross-pollinates improvements, and reports to you — without you touching it.
 
-### The Problem It Solves
+Like Bitcoin miners: Mac Mini M4 hardware running agents 24/7, delivering outcomes that humans QC before anything ships. The agents teach each other. The research improves the agents. The agents generate data that improves the research. Compounding forever.
 
-You have 55 projects. 20 agents. 10 research repos. 4 GTM engines. 5 daily email bots. They're all in different directories, different contexts, different conversations. When you start a new Claude Code session, that context is **gone**.
+**The outcome it optimizes for:**
+- New sales (pipeline velocity, conversion, MRR growth)
+- Client CSAT >= 9.0 (hard gate — non-negotiable)
+- Agent cross-improvement score (how much one agent improved another)
 
-Super Brain makes it permanent.
+### The Problem V1 Solved
+
+You have 50+ projects, 20 agents, 10 research repos, 6 GTM engines, 5 daily email bots. All in different directories. When you start a new Claude Code session, all that context is **gone**.
+
+**V1** made it permanent via Mem0 cloud memory.
+
+### What V2 Solves
+
+V1 stored. V2 **orchestrates**. The brain now understands dependencies, detects patterns, runs health checks, suggests improvements, and manages the company P&L.
 
 ---
 
@@ -98,23 +109,59 @@ See [ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full deep dive.
 
 ## Quick Start
 
-### 1. Push a memory
+### Memory (V1)
 ```bash
-~/wrappers/mem0_push.sh "techm-intel V3 now supports real-time Bombora API" "agent"
+# Push a learning to the brain
+~/wrappers/mem0_push.sh "nova-gtm: healthcare leads convert 3x on Tuesdays" "gtm-engine"
+
+# Search the brain
+~/wrappers/mem0_search.sh "what works for healthcare outreach?" 5
+
+# Auto-learning: active
+# Every Write/Edit/Bash in Claude Code auto-feeds the brain via PostToolUse hook
 ```
 
-### 2. Search the brain
+### Orchestration (V2 — new)
 ```bash
-~/wrappers/mem0_search.sh "what projects use Bombora?" 5
+# See the full ecosystem registry
+python3 src/brain.py registry
+
+# Dependency graph for any repo
+python3 src/brain.py graph aros-agent
+
+# Health check all repos
+python3 src/brain.py health-all
+
+# Detect cross-repo patterns
+python3 src/brain.py patterns
+
+# Generate improvement suggestions
+python3 src/brain.py suggest nova-gtm
+
+# Full ecosystem report
+python3 src/brain.py report
+
+# Deep scan + HTML dashboard
+python3 src/orchestrator.py dashboard
 ```
 
-### 3. Pipe anything in
+### Company (new)
 ```bash
-git log --oneline -5 | ~/wrappers/mem0_push.sh - "git-activity"
-```
+# Morning CEO brief
+python3 src/company.py daily-brief
 
-### 4. Auto-learning (already active)
-Every `Write`, `Edit`, and `Bash` action in Claude Code automatically feeds the brain via the PostToolUse hook in `~/.claude/settings.json`.
+# Sales pipeline status
+python3 src/company.py sales-pipeline
+
+# CSAT check (must be >= 9.0)
+python3 src/company.py delivery-check
+
+# Add a client
+python3 src/company.py add-client "Jane Smith" "Acme Corp" "jane@acme.com" "business" 4300
+
+# Log CSAT
+python3 src/company.py log-csat CLIENT_ID 9.5 "Agents are saving us 4hrs/day"
+```
 
 ---
 
@@ -122,24 +169,70 @@ Every `Write`, `Edit`, and `Bash` action in Claude Code automatically feeds the 
 
 ```
 super-brain/
-├── README.md                  # You are here
-├── docs/
-│   ├── ARCHITECTURE.md        # Full system architecture deep dive
-│   └── EVOLUTION.md           # V1 → V5 roadmap toward predictive AGI brain
+├── README.md                       # You are here
+├── index.html                      # AONXI sales page (deploy anywhere)
 ├── src/
-│   ├── mem0_push.sh           # Push memories to brain
-│   ├── mem0_search.sh         # Search the brain
-│   ├── mem0_hook.sh           # Claude Code auto-learning hook
-│   └── brain.py               # Python SDK wrapper for programmatic access
+│   ├── brain.py                    # V2: Memory + orchestration SDK
+│   ├── orchestrator.py             # Ecosystem scan + improvement engine
+│   ├── company.py                  # Automated company: sales + delivery + CSAT
+│   ├── local_brain.py              # MemoryMesh local memory layer
+│   ├── mem0_push.sh                # Push memories to Mem0 cloud
+│   ├── mem0_search.sh              # Search the brain
+│   └── mem0_hook.sh                # Claude Code PostToolUse auto-learning hook
 ├── config/
-│   ├── claude_hooks.json      # Hook configuration for Claude Code
-│   └── categories.json        # Memory category taxonomy
+│   ├── repos.yaml                  # Complete registry of all 50+ repos
+│   ├── categories.json             # Memory category taxonomy
+│   └── claude_hooks.json           # Claude Code hook config
+├── data/
+│   └── company.db                  # SQLite: clients, pipeline, CSAT, revenue
+├── reports/                        # Auto-generated: improvement reports + dashboards
+├── docs/
+│   ├── ARCHITECTURE.md             # Full system architecture
+│   └── EVOLUTION.md                # V1 → V5 roadmap
 ├── examples/
-│   ├── cross_project_query.sh # Demo: cross-project relationship queries
-│   └── daily_digest.sh        # Demo: daily brain digest email
+│   ├── cross_project_query.sh
+│   └── daily_digest.sh
 └── tests/
-    └── test_brain.sh          # Validation tests for brain connectivity
+    └── test_brain.sh
 ```
+
+---
+
+## The Company Architecture
+
+```
+                    ┌─────────────────────────────────┐
+                    │         SUPER BRAIN V2           │
+                    │   The OS running the company     │
+                    └──────────────┬──────────────────┘
+                                   │
+          ┌────────────────────────┼────────────────────────┐
+          │                        │                        │
+    ┌─────▼──────┐          ┌──────▼──────┐         ┌──────▼──────┐
+    │   SALES    │          │  DELIVERY   │         │    BRAIN    │
+    │            │          │             │         │             │
+    │ FundingScn │          │ AROS + ARIA │         │ Mem0 cloud  │
+    │ OutreachV8 │          │ GTM Engines │         │ MemoryMesh  │
+    │ NOVA GTM   │          │ QA Systems  │         │ Local SQLite│
+    │            │          │             │         │             │
+    │ KPI: MRR   │          │ KPI: CSAT   │         │ KPI: Cross- │
+    │ KPI: Conv  │          │ >= 9.0      │         │ repo score  │
+    └────────────┘          └─────────────┘         └─────────────┘
+          │                        │
+          └────────────────────────┘
+                    │
+              Human QC Gate
+              (approve before ship)
+```
+
+**The outcome loop:**
+1. Brain scans all 50+ repos at 5am
+2. Detects patterns and improvement opportunities
+3. Sales agents find new leads (FundingScanner + Outreach)
+4. Delivery agents serve existing clients (CSAT must stay >= 9.0)
+5. Research improves agent accuracy
+6. Every outcome feeds back to the brain
+7. Brain gets smarter → agents get better → repeat
 
 ---
 

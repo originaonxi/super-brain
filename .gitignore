@@ -6,3 +6,6 @@ __pycache__/
 
 # Added by ggshield
 .cache_ggshield
+data/company.db
+reports/*.html
+reports/*.txt
