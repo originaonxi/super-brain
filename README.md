@@ -1,68 +1,59 @@
-# Super Brain — The Aonxi OS
+# AONXI OS — Your Mac Mini Replaces Every SaaS Tool You Pay For
 
-**A self-evolving company operating system. 50+ autonomous agents. All connected. All learning from each other. Human QC'd. $0/query on-prem.**
+**A self-learning SaaS factory. It watches how you use your existing tools, learns YOUR specific workflows, then builds local versions that are BETTER than the originals — because it has ALL your data in one brain.**
+
+**Live site:** [https://originaonxi.github.io/super-brain/](https://originaonxi.github.io/super-brain/)
 
 Built by [Anmol Sam](https://github.com/originaonxi) | CTO, Aonxi
 
 ---
 
-## What This Is
+## The Problem
 
-This is not just a memory system. This is a **company running on automation**.
+You pay $3,000+/month for siloed SaaS tools that can't talk to each other. Your CRM doesn't know what your support team learned. Your marketing tool can't see your sales data. Your project management tool has no idea what your finance tool knows.
 
-Every repo is a team member. Every agent has a job. Every pattern detected becomes a data point for the next improvement. The system wakes up daily, scans every repo, detects what's working, cross-pollinates improvements, and reports to you — without you touching it.
+**Your Mac Mini can see ALL of it.**
 
-Like Bitcoin miners: Mac Mini M4 hardware running agents 24/7, delivering outcomes that humans QC before anything ships. The agents teach each other. The research improves the agents. The agents generate data that improves the research. Compounding forever.
+## The SaaS You Cancel
 
-**The outcome it optimizes for:**
-- New sales (pipeline velocity, conversion, MRR growth)
-- Client CSAT >= 9.0 (hard gate — non-negotiable)
-- Agent cross-improvement score (how much one agent improved another)
+| SaaS Tool Category | Typical Monthly Cost | With AONXI OS | Savings |
+|---|---|---|---|
+| CRM & Sales Platform | $800/mo | $0 | $800/mo |
+| Support & Ticketing Platform | $55/seat/mo | $0 | $550/mo (10 seats) |
+| Marketing Automation Platform | $300/mo | $0 | $300/mo |
+| SEO & Marketing Analytics | $200/mo | $0 | $200/mo |
+| Project Management Platform | $20/seat/mo | $0 | $200/mo (10 seats) |
+| Team Communication Platform | $12.50/seat/mo | $0 | $125/mo (10 seats) |
+| Ad Management Platform | $500/mo | $0 | $500/mo |
+| Accounting & Finance Platform | $80/mo | $0 | $80/mo |
+| **Total** | **$2,755/mo** | **$15/mo electricity** | **$2,740/mo saved** |
 
-### The Problem V1 Solved
-
-You have 50+ projects, 20 agents, 10 research repos, 6 GTM engines, 5 daily email bots. All in different directories. When you start a new Claude Code session, all that context is **gone**.
-
-**V1** made it permanent via Mem0 cloud memory.
-
-### What V2 Solves
-
-V1 stored. V2 **orchestrates**. The brain now understands dependencies, detects patterns, runs health checks, suggests improvements, and manages the company P&L.
+**$32,880/year back in your pocket.** And the local versions are better because they share context.
 
 ---
 
-## Live Test Results
+## How It Works — The Tool Learning Flow
 
-We tested with hard cross-project queries. The brain connects dots across completely separate repos:
+```
+STEP 1: CONNECT                    STEP 2: OBSERVE
+┌──────────────────────┐           ┌──────────────────────┐
+│ Connect your existing│           │ Mac Mini watches how  │
+│ SaaS tools via API   │    ──>    │ you ACTUALLY use them │
+│ (CRM, support desk,  │           │ (not how the manual   │
+│  marketing, finance) │           │  says to use them)    │
+└──────────────────────┘           └──────────────────────┘
+                                              │
+                                              v
+STEP 4: CANCEL                     STEP 3: BUILD
+┌──────────────────────┐           ┌──────────────────────┐
+│ Cancel subscriptions │           │ Builds local versions │
+│ one by one as each   │    <──    │ that replicate YOUR   │
+│ local version proves │           │ workflows + add cross-│
+│ itself in parallel   │           │ tool intelligence     │
+└──────────────────────┘           └──────────────────────┘
+```
 
-### Query 1: "What modules does techm-intel share with other Aonxi projects?"
-| Rank | Score | Memory Retrieved |
-|------|-------|-----------------|
-| 1 | **0.90** | techm-intel uses Aonxi modules router, safeguard, and memcollab |
-| 2 | **0.82** | techm-intel at ~/techm-intel/ — CLI for Fortune 500 account intel, V2 adds Bombora surge + 6sense |
-| 3 | **0.75** | Super brain architecture: all 55 projects connect via shared patterns — Aonxi ecosystem supplies shared memory/routing/safety |
-| 4 | **0.69** | Key accounts: SimpleNursing (GTM + agent + ad intel), TechM/MHA (techm-intel), BuildWithTeg (competitive intel) |
-| 5 | **0.64** | GTM engines share agent patterns across the Aonxi ecosystem |
-
-### Query 2: "Everything related to SimpleNursing across all projects"
-| Rank | Score | Memory Retrieved |
-|------|-------|-----------------|
-| 1 | **0.90** | simplenursing-agent at ~/simplenursing-agent/ |
-| 2 | **0.82** | simplenursing-gtm-engine at ~/simplenursing-gtm-engine/ |
-| 3 | **0.75** | nova-gtm — full 17-agent GTM system for SimpleNursing WhyNursingMoment |
-| 4 | **0.69** | FacebookStrategy report folders for SimpleNursing |
-| 5 | **0.64** | AdIntel report folders for simplenursing.com |
-
-### Query 3: "What is the daily workflow and what agents run automatically?"
-| Rank | Score | Memory Retrieved |
-|------|-------|-----------------|
-| 1 | **0.90** | 5 daily email agents via cron — news, space, echo, AGI, stocks |
-| 2 | **0.82** | 365-day frontier-agi-journey — daily paper + implement + push + LinkedIn + email |
-| 3 | **0.75** | news-briefing-agent — 6:30 AM PST daily |
-| 4 | **0.69** | echo agent — 7:05 AM PST daily |
-| 5 | **0.64** | agi-possible-agent — 8:00 AM PST daily |
-
-**The brain doesn't just search — it understands relationships.**
+**Why local versions are BETTER:** Your CRM tool only sees CRM data. Your support tool only sees support data. Your Mac Mini sees EVERYTHING — so when a support ticket comes in from your biggest sales prospect, it knows. When your marketing campaign targets a segment that your finance data shows is unprofitable, it flags it. Siloed SaaS tools can't do this. Your Mac Mini can.
 
 ---
 
@@ -70,29 +61,36 @@ We tested with hard cross-project queries. The brain connects dots across comple
 
 ```
 +------------------------------------------------------------------+
-|                        SUPER BRAIN                                |
-|                   user_id: anmol-super-brain                      |
+|                         SUPER BRAIN                               |
+|                   AONXI OS — SaaS Replacement Engine              |
 +------------------------------------------------------------------+
 |                                                                    |
 |   +------------------+    +------------------+    +--------------+ |
-|   |  63 Memories     |    |  9 Categories    |    |  Semantic    | |
-|   |  (and growing)   |    |  agent, research |    |  Search via  | |
-|   |                  |    |  gtm, aonxi,     |    |  Mem0 API    | |
-|   |                  |    |  ci-report, etc  |    |              | |
+|   | SaaS Replacement |    |  Cross-Tool      |    |  Semantic    | |
+|   |    Engine         |    |  Intelligence    |    |  Memory via  | |
+|   | (observe, learn, |    |  (patterns that  |    |  Mem0 + Local| |
+|   |  build, replace) |    |  span all tools) |    |  SQLite      | |
+|   +------------------+    +------------------+    +--------------+ |
+|                                                                    |
+|   +------------------+    +------------------+    +--------------+ |
+|   |  63+ Memories    |    |  9 Categories    |    |  Workflow    | |
+|   |  (and growing)   |    |  agent, research |    |  Pattern DB  | |
+|   |                  |    |  gtm, aonxi,     |    |  (learned    | |
+|   |                  |    |  saas, ci, etc   |    |   behaviors) | |
 |   +------------------+    +------------------+    +--------------+ |
 |                                                                    |
 +----+-------------------+-------------------+----------------------+
      |                   |                   |
      v                   v                   v
 +----------+     +-------------+     +----------------+
-| CLI Tools|     | Claude Code |     | Any Agent/App  |
-| mem0_push|     | PostToolUse |     | that calls the |
-| mem0_search    | Hook (auto) |     | Mem0 API       |
+| CLI Tools|     | Claude Code |     | SaaS Tool APIs |
+| mem0_push|     | PostToolUse |     | (CRM, support, |
+| mem0_search    | Hook (auto) |     |  marketing, etc)|
 +----------+     +-------------+     +----------------+
      |                   |                   |
      v                   v                   v
 +------------------------------------------------------------------+
-|                    YOUR 55 PROJECTS                                |
+|                    YOUR 55+ PROJECTS                              |
 |                                                                    |
 |  Agents (20)     Research (10)    GTM (4)    Aonxi (8)    Other  |
 |  techm-intel     asm-replication  nova-gtm   aria         echo   |
@@ -107,20 +105,16 @@ See [ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full deep dive.
 
 ---
 
-## Sales Page (`index.html`)
+## What Makes This Different
 
-The `index.html` file is a self-contained, deploy-anywhere sales page built as a 10-section no-brainer funnel:
-
-1. **Hero** — headline + live stats (50+ agents, $0/query, 90%+ margin)
-2. **ROI Calculator** — interactive sliders: input your team's current AI spend, see break-even and 3-year savings
-3. **Day-1 Experience** — what happens after purchase (setup timeline, first-hour walkthrough)
-4. **Outcome Cards (The Agent Family)** — every agent type with what it does and the KPI it moves
-5. **The Family Effect** — how agents cross-pollinate and improve each other over time
-6. **Live Proof** — real query results from the brain with relevance scores
-7. **Compliance & Data Sovereignty** — GDPR/HIPAA, data never leaves, zero-trust by default
-8. **Comparison Table (The Real Math)** — AONXI vs ChatGPT Team vs Copilot vs Claude Pro (cost, privacy, memory)
-9. **Building Model Case Study** — the WeWork/coworking deployment: 500 members, $500/month, 97% margin
-10. **Pricing + Guarantee** — four tiers (Micro $1,999 to Enterprise $24,900) with hardware specs
+| Dimension | Generic AI Assistants | Cloud CRM/SaaS Suites | Open-Source Self-Hosted | Automation Platforms | AONXI OS |
+|---|---|---|---|---|---|
+| **Data ownership** | Theirs | Theirs | Yours | Mixed | **Yours — 100% local** |
+| **Cross-tool intelligence** | None | Within their suite only | Manual wiring | Rule-based | **Automatic — all data in one brain** |
+| **Learns YOUR workflows** | No | No | No | You build automations manually | **Yes — observes and replicates** |
+| **Per-query cost** | $0.01-0.10 | N/A | Varies | Per-task pricing | **$0 — local inference** |
+| **Replaces SaaS subscriptions** | No | IS the subscription | Partial | No | **Yes — the whole point** |
+| **Privacy / compliance** | Data leaves | Data leaves | Depends | Data leaves | **Zero data leaves your hardware** |
 
 ---
 
@@ -138,7 +132,7 @@ The `index.html` file is a self-contained, deploy-anywhere sales page built as a
 # Every Write/Edit/Bash in Claude Code auto-feeds the brain via PostToolUse hook
 ```
 
-### Orchestration (V2 — new)
+### Orchestration (V2)
 ```bash
 # See the full ecosystem registry
 python3 src/brain.py registry
@@ -162,7 +156,7 @@ python3 src/brain.py report
 python3 src/orchestrator.py dashboard
 ```
 
-### Evals (new)
+### Evals
 ```bash
 # Run full eval suite across all agent types
 python3 src/evals.py run-all
@@ -180,9 +174,14 @@ python3 src/evals.py weekly-report
 
 # Compare two weeks
 python3 src/evals.py compare --week 2026-W12 --week 2026-W13
+
+# Experiment tracking — RPDC attribution
+python3 src/evals.py experiment start outreach "switched to 1-paragraph emails"
+python3 src/evals.py rpdc
+python3 src/evals.py leaderboard
 ```
 
-### Company (new)
+### Company
 ```bash
 # Morning CEO brief
 python3 src/company.py daily-brief
@@ -202,6 +201,25 @@ python3 src/company.py log-csat CLIENT_ID 9.5 "Agents are saving us 4hrs/day"
 
 ---
 
+## RPDC — The ONE Metric
+
+```
+RPDC = Revenue Attributed to Agent / (Inference Cost + Human QC Cost)
+
+Example (Outreach Agent):
+  Revenue:        $14,000/month (meetings booked -> deals closed)
+  Inference cost:  $0.50/month  (local Ollama, electricity only)
+  Human QC cost:   $250/month   (5 hrs/month reviewing emails @ $50/hr)
+
+  RPDC = $14,000 / ($0.50 + $250) = 55.9x
+
+  Every $1 you spend on this agent generates $55.90 in revenue.
+```
+
+See [EVALS.md](docs/EVALS.md) for the full experiment tracking and attribution architecture.
+
+---
+
 ## What's Inside
 
 ```
@@ -212,7 +230,7 @@ super-brain/
 │   ├── brain.py                    # V2: Memory + orchestration SDK
 │   ├── orchestrator.py             # Ecosystem scan + improvement engine
 │   ├── company.py                  # Automated company: sales + delivery + CSAT
-│   ├── evals.py                    # Agent evaluation framework — compound intelligence scoring
+│   ├── evals.py                    # Agent evaluation framework — RPDC + experiment tracking
 │   ├── local_brain.py              # MemoryMesh local memory layer
 │   ├── mem0_push.sh                # Push memories to Mem0 cloud
 │   ├── mem0_search.sh              # Search the brain
@@ -222,11 +240,13 @@ super-brain/
 │   ├── categories.json             # Memory category taxonomy
 │   └── claude_hooks.json           # Claude Code hook config
 ├── data/
-│   └── company.db                  # SQLite: clients, pipeline, CSAT, revenue
+│   ├── company.db                  # SQLite: clients, pipeline, CSAT, revenue
+│   └── evals.db                    # SQLite: weekly eval snapshots + compound scores
 ├── reports/                        # Auto-generated: improvement reports + dashboards
 ├── docs/
 │   ├── ARCHITECTURE.md             # Full system architecture
-│   └── EVOLUTION.md                # V1 → V5 roadmap
+│   ├── EVOLUTION.md                # V1 -> V5 roadmap
+│   └── EVALS.md                    # Evaluation & experiment attribution architecture
 ├── examples/
 │   ├── cross_project_query.sh
 │   └── daily_digest.sh
@@ -241,7 +261,7 @@ super-brain/
 ```
                     ┌─────────────────────────────────┐
                     │         SUPER BRAIN V2           │
-                    │   The OS running the company     │
+                    │  The SaaS Replacement Engine     │
                     └──────────────┬──────────────────┘
                                    │
           ┌────────────────────────┼────────────────────────┐
@@ -254,7 +274,7 @@ super-brain/
     │ NOVA GTM   │          │ QA Systems  │         │ Local SQLite│
     │            │          │             │         │             │
     │ KPI: MRR   │          │ KPI: CSAT   │         │ KPI: Cross- │
-    │ KPI: Conv  │          │ >= 9.0      │         │ repo score  │
+    │ KPI: Conv  │          │ >= 9.0      │         │ tool intel  │
     └────────────┘          └─────────────┘         └─────────────┘
           │                        │
           └────────────────────────┘
@@ -264,13 +284,14 @@ super-brain/
 ```
 
 **The outcome loop:**
-1. Brain scans all 50+ repos at 5am
-2. Detects patterns and improvement opportunities
-3. Sales agents find new leads (FundingScanner + Outreach)
-4. Delivery agents serve existing clients (CSAT must stay >= 9.0)
-5. Research improves agent accuracy
-6. Every outcome feeds back to the brain
-7. Brain gets smarter → agents get better → repeat
+1. Brain connects to your existing SaaS tools and observes workflows
+2. Detects patterns and builds local equivalents
+3. Runs local versions in parallel with existing tools for validation
+4. Sales agents find new leads (FundingScanner + Outreach)
+5. Delivery agents serve existing clients (CSAT must stay >= 9.0)
+6. Research improves agent accuracy
+7. Every outcome feeds back to the brain
+8. Brain gets smarter, local tools get better, SaaS subscriptions get cancelled
 
 ---
 
@@ -280,9 +301,9 @@ super-brain/
 |---------|------|--------|----------------|
 | **V1** | Memory Spine | **LIVE** | Store + search 55 projects via Mem0 |
 | **V2** | Synaptic Links | Next | Auto-detect cross-project dependencies |
-| **V3** | Predictive Cortex | Planned | Predict what you need before you ask |
-| **V4** | Autonomous Hippocampus | Planned | Self-healing, self-organizing memory |
-| **V5** | Full AGI Brain | Vision | Thinks, plans, and acts across all projects autonomously |
+| **V3** | Predictive Cortex + SaaS Tool Learning | Planned | Predict needs + observe and learn SaaS workflows |
+| **V4** | Autonomous Hippocampus + SaaS Replacement | Planned | Self-healing memory + autonomous SaaS tool replacement |
+| **V5** | Full Business OS | Vision | Zero external dependencies — every tool runs locally |
 
 See [EVOLUTION.md](docs/EVOLUTION.md) for the full vision.
 
@@ -295,6 +316,8 @@ See [EVOLUTION.md](docs/EVOLUTION.md) for the full vision.
 - **0.90 top relevance scores** on cross-project queries
 - **Auto-learning** from every Claude Code session
 - **< 500ms** search latency
+- **$2,740/month** SaaS savings for a typical 10-person team
+- **55.9x RPDC** on the outreach agent
 
 ---
 
@@ -304,4 +327,4 @@ MIT
 
 ---
 
-*Built with Claude Code, Mem0, and the belief that your tools should remember everything so you don't have to.*
+*Built with Claude Code, Mem0, and the belief that your Mac Mini should replace every SaaS tool you pay for — because it has all your data in one brain, and siloed tools never will.*

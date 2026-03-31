@@ -1,18 +1,21 @@
 # AONXI OS — The Complete Architecture
 
-> **One Mac Mini M4. Serving the world. Zero per-query cost.**
+> **One Mac Mini M4. Replacing every SaaS tool you pay for. Zero per-query cost.**
 >
-> Every employee has a customized AI. Every business owns their intelligence.
-> Every office building runs its own AI layer. All connected. All learning.
-> All running on hardware you own. Billed only for the hardware and setup.
+> Your Mac Mini is a self-learning SaaS factory. It watches how you use your
+> existing tools, learns YOUR specific workflows, then builds local versions
+> that are BETTER than the originals — because it has ALL your data in one brain.
+> Siloed SaaS tools can't talk to each other. Your Mac Mini can.
+>
+> **Live site:** [https://originaonxi.github.io/super-brain/](https://originaonxi.github.io/super-brain/)
 
 ---
 
 ## The Vision in One Sentence
 
-A Mac Mini in every office, serving AI to every person connected to that network —
-globally accessible, per-employee customized, self-improving, and billing at
-near-zero marginal cost while cloud AI charges $11,200/month for the same workload.
+A Mac Mini in every office — it doesn't just serve AI, it replaces every SaaS
+subscription you pay for by learning your workflows and building local versions
+that have cross-tool intelligence no siloed cloud tool can match.
 
 ---
 
@@ -115,6 +118,14 @@ LAYER 2: MEMORY LAYER
 ├── Mem0 API (optional cloud sync) — cross-device memory persistence
 └── Super Brain orchestrator — pattern detection across all tenants
 
+LAYER 2.5: SAAS REPLACEMENT ENGINE
+├── SaaS Connector (API adapters for CRM, support, marketing, finance, etc.)
+├── Workflow Observer (watches how you ACTUALLY use each tool)
+├── Pattern Learner (extracts your specific workflows, not generic templates)
+├── Local Builder (generates local equivalents with cross-tool intelligence)
+├── Parallel Validator (runs local version alongside SaaS for verification)
+└── Migration Manager (cutover control + subscription cancellation tracking)
+
 LAYER 3: AGENT LAYER
 ├── Omni-Outreach Agent (all channels: LinkedIn, ads, SEO, email, social)
 ├── Employee AI (per-person customized Claude workspace)
@@ -148,6 +159,57 @@ LAYER 6: INTELLIGENCE LAYER
 ├── Revenue forecasting (MRR → ARR trajectory)
 └── Agent improvement scoring (did this agent make others better?)
 ```
+
+---
+
+## The SaaS Replacement Engine
+
+The core innovation of AONXI OS: your Mac Mini doesn't just run AI agents — it **replaces the SaaS tools you're already paying for** by learning how you use them and building local versions that are better.
+
+### How It Works
+
+**Step 1: Connect via API**
+The Mac Mini connects to your existing SaaS tools (CRM, support desk, marketing automation, accounting, SEO analytics, project management, team chat, ad platforms) via their APIs. Read-only at first. No disruption.
+
+**Step 2: Observe and Learn Workflows**
+The Workflow Observer watches how your team ACTUALLY uses each tool — not how the manual says to use it. It captures:
+- Which features you use (and which you don't — most teams use <20% of any SaaS tool)
+- The sequences: what happens after a deal closes? After a support ticket resolves?
+- The cross-tool patterns: when a big deal closes in CRM, does someone manually update the finance tool?
+- The workarounds: copy-paste between tools, manual data entry, spreadsheet bridges
+
+**Step 3: Build Local Equivalents**
+The Local Builder generates streamlined local versions that replicate YOUR workflows. These local versions have a superpower no SaaS tool has: **cross-tool intelligence**. Because all your data lives in one brain:
+- Your support agent sees the full sales history before responding to a ticket
+- Your outreach agent knows which customer segments are profitable (from finance data)
+- Your project management view knows which clients have open support issues
+- Your marketing agent knows which leads your sales team has already contacted
+
+**Step 4: Parallel Run and Validation**
+The local version runs alongside the SaaS tool. Both receive the same inputs. Outputs are compared. When the local version matches or exceeds the SaaS tool's utility for 2+ weeks, it's validated.
+
+**Step 5: Cutover and Cancel**
+Migration is tool-by-tool, not all-at-once:
+```
+Week 1-2:   Connect CRM API, observe workflows
+Week 3-4:   Local CRM runs in parallel, outputs compared
+Week 5:     Local CRM validated → cancel CRM subscription ($800/mo saved)
+Week 6-7:   Connect support desk API, observe workflows
+Week 8-9:   Local support runs in parallel
+Week 10:    Local support validated → cancel subscription ($550/mo saved)
+...repeat for each tool...
+```
+
+### Why Local Versions Are Better
+
+| Dimension | Siloed SaaS Tool | AONXI Local Version |
+|---|---|---|
+| **Data visibility** | Only sees its own data | Sees ALL your business data |
+| **Cross-tool triggers** | Requires Zapier/Make + manual setup | Automatic — it's all one brain |
+| **Learns your patterns** | Generic for all customers | Trained on YOUR specific workflows |
+| **Privacy** | Your data on their servers | Your data on your hardware |
+| **Monthly cost** | $50-$800/tool/month | $0 per query, $15/mo electricity |
+| **Customization** | Limited to their UI/API | Unlimited — you own the code |
 
 ---
 
@@ -421,6 +483,14 @@ super-brain/
 │   │   ├── support_agent.py        # Customer support: inbound, escalation, retention
 │   │   ├── finance_agent.py        # Finance: invoices, categorization, forecasting
 │   │   └── custom_agent.py         # Template for building new domain agents
+│   │
+│   ├── saas_engine/
+│   │   ├── connector.py            # API adapters for CRM, support, marketing, finance, etc.
+│   │   ├── observer.py             # Workflow observation — watches how you use each tool
+│   │   ├── pattern_learner.py      # Extracts your specific workflow patterns
+│   │   ├── local_builder.py        # Generates local equivalents with cross-tool intelligence
+│   │   ├── validator.py            # Parallel run comparison — local vs SaaS
+│   │   └── migration.py            # Cutover control + subscription cancellation tracking
 │   │
 │   ├── intelligence/
 │   │   ├── predictor.py            # Lead conversion, churn, MRR forecasting

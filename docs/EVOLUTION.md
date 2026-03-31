@@ -7,14 +7,18 @@ Super Brain evolves from a simple memory store into a **full autonomous cognitiv
 Each version adds a new cognitive layer, inspired by how biological brains evolved:
 
 ```
-V5: FULL AGI BRAIN ─────────────────── Prefrontal Cortex (executive function)
- |   Autonomous planning, multi-project orchestration, self-directed goals
+V5: FULL BUSINESS OS ───────────────── Prefrontal Cortex (executive function)
+ |   Zero external dependencies — every tool runs locally, fully autonomous
  |
-V4: AUTONOMOUS HIPPOCAMPUS ─────────── Hippocampus (memory consolidation)
- |   Self-healing memory, importance scoring, memory dreams, garbage collection
+V4: AUTONOMOUS HIPPOCAMPUS + ───────── Hippocampus (memory consolidation)
+ |   SAAS REPLACEMENT                   Self-healing memory + autonomous SaaS
+ |   Self-healing, self-organizing,     tool replacement without human oversight
+ |   auto-replacing SaaS subscriptions
  |
-V3: PREDICTIVE CORTEX ──────────────── Neocortex (prediction)
- |   Anticipate needs, suggest actions, pattern recognition across time
+V3: PREDICTIVE CORTEX + ───────────── Neocortex (prediction)
+ |   SAAS TOOL LEARNING                 Anticipate needs + observe and learn
+ |   Pattern recognition across time    SaaS tool workflows for local replacement
+ |   and across SaaS tool boundaries
  |
 V2: SYNAPTIC LINKS ─────────────────── Synapses (connections)
  |   Auto-detect dependencies, knowledge graph, relationship inference
@@ -150,11 +154,11 @@ Recommendation: Run tests in techm-intel and nova-gtm first.
 
 ---
 
-## V3: Predictive Cortex
+## V3: Predictive Cortex + SaaS Tool Learning
 
 **Status:** Planned
 
-**Biological analogy:** Neocortex — the brain starts predicting what will happen next.
+**Biological analogy:** Neocortex — the brain starts predicting what will happen next AND learning how you use external tools.
 
 ### What It Adds
 - **Temporal patterns**: Brain tracks when you work on what, detects cycles.
@@ -162,6 +166,9 @@ Recommendation: Run tests in techm-intel and nova-gtm first.
 - **Anomaly detection**: "stock-analyst-agent hasn't run in 3 days — cron may be broken."
 - **Context preloading**: Brain preloads relevant memories before you even ask.
 - **Cross-project pattern recognition**: "Every time you update safeguard, you also update router within 24 hours."
+- **SaaS Tool Learning**: Connects to your existing SaaS tools (CRM, support desk, marketing automation, accounting, SEO analytics, project management, team chat, ad platforms) via API, observes how your team actually uses them, and extracts workflow patterns.
+- **Cross-tool pattern detection**: Discovers the manual bridges between siloed tools — when a deal closes in CRM, someone manually updates finance. When a support ticket escalates, someone manually pings the sales team. The brain sees all of these and learns them.
+- **Workflow pattern database**: Stores every observed workflow as a reproducible pattern that can be replicated locally.
 
 ### Architecture
 ```
@@ -175,6 +182,18 @@ Recommendation: Run tests in techm-intel and nova-gtm first.
   - Day of week             - Project clusters         - "Y might break"
   - Session duration        - Pre/post patterns        - "Start with Z"
   - Project switches        - Failure precursors       - "Check agent W"
+
++-------------------+     +--------------------+     +------------------+
+| SaaS Connector    |     | Workflow Observer  |     | Pattern Learner  |
+| (API adapters for |---->| (watches real tool |---->| (extracts YOUR   |
+|  all SaaS tools)  |     |  usage patterns)   |     |  specific flows)  |
++-------------------+     +--------------------+     +------------------+
+        |                          |                          |
+  Connects to:              Captures:                  Learns:
+  - CRM APIs               - Feature usage %           - Your sequences
+  - Support APIs            - Action sequences          - Cross-tool bridges
+  - Marketing APIs          - Cross-tool copy-paste     - Manual workarounds
+  - Finance APIs            - Timing patterns           - Automation gaps
 ```
 
 ### Implementation Plan

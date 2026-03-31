@@ -2,7 +2,7 @@
 
 ## System Overview
 
-Super Brain is a **distributed memory architecture** that unifies 55+ autonomous projects into a single queryable intelligence layer. It operates on three planes: **Ingestion** (how memories enter), **Storage** (how they're organized), and **Retrieval** (how they're surfaced).
+Super Brain is a **distributed memory architecture and SaaS replacement engine** that unifies 55+ autonomous projects into a single queryable intelligence layer. It operates on three planes: **Ingestion** (how memories and SaaS tool observations enter), **Storage** (how they're organized, including workflow patterns), and **Retrieval** (how they're surfaced with cross-tool intelligence).
 
 ---
 
@@ -10,20 +10,20 @@ Super Brain is a **distributed memory architecture** that unifies 55+ autonomous
 
 ### Plane 1: Ingestion
 
-Memories enter the brain through three channels:
+Memories enter the brain through four channels:
 
 ```
                     +------------------+
                     |   INGESTION      |
                     +------------------+
                     |                  |
-          +---------+--------+---------+
-          |                  |         |
-    +-----v------+   +------v---+  +--v-----------+
-    | Manual CLI |   | Auto Hook|  | Programmatic |
-    | mem0_push  |   | PostTool |  | brain.py SDK |
-    | mem0_search|   | Use fire |  | REST API     |
-    +------------+   +----------+  +--------------+
+          +---------+--------+---------+-----------+
+          |                  |         |           |
+    +-----v------+   +------v---+  +--v--------+  +--v-----------+
+    | Manual CLI |   | Auto Hook|  | SaaS Tool |  | Programmatic |
+    | mem0_push  |   | PostTool |  | Observer  |  | brain.py SDK |
+    | mem0_search|   | Use fire |  | (API watch)|  | REST API     |
+    +------------+   +----------+  +-----------+  +--------------+
 ```
 
 **Manual CLI** (`mem0_push.sh`):
@@ -42,6 +42,13 @@ Memories enter the brain through three channels:
 - Used by automated agents to share context
 - Enables inter-agent memory sharing
 
+**SaaS Tool Observer** (`saas_engine/observer.py`):
+- Connects to existing SaaS tools via their APIs (CRM, support desk, marketing, finance, etc.)
+- Watches how your team actually uses each tool — captures real workflow sequences
+- Extracts cross-tool patterns (e.g., deal closes in CRM then manual update in finance)
+- Feeds observed workflows into the Pattern Learner for local version generation
+- Read-only observation — no disruption to existing tools during learning phase
+
 ### Plane 2: Storage
 
 Mem0 handles storage with semantic embeddings + metadata indexing:
@@ -59,11 +66,13 @@ Mem0 handles storage with semantic embeddings + metadata indexing:
 |   |  search)                  |   | source: terminal/hook   |  |
 |   +---------------------------+   +-------------------------+  |
 |                                                                |
-|   +---------------------------+                                |
-|   | Structured Attributes     |                                |
-|   | day, hour, quarter,       |                                |
-|   | day_of_week, week_of_year |                                |
-|   +---------------------------+                                |
+|   +---------------------------+   +-------------------------+  |
+|   | Structured Attributes     |   | Workflow Pattern Store   |  |
+|   | day, hour, quarter,       |   | saas_tool: crm/support  |  |
+|   | day_of_week, week_of_year |   | sequence: action chains  |  |
+|   +---------------------------+   | frequency: usage counts  |  |
+|                                   | cross_tool: linked flows |  |
+|                                   +-------------------------+  |
 +---------------------------------------------------------------+
 ```
 
@@ -79,6 +88,7 @@ Mem0 handles storage with semantic embeddings + metadata indexing:
 | `ci-report` | 5 | Competitive intelligence outputs |
 | `ad-intel-report` | 2 | Ad analysis and strategy reports |
 | `system-config` | 1 | Cron jobs, email agents, wrapper infrastructure |
+| `saas-workflow` | growing | Observed SaaS tool usage patterns and cross-tool flows |
 | `live-session` | growing | Auto-captured from Claude Code sessions |
 
 ### Plane 3: Retrieval
@@ -104,6 +114,8 @@ Query: "What modules does techm-intel share with Aonxi?"
 ```
 
 The retrieval plane doesn't just do keyword matching — it understands **semantic relationships**. Asking about "modules shared with Aonxi" retrieves memories about router/safeguard/memcollab even though the word "shared" doesn't appear in those memories.
+
+**Cross-Tool Intelligence:** The retrieval plane is what makes local SaaS replacements BETTER than the originals. When a support query comes in, retrieval pulls not just support history but also the customer's sales pipeline status, billing history, and marketing engagement — all in one query. No siloed SaaS tool can do this because they only see their own data. The brain sees everything.
 
 ---
 
@@ -141,9 +153,62 @@ Action completes           Extract meaningful content
 
 ---
 
+## SaaS Replacement Architecture
+
+The SaaS Replacement Engine sits between your existing SaaS tools and the brain, turning observed workflows into local replacements:
+
+```
++------------------------------------------------------------------+
+|                  SAAS REPLACEMENT ENGINE                           |
++------------------------------------------------------------------+
+|                                                                    |
+|  EXTERNAL SAAS TOOLS (connected via API)                          |
+|  ┌──────┐ ┌──────────┐ ┌──────────┐ ┌────────┐ ┌──────────┐     |
+|  │ CRM  │ │ Support  │ │Marketing │ │Finance │ │ Project  │ ... |
+|  │ API  │ │ Desk API │ │Auto. API │ │  API   │ │ Mgmt API │     |
+|  └──┬───┘ └────┬─────┘ └────┬─────┘ └───┬────┘ └────┬─────┘     |
+|     │          │            │           │           │             |
+|     v          v            v           v           v             |
+|  ┌──────────────────────────────────────────────────────┐        |
+|  │              WORKFLOW OBSERVER                        │        |
+|  │  Watches real usage patterns, sequences, frequencies  │        |
+|  └──────────────────────┬───────────────────────────────┘        |
+|                         │                                         |
+|                         v                                         |
+|  ┌──────────────────────────────────────────────────────┐        |
+|  │              PATTERN LEARNER                          │        |
+|  │  Extracts YOUR workflows (not generic templates)      │        |
+|  │  Detects cross-tool patterns (CRM close → finance)    │        |
+|  └──────────────────────┬───────────────────────────────┘        |
+|                         │                                         |
+|                         v                                         |
+|  ┌──────────────────────────────────────────────────────┐        |
+|  │              LOCAL BUILDER                            │        |
+|  │  Generates local versions with cross-tool intelligence │        |
+|  └──────────────────────┬───────────────────────────────┘        |
+|                         │                                         |
+|                         v                                         |
+|  ┌──────────────────────────────────────────────────────┐        |
+|  │              PARALLEL VALIDATOR                       │        |
+|  │  Runs local vs SaaS side-by-side for 2+ weeks        │        |
+|  │  Compares outputs, flags discrepancies                │        |
+|  └──────────────────────┬───────────────────────────────┘        |
+|                         │                                         |
+|                         v                                         |
+|  ┌──────────────────────────────────────────────────────┐        |
+|  │              MIGRATION MANAGER                        │        |
+|  │  Tool-by-tool cutover → subscription cancellation     │        |
+|  └──────────────────────────────────────────────────────┘        |
++------------------------------------------------------------------+
+```
+
+**Key design principle:** The brain's cross-tool intelligence is the moat. Every SaaS tool is siloed — it only sees its own data. The brain sees all data from all tools simultaneously. This means the local CRM replacement can factor in support ticket sentiment, the local support replacement can see deal value and prioritize accordingly, and the local marketing replacement knows which segments are actually profitable from finance data.
+
+---
+
 ## Connection Topology
 
-The brain doesn't just store isolated memories — it understands how projects connect:
+The brain doesn't just store isolated memories — it understands how projects connect. SaaS tools feed into the brain through the Replacement Engine:
 
 ```
                           +----------+
@@ -167,10 +232,10 @@ The brain doesn't just store isolated memories — it understands how projects c
 
 +------------------+     +------------------+     +-----------+
 | RESEARCH CLUSTER |     | EMAIL AGENTS     |     | CI/INTEL  |
-| asm-replication  |     | news-briefing    |     | CI_Accenture
-| attention-scratch|     | space-wonder     |     | CI_HubSpot
-| llm-calibration  |---->| echo             |     | AdIntel_sn
-| moe-efficiency   |     | agi-possible     |     | CompIntel
+| asm-replication  |     | news-briefing    |     | CI reports|
+| attention-scratch|     | space-wonder     |     | AdIntel   |
+| llm-calibration  |---->| echo             |     | CompIntel |
+| moe-efficiency   |     | agi-possible     |     |           |
 | reward-blindness |     | stock-analyst    |     |           |
 | frontier-journey |     +------------------+     +-----------+
 +------------------+            |
@@ -181,6 +246,19 @@ The brain doesn't just store isolated memories — it understands how projects c
 | APPLICATIONS     |   | ~/logs/          |
 | NeurIPS 2026     |   | wake_guard.sh    |
 +------------------+   +------------------+
+
++------------------------------------------------------------------+
+| SAAS TOOL FEEDS (via SaaS Replacement Engine)                     |
+|                                                                    |
+| CRM ──────────> Workflow patterns ──> Local CRM replacement       |
+| Support Desk ──> Ticket patterns ───> Local support replacement   |
+| Marketing ────> Campaign patterns ──> Local marketing replacement |
+| Finance ──────> Transaction flows ──> Local finance replacement   |
+| Project Mgmt ─> Task patterns ─────> Local PM replacement        |
+| Team Chat ────> Communication flows > Local chat replacement      |
+| Ad Platform ──> Campaign data ─────> Local ad mgmt replacement   |
+| SEO Analytics ─> Ranking data ─────> Local SEO replacement       |
++------------------------------------------------------------------+
 ```
 
 ---
