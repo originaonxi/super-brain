@@ -3,608 +3,424 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AONXI — One Mac Mini. Every Tool Replaced. Intelligence You Own.</title>
-<meta name="description" content="AONXI OS: One Mac Mini learns your business, replaces every SaaS subscription, runs 50+ AI agents. One payment. $0/query forever. 559x RPDC. $200K proved.">
+<title>AONXI OS — The AI Operating System That Replaces Your Entire SaaS Stack</title>
+<meta name="description" content="One Mac Mini. 50+ AI agents that create, test, deploy, and improve themselves. Replaces $4K/mo in SaaS. $200K revenue proved. 559x RPDC. Data never leaves your building.">
 <link rel="canonical" href="https://originaonxi.github.io/super-brain/">
-<meta property="og:title" content="AONXI — One Mac Mini. Every Tool Replaced.">
-<meta property="og:description" content="Replace $5K/month in SaaS with one Mac Mini. 50+ AI agents. Self-evolving. Data never leaves.">
-<meta property="og:url" content="https://originaonxi.github.io/super-brain/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0c1120;--s1:#111827;--s2:#1a2234;--s3:#222d42;
-  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);
-  --text:#f0eee6;--muted:rgba(240,238,230,0.55);--dim:rgba(240,238,230,0.25);
-  --gold:#f0b429;--gold-dim:rgba(240,180,41,0.08);--gold-b:rgba(240,180,41,0.22);
-  --blue:#5b9cf4;--blue-dim:rgba(91,156,244,0.08);
-  --red:#ef4444;--green:#22c55e;--purple:#a78bfa;
-}
+:root{--bg:#0c1120;--s1:#111827;--s2:#1a2234;--s3:#222d42;--border:rgba(255,255,255,.06);--border2:rgba(255,255,255,.12);--text:#f0eee6;--muted:rgba(240,238,230,.55);--dim:rgba(240,238,230,.25);--gold:#f0b429;--gold2:#d4a017;--gd:rgba(240,180,41,.08);--gb:rgba(240,180,41,.22);--blue:#5b9cf4;--red:#ef4444;--green:#22c55e}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-weight:400;overflow-x:hidden;line-height:1.65}
 a{color:inherit;text-decoration:none}
 ::selection{background:rgba(240,180,41,.25)}
 
-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(12,17,32,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.logo{font-size:20px;font-weight:900;color:var(--gold);letter-spacing:.02em}
-.nav-links{display:flex;gap:32px}
-.nav-links a{font-size:13px;font-weight:500;color:var(--muted);transition:color .2s}
-.nav-links a:hover{color:var(--text)}
-.nav-r{display:flex;gap:10px;align-items:center}
-.nav-r a{font-size:12px;font-weight:600;padding:10px 18px;border-radius:6px;transition:all .2s}
-.nav-gh{color:var(--muted);border:1px solid var(--border2)}
-.nav-gh:hover{color:var(--text);border-color:var(--muted)}
-.nav-cta{color:var(--bg);background:var(--gold);letter-spacing:.02em}
-.nav-cta:hover{background:#f5c842;transform:translateY(-1px)}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(12,17,32,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-size:20px;font-weight:900;color:var(--gold)}
+.nav-l{display:flex;gap:28px}.nav-l a{font-size:13px;font-weight:500;color:var(--muted);transition:color .2s}.nav-l a:hover{color:var(--text)}
+.nav-r{display:flex;gap:10px}.nav-r a{font-size:12px;font-weight:600;padding:10px 18px;border-radius:6px;transition:all .2s}
+.n-gh{color:var(--muted);border:1px solid var(--border2)}.n-gh:hover{color:var(--text)}
+.n-cta{color:var(--bg);background:var(--gold)}.n-cta:hover{background:#f5c842;transform:translateY(-1px)}
 
-section{padding:100px 48px;position:relative}
-.stag{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
-section h2{font-size:clamp(34px,4.5vw,62px);font-weight:900;letter-spacing:-.03em;line-height:.98;margin-bottom:18px}
+section{padding:100px 48px;border-bottom:1px solid var(--border);position:relative}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+section h2{font-size:clamp(32px,4.5vw,58px);font-weight:900;letter-spacing:-.03em;line-height:.98;margin-bottom:18px}
 section h2 em{font-style:normal;color:var(--gold)}
-section h2 .it{font-family:'Playfair Display',serif;font-style:italic;font-weight:700}
-.sub{max-width:620px;font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:52px;font-weight:300}
-.sub strong{color:var(--text);font-weight:600}
-.divider{border-bottom:1px solid var(--border)}
+section h2 i{font-family:'Playfair Display',serif;font-style:italic;font-weight:700}
+.sub{max-width:640px;font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:48px;font-weight:300}
+.sub b{color:var(--text);font-weight:600}
 
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:80px;position:relative;overflow:hidden}
-.hero-grad{position:absolute;top:0;right:0;width:60%;height:100%;background:radial-gradient(ellipse at 70% 40%,rgba(240,180,41,0.04),transparent 60%);pointer-events:none}
-.hero-grad2{position:absolute;bottom:0;left:0;width:40%;height:60%;background:radial-gradient(ellipse at 30% 80%,rgba(91,156,244,0.03),transparent 60%);pointer-events:none}
-.hero h1{font-size:clamp(44px,6vw,86px);font-weight:900;line-height:.92;letter-spacing:-.045em;margin-bottom:32px;max-width:900px}
-.hero h1 .it{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold)}
-.hero h1 .light{font-weight:300;color:var(--muted)}
-.hero-p{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:600px;line-height:1.8;margin-bottom:40px;font-weight:300}
-.hero-p strong{color:var(--text);font-weight:600}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
-.btn-gold{font-size:14px;font-weight:700;color:var(--bg);background:var(--gold);padding:16px 32px;border-radius:8px;transition:all .2s;letter-spacing:.01em}
-.btn-gold:hover{background:#f5c842;transform:translateY(-2px);box-shadow:0 8px 30px rgba(240,180,41,.2)}
-.btn-out{font-size:13px;font-weight:600;color:var(--muted);padding:16px 24px;border:1px solid var(--border2);border-radius:8px;transition:all .2s}
-.btn-out:hover{color:var(--text);border-color:var(--muted)}
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:10px;overflow:hidden;max-width:700px}
-.stat{background:var(--s1);padding:22px 20px}
-.stat-n{font-size:32px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:4px;letter-spacing:-.02em}
-.stat-l{font-size:11px;color:var(--dim);font-weight:500}
-
-/* TICKER */
-.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden;background:var(--s1)}
-.ticker-track{display:flex;gap:0;animation:tick 45s linear infinite;white-space:nowrap}
-.tick-item{display:flex;align-items:center;gap:20px;padding:0 20px;font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.06em;text-transform:uppercase}
-.tick-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;opacity:.6}
-@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-/* CARDS */
 .grid{display:grid;gap:1px;background:var(--border);border-radius:10px;overflow:hidden}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.grid-4{grid-template-columns:repeat(4,1fr)}
-.grid-auto{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
-.card{background:var(--s1);padding:28px 24px;transition:background .2s}
-.card:hover{background:var(--s2)}
-.card-gold{border-top:2px solid var(--gold)}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.ga{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.c{background:var(--s1);padding:28px 24px;transition:background .15s}.c:hover{background:var(--s2)}
+.c-hl{background:var(--s2);border-top:2px solid var(--gold)}
 
-/* SAAS */
-.saas-old{font-size:11px;color:var(--red);font-weight:600;text-decoration:line-through;opacity:.7;margin-bottom:2px;font-family:'JetBrains Mono',monospace}
-.saas-new{font-size:18px;font-weight:800;margin-bottom:2px}
-.saas-save{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--gold);margin-bottom:14px}
-.saas-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px}
-.saas-learn{font-size:11px;color:var(--blue);font-weight:500}
-.saas-total{margin-top:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--s2);border:1.5px solid var(--gold-b);border-radius:10px;overflow:hidden;text-align:center;padding:32px 24px}
-.st-n{font-size:36px;font-weight:900;line-height:1;margin-bottom:4px;letter-spacing:-.02em}
-.st-l{font-size:11px;color:var(--dim);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+/* term */
+.t{background:#0a0e18;border:1px solid #1e2740;border-radius:10px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:12px}
+.t-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#0e1324;border-bottom:1px solid #1e2740}
+.t-dot{width:10px;height:10px;border-radius:50%}.t-title{font-size:11px;color:var(--dim);margin-left:10px}
+.t-body{padding:18px;line-height:1.9;max-height:500px;overflow-y:auto}
+.tp{color:var(--gold)}.tc{color:var(--text);font-weight:500}.to{color:var(--muted)}.th{color:var(--gold)}.tb{color:var(--blue)}.tw{color:#fbbf24}
 
-/* LEARN FLOW */
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px}
-.flow-step{text-align:center}
-.flow-num{width:52px;height:52px;border-radius:50%;background:var(--gold-dim);border:1.5px solid var(--gold-b);color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px}
-.flow-step h4{font-size:15px;font-weight:700;margin-bottom:6px}
-.flow-step p{font-size:13px;color:var(--muted);line-height:1.65}
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:15%;right:0;width:55%;height:70%;background:radial-gradient(ellipse at 60% 40%,rgba(240,180,41,.04),transparent 65%);pointer-events:none}
+.hero h1{font-size:clamp(42px,5.5vw,80px);font-weight:900;line-height:.92;letter-spacing:-.045em;margin-bottom:28px;max-width:860px}
+.hero h1 i{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold)}
+.hero h1 span{font-weight:300;color:var(--muted)}
+.hp{font-size:clamp(16px,1.5vw,19px);color:var(--muted);max-width:580px;line-height:1.8;margin-bottom:36px;font-weight:300}.hp b{color:var(--text);font-weight:600}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
+.bg{font-size:14px;font-weight:700;color:var(--bg);background:var(--gold);padding:16px 32px;border-radius:8px;transition:all .2s}.bg:hover{background:#f5c842;transform:translateY(-2px);box-shadow:0 8px 30px rgba(240,180,41,.2)}
+.bo{font-size:13px;font-weight:600;color:var(--muted);padding:16px 24px;border:1px solid var(--border2);border-radius:8px;transition:all .2s}.bo:hover{color:var(--text);border-color:var(--muted)}
+.hstats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:10px;overflow:hidden;max-width:680px}
+.hs{background:var(--s1);padding:22px 20px}.hs-n{font-size:30px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:4px}.hs-l{font-size:11px;color:var(--dim);font-weight:500}
 
-/* TERMINAL */
-.term{background:#0a0e18;border:1px solid #1e2740;border-radius:10px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:12px}
-.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#0e1324;border-bottom:1px solid #1e2740}
-.term-dot{width:10px;height:10px;border-radius:50%}
-.term-title{font-size:11px;color:var(--dim);margin-left:10px;font-weight:500}
-.term-body{padding:18px;line-height:1.9;max-height:450px;overflow-y:auto}
-.t-p{color:var(--gold)}.t-c{color:var(--text);font-weight:500}.t-o{color:var(--muted)}.t-h{color:var(--gold)}.t-b{color:var(--blue)}.t-w{color:#fbbf24}
+/* ticker */
+.tick{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 0;overflow:hidden;background:var(--s1)}
+.tick-t{display:flex;animation:tk 45s linear infinite;white-space:nowrap}
+.tk{display:flex;align-items:center;gap:20px;padding:0 20px;font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.06em;text-transform:uppercase}
+.tk-d{width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.6}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
 
-/* CALCULATOR */
-.calc-box{background:var(--s1);border-radius:12px;border:1px solid var(--border2);padding:48px;position:relative;overflow:hidden}
-.calc-box::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:200px;background:radial-gradient(ellipse,rgba(240,180,41,.04),transparent);pointer-events:none}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.calc-sliders{display:flex;flex-direction:column;gap:28px}
-.calc-group{display:flex;flex-direction:column;gap:8px}
-.calc-lbl{display:flex;justify-content:space-between;align-items:baseline}
-.calc-lbl span:first-child{font-size:14px;font-weight:600}
-.calc-val{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:800;color:var(--gold)}
-.calc-price{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim)}
-input[type=range]{-webkit-appearance:none;width:100%;height:5px;background:var(--s3);border-radius:5px;outline:none;cursor:pointer}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;background:var(--gold);border-radius:50%;cursor:pointer;border:3px solid var(--bg);box-shadow:0 2px 8px rgba(240,180,41,.3)}
-.calc-results{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:10px;overflow:hidden}
-.cr{background:var(--s2);padding:24px 20px}
-.cr-n{font-size:36px;font-weight:900;line-height:1;margin-bottom:4px;letter-spacing:-.02em}
-.cr-l{font-size:10px;color:var(--dim);font-family:'JetBrains Mono',monospace;font-weight:500}
-.cr-hl{background:var(--s3);border-top:2px solid var(--gold)}
-.calc-msg{margin-top:20px;padding:18px;background:var(--gold-dim);border:1px solid var(--gold-b);border-radius:8px;text-align:center;font-size:14px;color:var(--gold);font-weight:600}
+/* tbl */
+.tw{overflow-x:auto}
+table.tbl{width:100%;border-collapse:separate;border-spacing:0 2px;min-width:640px}
+.tbl th{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:14px 18px;background:var(--s2)}
+.tbl td{font-size:13px;padding:13px 18px;background:var(--s1);font-weight:500}
+.tbl .r{color:var(--red);font-family:'JetBrains Mono',monospace;font-weight:600}
+.tbl .g{color:var(--green);font-family:'JetBrains Mono',monospace;font-weight:600}
+.tbl .gl{color:var(--gold);font-family:'JetBrains Mono',monospace;font-weight:600}
+.tbl .tot td{background:var(--s2);font-weight:800;font-size:15px;border-top:2px solid var(--gold)}
 
-/* AGENT */
-.ag-metric{font-size:44px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px;letter-spacing:-.03em}
-.ag-name{font-size:14px;font-weight:700;margin-bottom:2px}
-.ag-role{font-size:10px;font-weight:600;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
-.ag-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px}
-.ag-proof{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);font-weight:500;opacity:.7}
+/* misc */
+.box{padding:20px 24px;background:var(--gd);border:1px solid var(--gb);border-radius:8px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}.reveal.vis{opacity:1;transform:translateY(0)}
 
-/* FAMILY */
-.fam-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.fam-steps{display:flex;flex-direction:column}
-.fam-step{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}
-.fam-step:last-child{border-bottom:none}
-.fam-wk{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--gold);opacity:.5;min-width:60px;padding-top:3px}
-.fam-step h4{font-size:14px;font-weight:700;margin-bottom:4px}
-.fam-step p{font-size:13px;color:var(--muted);line-height:1.65}
-.fam-box{margin-top:24px;padding:20px;background:var(--gold-dim);border:1px solid var(--gold-b);border-radius:8px;font-size:14px;color:var(--gold);font-weight:500;line-height:1.7}
-
-/* COMPLIANCE */
-.comp-badge{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:800;color:var(--gold);margin-bottom:10px;letter-spacing:.04em}
-.comp-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
-.comp-card p{font-size:13px;color:var(--muted);line-height:1.65}
-
-/* TABLE */
-.tbl-wrap{overflow-x:auto}
-table.tbl{width:100%;border-collapse:separate;border-spacing:0 2px;min-width:600px}
-.tbl th{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:16px 20px;background:var(--s2)}
-.tbl th:first-child{border-radius:8px 0 0 0}.tbl th:last-child{border-radius:0 8px 0 0}
-.tbl td{font-size:14px;padding:14px 20px;background:var(--s1);font-weight:500}
-.tbl .bad{color:var(--red);font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
-.tbl .good{color:var(--green);font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
-.tbl .total td{background:var(--s2);font-weight:800;font-size:16px;border-top:2px solid var(--gold)}
-
-/* BIG NUMBERS */
-.big-n{font-size:52px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px;letter-spacing:-.03em}
-.big-label{font-size:14px;font-weight:700;margin-bottom:6px}
-.big-desc{font-size:13px;color:var(--muted);line-height:1.65}
-
-/* HARDWARE */
-.hw{background:var(--s1);padding:28px 22px;position:relative}
-.hw.best{background:var(--s2);border-top:2px solid var(--gold)}
-.hw-tag{position:absolute;top:0;right:16px;background:var(--gold);color:var(--bg);font-size:9px;font-weight:800;padding:3px 12px;border-radius:0 0 6px 6px;letter-spacing:.08em}
-.hw-name{font-size:18px;font-weight:800;margin-bottom:4px}
-.hw-price{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--gold);margin-bottom:16px}
-.hw-specs{display:flex;flex-direction:column;gap:8px}
-.hw-row{display:flex;justify-content:space-between;font-size:13px;padding-bottom:8px;border-bottom:1px solid var(--border)}.hw-row:last-child{border-bottom:none}
-.hw-k{color:var(--muted);font-weight:400}.hw-v{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600}.hw-vg{color:var(--gold)}
-
-/* PRICING */
-.pc{background:var(--s1);padding:32px 24px;display:flex;flex-direction:column;position:relative}
-.pc.feat{background:var(--s2);border-top:2px solid var(--gold)}
-.pc-tag{position:absolute;top:0;right:16px;background:var(--gold);color:var(--bg);font-size:9px;font-weight:800;padding:3px 12px;border-radius:0 0 6px 6px;letter-spacing:.08em}
-.pc-tier{font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.15em;margin-bottom:12px}
-.pc-amt{font-size:44px;font-weight:900;letter-spacing:-.03em;line-height:1;margin-bottom:4px}.pc-per{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:4px}
-.pc-hw{font-size:11px;font-weight:600;color:var(--gold);opacity:.7;margin-bottom:16px}
-.pc-div{height:1px;background:var(--border);margin-bottom:14px}
-.pc-feats{flex:1;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-.pf{display:flex;gap:8px;font-size:12px;color:var(--muted);line-height:1.5;font-weight:500}.pf-ok{color:var(--gold);font-weight:700}
-.pc-btn{font-size:13px;font-weight:700;text-align:center;padding:13px;border-radius:6px;transition:all .2s;display:block;margin-top:auto}
-.pc-btn.primary{background:var(--gold);color:var(--bg)}.pc-btn.primary:hover{background:#f5c842}
-.pc-btn.secondary{border:1px solid var(--border2);color:var(--muted)}.pc-btn.secondary:hover{border-color:var(--muted);color:var(--text)}
-
-/* GUARANTEE */
-.guar{max-width:720px;margin:0 auto;text-align:center;padding:56px 48px;background:var(--s1);border:1.5px solid var(--gold-b);border-radius:14px;position:relative;overflow:hidden}
-.guar::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(240,180,41,.05),transparent);pointer-events:none}
-.guar-n{font-size:64px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:16px}
-.guar h3{font-size:30px;font-weight:900;letter-spacing:-.02em;margin-bottom:14px}
-.guar h3 em{font-style:normal;color:var(--gold)}
-.guar p{font-size:16px;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:14px}
-.guar .fine{font-size:11px;color:var(--dim)}
-
-/* CTA */
-.cta{text-align:center;padding:120px 48px;background:var(--s1);position:relative;overflow:hidden}
-.cta::before{content:'';position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse at center bottom,rgba(240,180,41,.06),transparent 70%);pointer-events:none}
-.cta h2{font-size:clamp(44px,7vw,88px);font-weight:900;letter-spacing:-.04em;line-height:.92;margin-bottom:24px}
-.cta h2 .it{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold)}
-.cta p{font-size:18px;color:var(--muted);max-width:520px;margin:0 auto 44px;line-height:1.75;font-weight:300}
-.email-row{display:flex;max-width:440px;margin:0 auto;border:1px solid var(--border2);border-radius:8px;overflow:hidden}
-.email-inp{flex:1;padding:16px 18px;background:var(--s2);border:none;color:var(--text);font-family:'Inter',sans-serif;font-size:15px;outline:none;font-weight:400}
-.email-inp::placeholder{color:var(--dim)}
-.email-sub{padding:16px 28px;background:var(--gold);color:var(--bg);font-size:13px;font-weight:800;border:none;cursor:pointer;letter-spacing:.04em;transition:background .2s}
-.email-sub:hover{background:#f5c842}
-
-footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.f-logo{font-size:20px;font-weight:900;color:var(--gold)}
-.f-text{font-size:12px;color:var(--dim);font-weight:500}
-
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}.reveal.vis{opacity:1;transform:translateY(0)}
-
-@media(max-width:1024px){.fam-grid,.calc-grid{grid-template-columns:1fr}.grid-4,.grid-3{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr}.hero-visual{display:none}.saas-total{grid-template-columns:1fr;gap:16px}}
-@media(max-width:768px){nav{padding:12px 20px}.nav-links{display:none}section,.hero,.cta{padding:64px 20px}.grid-4,.grid-3,.grid-auto,.calc-results,.stats-row{grid-template-columns:1fr}.flow{grid-template-columns:1fr;gap:20px}.calc-box{padding:24px}.guar{padding:40px 24px;margin:0}footer{flex-direction:column;text-align:center;gap:10px;padding:24px 20px}.saas-total{grid-template-columns:1fr;gap:12px}}
+@media(max-width:1024px){.g4,.g3{grid-template-columns:1fr 1fr}.arch-grid,.fam-g{grid-template-columns:1fr}.hstats{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){nav{padding:12px 20px}.nav-l{display:none}section,.hero{padding:64px 20px}.g4,.g3,.g2,.ga,.hstats{grid-template-columns:1fr}footer{flex-direction:column;text-align:center;gap:10px;padding:24px 20px}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="logo">AONXI</div>
-  <div class="nav-links"><a href="#replace">What It Replaces</a><a href="#how">How It Learns</a><a href="#calc">Calculator</a><a href="#agents">Agents</a><a href="#pricing">Pricing</a></div>
-  <div class="nav-r"><a href="https://github.com/originaonxi/super-brain" class="nav-gh">GitHub</a><a href="#start" class="nav-cta">Get Started</a></div>
+  <div class="nav-l"><a href="#arch">How It Works</a><a href="#agents">Agents</a><a href="#evals">Evals</a><a href="#pricing">Pricing</a></div>
+  <div class="nav-r"><a href="https://github.com/originaonxi/super-brain" class="n-gh">GitHub</a><a href="#cta" class="n-cta">Get Started</a></div>
 </nav>
 
+<!-- ═══════ HERO ═══════ -->
 <section class="hero">
-  <div class="hero-grad"></div><div class="hero-grad2"></div>
-  <div style="position:relative;z-index:2;max-width:900px">
-    <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:var(--gold-dim);border:1px solid var(--gold-b);border-radius:100px;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.08em;margin-bottom:28px;text-transform:uppercase"><span style="width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite"></span>Live &mdash; 50 agents &mdash; $200K proved &mdash; 559x RPDC</div>
-    <h1>One Mac Mini.<br><span class="it">Every tool</span> replaced.<br><span class="light">Intelligence you own.</span></h1>
-    <p class="hero-p">Your company pays <strong>$3,000&ndash;$5,000/month</strong> for SaaS tools that can't talk to each other. One Mac Mini replaces all of them. It <strong>learns your workflows</strong>, builds local versions of every tool, runs <strong>50+ AI agents</strong>, and gets smarter every day. <strong>One payment. $0/query. Forever.</strong></p>
-    <div class="hero-btns"><a href="#calc" class="btn-gold">Calculate your savings</a><a href="#replace" class="btn-out">See what it replaces</a><a href="#pricing" class="btn-out">From $1,999</a></div>
-    <div class="stats-row">
-      <div class="stat"><div class="stat-n">50+</div><div class="stat-l">AI agents live</div></div>
-      <div class="stat"><div class="stat-n">$200K</div><div class="stat-l">Revenue proved</div></div>
-      <div class="stat"><div class="stat-n">559x</div><div class="stat-l">Revenue per $ spent</div></div>
-      <div class="stat"><div class="stat-n">$0</div><div class="stat-l">Per-query cost</div></div>
-    </div>
+  <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:var(--gd);border:1px solid var(--gb);border-radius:100px;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.08em;margin-bottom:28px;text-transform:uppercase"><span style="width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite"></span>Live &mdash; 50+ Agents &mdash; $200K Proved &mdash; 559x RPDC</div>
+  <h1>One Mac Mini.<br><i>Creates, tests, deploys</i><br><span>and improves every agent.</span></h1>
+  <p class="hp">Your Mac Mini runs an <b>AI operating system</b> that replaces your entire SaaS stack. It creates agents for every business function, tests them with real experiments, deploys them to production, and makes each agent <b>teach every other agent</b> what works. <b>$4K/month in SaaS &rarr; $12/month electricity.</b></p>
+  <div class="hbtns"><a href="#arch" class="bg">See how it works</a><a href="#pricing" class="bo">Pricing</a><a href="https://github.com/originaonxi/super-brain" class="bo">GitHub</a></div>
+  <div class="hstats">
+    <div class="hs"><div class="hs-n">50+</div><div class="hs-l">Agents live</div></div>
+    <div class="hs"><div class="hs-n">$200K</div><div class="hs-l">Revenue proved</div></div>
+    <div class="hs"><div class="hs-n">559x</div><div class="hs-l">Revenue per $1 spent</div></div>
+    <div class="hs"><div class="hs-n">9</div><div class="hs-l">Agent types</div></div>
   </div>
-  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
 </section>
 
-<div class="ticker"><div class="ticker-track">
-  <div class="tick-item"><span class="tick-dot"></span>Replaces $5K/mo in SaaS</div><div class="tick-item"><span class="tick-dot"></span>50+ live agents</div><div class="tick-item"><span class="tick-dot"></span>Self-evolving</div><div class="tick-item"><span class="tick-dot"></span>GDPR + HIPAA safe</div><div class="tick-item"><span class="tick-dot"></span>559x RPDC</div><div class="tick-item"><span class="tick-dot"></span>Agents teach agents</div><div class="tick-item"><span class="tick-dot"></span>30-day guarantee</div><div class="tick-item"><span class="tick-dot"></span>Login from anywhere</div><div class="tick-item"><span class="tick-dot"></span>Mac Mini M4</div><div class="tick-item"><span class="tick-dot"></span>Replaces $5K/mo in SaaS</div><div class="tick-item"><span class="tick-dot"></span>50+ live agents</div><div class="tick-item"><span class="tick-dot"></span>Self-evolving</div><div class="tick-item"><span class="tick-dot"></span>GDPR + HIPAA safe</div><div class="tick-item"><span class="tick-dot"></span>559x RPDC</div><div class="tick-item"><span class="tick-dot"></span>Agents teach agents</div><div class="tick-item"><span class="tick-dot"></span>30-day guarantee</div>
+<div class="tick"><div class="tick-t">
+<div class="tk"><span class="tk-d"></span>Replaces $4K/mo SaaS</div><div class="tk"><span class="tk-d"></span>Creates its own tools</div><div class="tk"><span class="tk-d"></span>Tests with experiments</div><div class="tk"><span class="tk-d"></span>Agents teach agents</div><div class="tk"><span class="tk-d"></span>559x RPDC</div><div class="tk"><span class="tk-d"></span>GDPR + HIPAA safe</div><div class="tk"><span class="tk-d"></span>Login from anywhere</div><div class="tk"><span class="tk-d"></span>Data never leaves</div><div class="tk"><span class="tk-d"></span>Replaces $4K/mo SaaS</div><div class="tk"><span class="tk-d"></span>Creates its own tools</div><div class="tk"><span class="tk-d"></span>Tests with experiments</div><div class="tk"><span class="tk-d"></span>Agents teach agents</div><div class="tk"><span class="tk-d"></span>559x RPDC</div><div class="tk"><span class="tk-d"></span>GDPR + HIPAA safe</div><div class="tk"><span class="tk-d"></span>Login from anywhere</div><div class="tk"><span class="tk-d"></span>Data never leaves</div>
 </div></div>
 
-<!-- SAAS REPLACEMENT -->
-<section id="replace" class="reveal divider" style="background:var(--s1)">
-  <div class="stag">What it replaces</div>
-  <h2>Cancel <em>every</em> subscription.<br>Your Mac Mini does <span class="it">all of it.</span></h2>
-  <p class="sub">It connects to your existing tools, <strong>learns how YOU actually use them</strong>, then builds local versions that are smarter. Why smarter? Because your CRM can finally see what your helpdesk knows. <strong>Siloed SaaS can't do that.</strong></p>
-  <div class="grid grid-auto">
-    <div class="card"><div class="saas-old">CRM Platform &mdash; $800/mo</div><div class="saas-new">Sales + Outreach AI</div><div class="saas-save">$800/mo saved</div><div class="saas-desc">Pipeline, lead scoring, email sequences, deal intelligence. Learns from every interaction. Every deal updates every other agent automatically.</div><div class="saas-learn">Learns your ICP, win patterns, deal stages, objection handling</div></div>
-    <div class="card"><div class="saas-old">Helpdesk &mdash; $55/seat/mo</div><div class="saas-new">Support + IT Agent</div><div class="saas-save">$550/mo saved (10 seats)</div><div class="saas-desc">Ticket handling, auto-resolution, CSAT tracking, escalation. Resolves 73% of Tier 1 tickets before a human sees them. Never sleeps.</div><div class="saas-learn">Learns your product, common issues, customer tone preferences</div></div>
-    <div class="card"><div class="saas-old">Accounting &mdash; $80/mo</div><div class="saas-new">Finance Agent</div><div class="saas-save">$80/mo saved</div><div class="saas-desc">Invoice categorization, MRR/ARR, cash flow forecasting, anomaly detection. Knows your revenue because it sees your pipeline directly.</div><div class="saas-learn">Learns your chart of accounts, seasonal trends, vendor patterns</div></div>
-    <div class="card"><div class="saas-old">SEO Platform &mdash; $120/mo</div><div class="saas-new">SEO + Content Agent</div><div class="saas-save">$120/mo saved</div><div class="saas-desc">Keyword research, competitor analysis, rank tracking, content suggestions. Runs audits at 3am. Reports by breakfast.</div><div class="saas-learn">Learns your winning content patterns, competitor gaps, search intent</div></div>
-    <div class="card"><div class="saas-old">Ad Management &mdash; $2,000/mo</div><div class="saas-new">Omni-Outreach Agent</div><div class="saas-save">$2,000/mo saved</div><div class="saas-desc">Writes ad copy, tests variants, adjusts bids, generates landing pages. Uses ad platform APIs. The Mac Mini is the brain the agency never had.</div><div class="saas-learn">Learns your CPA targets, winning creatives, audience segments</div></div>
-    <div class="card"><div class="saas-old">AI Assistant &mdash; $30/seat/mo</div><div class="saas-new">Per-Employee AI</div><div class="saas-save">$300/mo saved (10 seats)</div><div class="saas-desc">Every employee gets AI that knows their role, tools, style, projects. CEO gets strategy. Sales gets pipeline. HR gets compliance. Not a generic chatbot.</div><div class="saas-learn">Learns each person's role, writing style, current projects, past wins</div></div>
-    <div class="card"><div class="saas-old">Project Mgmt &mdash; $8/seat/mo</div><div class="saas-new">QA + Task Agent</div><div class="saas-save">$80/mo saved</div><div class="saas-desc">Task tracking, sprint planning, bug filing with evidence, test generation, deployment monitoring. Self-healing QA that learns from every failure.</div><div class="saas-learn">Learns sprint velocity, common blockers, test coverage gaps</div></div>
-    <div class="card"><div class="saas-old">Email Marketing &mdash; $60/mo</div><div class="saas-new">Daily Fleet Agent</div><div class="saas-save">$60/mo saved</div><div class="saas-desc">5 autonomous email agents. Newsletters, drip campaigns, nurture sequences. Tracks opens, clicks, optimizes send times. Fires on cron every morning.</div><div class="saas-learn">Learns optimal send times, subject line patterns, segment behavior</div></div>
-    <div class="card"><div class="saas-old">HR Platform &mdash; $6/seat/mo</div><div class="saas-new">HR Agent</div><div class="saas-save">$60/mo saved</div><div class="saas-desc">Resume screening (100 in 3 minutes), interview scheduling, offer letters, policy Q&A, onboarding. 4.2 hours saved per hire.</div><div class="saas-learn">Learns hiring criteria, culture signals, onboarding friction points</div></div>
-  </div>
-  <div class="saas-total">
-    <div><div class="st-n" style="color:var(--red)">$4,050</div><div class="st-l">Your monthly SaaS spend</div></div>
-    <div><div class="st-n" style="color:var(--gold)">$15</div><div class="st-l">AONXI monthly cost</div></div>
-    <div><div class="st-n" style="color:var(--green)">$48,420</div><div class="st-l">Your annual savings</div></div>
-  </div>
-</section>
+<!-- ═══════ THE FULL ARCHITECTURE ═══════ -->
+<section id="arch" class="reveal">
+  <div class="tag">How it works &mdash; the full system</div>
+  <h2>Six layers. One Mac Mini.<br><em>Everything</em> your business needs.</h2>
+  <p class="sub">This is not a chatbot. This is a <b>complete operating system</b> that runs on a Mac Mini in your office. Six layers, from hardware to intelligence. Every layer makes every other layer smarter.</p>
 
-<!-- HOW IT LEARNS -->
-<section id="how" class="reveal divider">
-  <div class="stag">Self-learning engine</div>
-  <h2>It watches how you work.<br>Then <em>builds</em> the <span class="it">tools.</span></h2>
-  <p class="sub">Your Mac Mini connects to existing tools via API, <strong>observes your actual usage patterns</strong>, then builds local versions shaped to YOUR business. Not generic clones. Tools that know YOUR data.</p>
-  <div class="flow">
-    <div class="flow-step"><div class="flow-num">1</div><h4>Connect</h4><p>Link your existing SaaS tools via API. Read-only. Zero disruption to your current workflow.</p></div>
-    <div class="flow-step"><div class="flow-num">2</div><h4>Observe</h4><p>Mac Mini watches what features you actually use. Most companies use 18% of what they pay for.</p></div>
-    <div class="flow-step"><div class="flow-num">3</div><h4>Build</h4><p>Creates local versions tuned to YOUR usage. Your fields. Your workflows. Your terminology.</p></div>
-    <div class="flow-step"><div class="flow-num">4</div><h4>Replace</h4><p>Run side-by-side. Validate. Then cancel the subscription. Your data stays. Your tool stays.</p></div>
-  </div>
-  <div class="term" style="margin-top:48px">
-    <div class="term-bar"><div class="term-dot" style="background:#ff5f57"></div><div class="term-dot" style="background:#ffbd2e"></div><div class="term-dot" style="background:#28c840"></div><div class="term-title">aonxi &mdash; tool learning engine</div></div>
-    <div class="term-body">
-<span class="t-p">$</span> <span class="t-c">aonxi learn --source crm --mode observe</span><br><br>
-<span class="t-o">  Connecting to CRM API...</span><br>
-<span class="t-o">  Scanning 847 contacts, 23 deals, 12 email sequences</span><br>
-<span class="t-o">  Learning: pipeline stages, deal properties, templates</span><br>
-<span class="t-o">  Fields you actually use: <span class="t-h">17 of 94 (18%)</span></span><br>
-<span class="t-o">  Custom views analyzed: <span class="t-h">6 views</span></span><br><br>
-<span class="t-o">  <span class="t-h">INSIGHT:</span> You pay $800/mo for 82% features you never touch.</span><br>
-<span class="t-o">  <span class="t-h">INSIGHT:</span> Your deal stages can collapse from 7 to 4.</span><br>
-<span class="t-o">  <span class="t-h">INSIGHT:</span> 3 email sequences have 0% reply rate &mdash; flagged.</span><br><br>
-<span class="t-p">$</span> <span class="t-c">aonxi build --tool crm --from-observations</span><br><br>
-<span class="t-o">  Building local CRM from your patterns...</span><br>
-<span class="t-o">  Pipeline: 4 stages (your actual flow)</span><br>
-<span class="t-o">  Fields: 17 (used) + 3 AI-suggested</span><br>
-<span class="t-o">  Sequences: imported, dead ones removed</span><br>
-<span class="t-o">  <span class="t-w">BONUS:</span> CRM now shares data with Finance Agent</span><br>
-<span class="t-o">  <span class="t-w">BONUS:</span> Pipeline changes auto-update revenue forecasts</span><br><br>
-<span class="t-o">  <span class="t-h">Local CRM ready. Global access via tunnel. $0/month.</span></span>
+  <!-- LAYER 0: HARDWARE -->
+  <div class="t" style="margin-bottom:24px">
+    <div class="t-bar"><div class="t-dot" style="background:#ff5f57"></div><div class="t-dot" style="background:#ffbd2e"></div><div class="t-dot" style="background:#28c840"></div><div class="t-title">AONXI OS &mdash; Full Architecture (6 Layers)</div></div>
+    <div class="t-body">
+<span class="th">LAYER 0: HARDWARE</span> <span class="to">(what sits on your desk)</span><br>
+<span class="to">  Mac Mini M4 ($499) / M4 Pro ($1,399-$1,799) / Mac Studio M4 Max ($2,499)</span><br>
+<span class="to">  Apple Silicon unified memory = fastest LLM inference on earth</span><br>
+<span class="to">  Power: 18-100W = <span class="th">$2-$12/month electricity</span></span><br><br>
+
+<span class="th">LAYER 1: MODELS</span> <span class="to">(local LLMs, zero cloud)</span><br>
+<span class="to">  Ollama server &mdash; OpenAI-compatible REST API</span><br>
+<span class="to">  Qwen2.5-7B (16GB) / Qwen2.5-32B (24GB) / Qwen2.5-72B (64GB)</span><br>
+<span class="to">  Llama 3.3 70B / DeepSeek / any open model</span><br>
+<span class="to">  Inference cost: <span class="th">$0.00 per query</span> (electricity only)</span><br><br>
+
+<span class="th">LAYER 2: MEMORY</span> <span class="to">(the brain that never forgets)</span><br>
+<span class="to">  Super Brain &mdash; orchestrator connecting 50+ repos</span><br>
+<span class="to">  MemoryMesh &mdash; local SQLite + FTS5 full-text search</span><br>
+<span class="to">  Mem0 &mdash; semantic vector search (0.90 relevance scores)</span><br>
+<span class="to">  Every agent reads and writes here. <span class="th">Shared memory = shared intelligence</span></span><br><br>
+
+<span class="th">LAYER 3: AGENTS</span> <span class="to">(50+ autonomous workers)</span><br>
+<span class="to">  Outreach ($200K proved) | Sales (2.3x close rate) | HR (4.2hrs saved/hire)</span><br>
+<span class="to">  IT Helpdesk (73% auto-resolved) | Support (&lt;30s response) | Finance (100% auto)</span><br>
+<span class="to">  QA (24/7 self-healing) | Daily Fleet (5 email agents on cron)</span><br>
+<span class="to">  <span class="th">Each agent has one job, one metric, one outcome</span></span><br><br>
+
+<span class="th">LAYER 4: GATEWAY</span> <span class="to">(login from anywhere in the world)</span><br>
+<span class="to">  FastAPI server + JWT auth + role-based access control</span><br>
+<span class="to">  WebSocket streaming for real-time agent output</span><br>
+<span class="to">  Per-employee AI profiles (CEO gets strategy, Sales gets pipeline, HR gets compliance)</span><br>
+<span class="to">  Cloudflare Tunnel &mdash; HTTPS globally, <span class="th">free tier, zero port forwarding</span></span><br><br>
+
+<span class="th">LAYER 5: SAAS REPLACEMENT ENGINE</span> <span class="to">(learns your tools, builds local versions)</span><br>
+<span class="to">  Connect existing SaaS via API &mdash; read-only observation</span><br>
+<span class="to">  Watches which features you actually use (most companies: 18%)</span><br>
+<span class="to">  Builds local versions tuned to YOUR workflows</span><br>
+<span class="to">  Run side-by-side &rarr; validate &rarr; <span class="th">cancel the subscription</span></span><br><br>
+
+<span class="th">LAYER 6: INTELLIGENCE</span> <span class="to">(the system that gets smarter every day)</span><br>
+<span class="to">  Experiment tracking: every change = before/after with RPDC attribution</span><br>
+<span class="to">  13 causal links between agents (outreach.leads &rarr; sales.pipeline)</span><br>
+<span class="to">  Compound Intelligence Score (CIS): one number for the whole system</span><br>
+<span class="to">  Experiment leaderboard: <span class="th">know exactly which change drove which improvement</span></span>
     </div>
   </div>
-  <div style="margin-top:28px;padding:20px 24px;background:var(--gold-dim);border:1px solid var(--gold-b);border-radius:8px;text-align:center">
-    <div style="font-size:16px;font-weight:700;margin-bottom:6px">Why the local version is <span style="color:var(--gold)">smarter</span> than the original</div>
-    <div style="font-size:14px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.7;font-weight:300">Your CRM can't see your support tickets. Your helpdesk can't see your pipeline. Your accounting can't see your ad spend. <strong>Your Mac Mini sees everything.</strong> Every tool shares one brain. Cross-tool intelligence is impossible with siloed SaaS.</div>
-  </div>
+
+  <div class="box" style="text-align:center;font-size:14px;font-weight:600;color:var(--gold)">Every layer feeds every other layer. Models power agents. Agents generate data. Data feeds memory. Memory makes agents smarter. Intelligence measures everything. The system compounds.</div>
 </section>
 
-<!-- CALCULATOR -->
-<section id="calc" class="reveal divider">
-  <div class="stag">ROI Calculator</div>
-  <h2>How much are you<br><em>wasting</em> every month?</h2>
-  <p class="sub">Move the sliders. Watch the math. <strong>Every SaaS dollar is a dollar you never get back.</strong></p>
-  <div class="calc-box">
-    <div class="calc-grid">
-      <div class="calc-sliders">
-        <div class="calc-group"><div class="calc-lbl"><span>AI assistant seats</span><span class="calc-val" id="v-ai">10</span></div><div class="calc-price">ChatGPT / Claude / Copilot @ $30/user/mo</div><input type="range" id="s-ai" min="0" max="200" value="10"></div>
-        <div class="calc-group"><div class="calc-lbl"><span>CRM seats</span><span class="calc-val" id="v-crm">5</span></div><div class="calc-price">Sales platform @ $80/user/mo</div><input type="range" id="s-crm" min="0" max="100" value="5"></div>
-        <div class="calc-group"><div class="calc-lbl"><span>Helpdesk seats</span><span class="calc-val" id="v-help">5</span></div><div class="calc-price">Support platform @ $55/user/mo</div><input type="range" id="s-help" min="0" max="100" value="5"></div>
-        <div class="calc-group"><div class="calc-lbl"><span>Other monthly SaaS</span><span class="calc-val" id="v-other">$500</span></div><div class="calc-price">SEO, accounting, project mgmt, email, ads, etc.</div><input type="range" id="s-other" min="0" max="5000" value="500" step="50"></div>
-      </div>
-      <div>
-        <div class="calc-results">
-          <div class="cr"><div class="cr-n" style="color:var(--red)">$<span id="c-annual">12,660</span></div><div class="cr-l">You pay per year (SaaS)</div></div>
-          <div class="cr"><div class="cr-n" style="color:var(--gold)">$<span id="c-once">4,999</span></div><div class="cr-l">AONXI one-time cost</div></div>
-          <div class="cr cr-hl"><div class="cr-n" style="color:var(--text)"><span id="c-break">5</span> <span style="font-size:18px">months</span></div><div class="cr-l">Break-even. Free after this.</div></div>
-          <div class="cr cr-hl"><div class="cr-n" style="color:var(--green)">$<span id="c-save">32,821</span></div><div class="cr-l">3-year savings</div></div>
-        </div>
-        <div class="calc-msg" id="c-msg">You break even in <strong>5 months</strong>. Then it's free. Forever.</div>
-      </div>
+<!-- ═══════ HOW AGENTS ARE CREATED, TESTED, DEPLOYED, IMPROVED ═══════ -->
+<section class="reveal">
+  <div class="tag">The agent lifecycle</div>
+  <h2>Created. Tested. Deployed.<br><em>Improved.</em> Automatically.</h2>
+  <p class="sub">Every agent goes through the same lifecycle. The system creates them, tests them with real experiments, deploys them to production, and uses the results to make <b>every agent better</b>. No human intervention required.</p>
+
+  <div class="grid g4" style="margin-bottom:32px">
+    <div class="c" style="text-align:center"><div style="font-size:36px;font-weight:900;color:var(--gold);margin-bottom:8px">1</div><div style="font-size:15px;font-weight:700;margin-bottom:6px">Create</div><div style="font-size:12px;color:var(--muted);line-height:1.7">Brain detects a need: "support tickets rising on VPN issues." Creates an IT agent with VPN auto-diagnosis. Defines metrics: resolve rate, response time, escalation rate.</div></div>
+    <div class="c" style="text-align:center"><div style="font-size:36px;font-weight:900;color:var(--gold);margin-bottom:8px">2</div><div style="font-size:15px;font-weight:700;margin-bottom:6px">Test</div><div style="font-size:12px;color:var(--muted);line-height:1.7">Starts an experiment. Logs baseline metrics. Runs the agent on real tickets. Measures RPDC (revenue per dollar of cost). Every change tracked with before/after attribution.</div></div>
+    <div class="c" style="text-align:center"><div style="font-size:36px;font-weight:900;color:var(--gold);margin-bottom:8px">3</div><div style="font-size:15px;font-weight:700;margin-bottom:6px">Deploy</div><div style="font-size:12px;color:var(--muted);line-height:1.7">RPDC positive? Agent goes live. Connected to Super Brain shared memory. Accessible via gateway from anywhere. Human QC gate: nothing ships without approval.</div></div>
+    <div class="c" style="text-align:center"><div style="font-size:36px;font-weight:900;color:var(--gold);margin-bottom:8px">4</div><div style="font-size:15px;font-weight:700;margin-bottom:6px">Improve</div><div style="font-size:12px;color:var(--muted);line-height:1.7">Agent shares what it learns with every other agent. VPN patterns help HR onboarding. Outreach insights improve sales. <b>13 causal links. Compound intelligence. Forever.</b></div></div>
+  </div>
+
+  <div class="t">
+    <div class="t-bar"><div class="t-dot" style="background:#ff5f57"></div><div class="t-dot" style="background:#ffbd2e"></div><div class="t-dot" style="background:#28c840"></div><div class="t-title">agent lifecycle &mdash; live example</div></div>
+    <div class="t-body">
+<span class="tp">$</span> <span class="tc">python3 brain.py suggest it_helpdesk</span><br>
+<span class="to">  SUGGESTION: VPN ticket volume up 340% this week.</span><br>
+<span class="to">  Recommend: create VPN auto-diagnosis sub-agent.</span><br>
+<span class="to">  Estimated RPDC: 15x (25 tickets/day * $25 = $625/day, cost: $0.04/day)</span><br><br>
+
+<span class="tp">$</span> <span class="tc">python3 evals.py experiment start it_helpdesk "add VPN auto-diagnosis"</span><br>
+<span class="to">  EXPERIMENT STARTED: <span class="th">exp-it-0331-c8a2f1</span></span><br>
+<span class="to">  Baseline: 7 metrics captured</span><br>
+<span class="to">    auto_resolve_rate: 58%</span><br>
+<span class="to">    avg_resolution_time: 12 min</span><br>
+<span class="to">    escalation_rate: 22%</span><br><br>
+
+<span class="to"><span class="tb">  ... agent runs for 1 week on real tickets ...</span></span><br><br>
+
+<span class="tp">$</span> <span class="tc">python3 evals.py experiment end exp-it-0331-c8a2f1 "VPN auto-diag works"</span><br>
+<span class="to">  ATTRIBUTION CHAIN:</span><br>
+<span class="to">    Code: "add VPN auto-diagnosis"</span><br>
+<span class="to">    +-> auto_resolve_rate: 58% -> 73% (<span class="th">+25.9%</span>)</span><br>
+<span class="to">    +-> avg_resolution_time: 12 -> 4 min (<span class="th">+66.7%</span>)</span><br>
+<span class="to">    +-> escalation_rate: 22% -> 9% (<span class="th">+59.1%</span>)</span><br>
+<span class="to">    RPDC: 8.2x -> 19.4x (<span class="th">+11.2x</span>)</span><br><br>
+
+<span class="to">  CROSS-AGENT RIPPLE:</span><br>
+<span class="to">    it_helpdesk.auto_resolve (+25.9%) -> <span class="tb">hr.time_per_hire improves</span></span><br>
+<span class="to">    it_helpdesk.escalation (-59.1%) -> <span class="tb">support.resolution_rate improves</span></span><br><br>
+
+<span class="tp">$</span> <span class="tc">python3 evals.py leaderboard</span><br>
+<span class="to">  1. <span class="th">+23.8x</span> outreach  "switched to 1-paragraph emails"</span><br>
+<span class="to">  2. <span class="th">+11.2x</span> helpdesk  "add VPN auto-diagnosis"</span><br>
+<span class="to">  3. <span class="th">+8.2x</span>  sales     "pre-call company briefs"</span>
     </div>
   </div>
 </section>
 
-<!-- AGENTS -->
-<section id="agents" class="reveal divider">
-  <div class="stag">The agent family</div>
-  <h2>Every agent has one job.<br>One <em>number.</em></h2>
-  <p class="sub">Not chatbots. <strong>Autonomous employees</strong> that work 24/7, never take sick days, and teach each other what works.</p>
-  <div class="grid grid-auto">
-    <div class="card"><div class="ag-metric">$200K</div><div class="ag-name">Outreach Agent v8</div><div class="ag-role">Revenue Generation</div><div class="ag-desc">Finds buying intent, researches decision-makers, writes personalized emails. Human approves before send. Self-correcting every week.</div><div class="ag-proof">Replaces 2 SDRs ($130K/yr)</div></div>
-    <div class="card"><div class="ag-metric">73%</div><div class="ag-name">IT Helpdesk Agent</div><div class="ag-role">Ticket Resolution</div><div class="ag-desc">Auto-resolves passwords, VPN, access, troubleshooting. Escalates P0 with root cause analysis. Learns from every resolution.</div><div class="ag-proof">Resolved before human sees it</div></div>
-    <div class="card"><div class="ag-metric">2.3x</div><div class="ag-name">Sales Pipeline Agent</div><div class="ag-role">Deal Intelligence</div><div class="ag-desc">Company briefs before every call. 15-signal intent scoring. Close probability prediction. Surfaces hidden pipeline.</div><div class="ag-proof">Close rate improvement</div></div>
-    <div class="card"><div class="ag-metric">559x</div><div class="ag-name">RPDC Score</div><div class="ag-role">The One Metric</div><div class="ag-desc">Revenue Per Dollar of Cost. Every change is an experiment with before/after. Full attribution chain from code change to revenue impact.</div><div class="ag-proof">$1 spent = $559 generated</div></div>
-    <div class="card"><div class="ag-metric">&lt;30s</div><div class="ag-name">Support Agent</div><div class="ag-role">Customer Retention</div><div class="ag-desc">Instant response. Knows your product and policies. Tracks CSAT. Prevents churn before it happens. Escalates with full context.</div><div class="ag-proof">Response time 24/7/365</div></div>
-    <div class="card"><div class="ag-metric">100%</div><div class="ag-name">Finance Agent</div><div class="ag-role">P&L Intelligence</div><div class="ag-desc">Auto-categorizes invoices. Daily MRR/ARR. Anomaly detection. Board-ready reports. Knows your pipeline because it shares the brain.</div><div class="ag-proof">Invoices processed automatically</div></div>
-  </div>
-</section>
+<!-- ═══════ AGENTS TEACHING AGENTS ═══════ -->
+<section class="reveal" style="background:var(--s1)">
+  <div class="tag">Compound intelligence</div>
+  <h2>Every agent makes<br><em>every other</em> agent <i>smarter.</i></h2>
+  <p class="sub"><b>13 causal links</b> between 9 agent types. When one agent learns something, the insight flows through shared memory to every other agent. No SaaS tool can do this because no SaaS tool shares a brain.</p>
 
-<!-- FAMILY EFFECT -->
-<section class="reveal divider">
-  <div class="stag">Compound intelligence</div>
-  <h2>Agents that <span class="it">teach</span><br>each <em>other.</em></h2>
-  <p class="sub">When one agent learns something, every agent gets smarter. <strong>13 causal links</strong> between agents. Your SaaS tools can't do this because they don't share a brain.</p>
-  <div class="fam-grid">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
     <div>
-      <div class="fam-steps">
-        <div class="fam-step"><div class="fam-wk">WEEK 1</div><div><h4>Outreach discovers a pattern</h4><p>"Healthcare leads convert 3x on Tuesdays." Stored in shared memory.</p></div></div>
-        <div class="fam-step"><div class="fam-wk">WEEK 2</div><div><h4>Sales Agent adapts automatically</h4><p>Prioritizes healthcare follow-ups for Tuesdays. Close rates improve. Nobody programmed this.</p></div></div>
-        <div class="fam-step"><div class="fam-wk">WEEK 3</div><div><h4>Finance Agent predicts the spike</h4><p>Forecasts Tuesday revenue bumps. Board report auto-adjusts. Cash flow model updated.</p></div></div>
-        <div class="fam-step"><div class="fam-wk">WEEK 4</div><div><h4>Support Agent prepares</h4><p>Anticipates Tuesday onboarding surge. Pre-generates FAQ responses. CSAT stays at 9.5.</p></div></div>
+      <div style="display:flex;flex-direction:column">
+        <div style="display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);opacity:.5;min-width:60px">WEEK 1</div><div><div style="font-size:14px;font-weight:700;margin-bottom:4px">Outreach discovers a pattern</div><div style="font-size:13px;color:var(--muted);line-height:1.65">"Healthcare leads convert 3x on Tuesdays." Stored in Super Brain shared memory.</div></div></div>
+        <div style="display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);opacity:.5;min-width:60px">WEEK 2</div><div><div style="font-size:14px;font-weight:700;margin-bottom:4px">Sales Agent reads the insight, adapts</div><div style="font-size:13px;color:var(--muted);line-height:1.65">Prioritizes healthcare follow-ups for Tuesdays. Close rates improve. Nobody programmed this.</div></div></div>
+        <div style="display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);opacity:.5;min-width:60px">WEEK 3</div><div><div style="font-size:14px;font-weight:700;margin-bottom:4px">Finance Agent forecasts the spike</div><div style="font-size:13px;color:var(--muted);line-height:1.65">Predicts Tuesday revenue bumps. Board report auto-adjusts. Cash flow model updated.</div></div></div>
+        <div style="display:flex;gap:16px;padding:20px 0"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);opacity:.5;min-width:60px">WEEK 4</div><div><div style="font-size:14px;font-weight:700;margin-bottom:4px">Support Agent prepares for the wave</div><div style="font-size:13px;color:var(--muted);line-height:1.65">Anticipates Tuesday onboarding surge. Pre-generates FAQ responses. CSAT stays at 9.5.</div></div></div>
       </div>
-      <div class="fam-box">One insight. Four agents improved. Zero human work. Every week the gap widens. No SaaS stack can replicate this because no SaaS stack shares a brain.</div>
+      <div class="box" style="margin-top:20px;font-size:14px;color:var(--gold);font-weight:600;text-align:center">One insight. Four agents improved. Zero human work. This compounds every week.</div>
     </div>
-    <div>
-      <div class="term">
-        <div class="term-bar"><div class="term-dot" style="background:#ff5f57"></div><div class="term-dot" style="background:#ffbd2e"></div><div class="term-dot" style="background:#28c840"></div><div class="term-title">evals.py &mdash; experiment attribution</div></div>
-        <div class="term-body">
-<span class="t-p">$</span> <span class="t-c">python3 evals.py experiment end exp-out-0331</span><br><br>
-<span class="t-o">  ATTRIBUTION CHAIN:</span><br>
-<span class="t-o">  Code: "switched to 1-paragraph emails"</span><br>
-<span class="t-o">    |</span><br>
-<span class="t-o">    +-> reply_rate: 3.2% -> 5.1% (<span class="t-h">+59%</span>)</span><br>
-<span class="t-o">    +-> meetings: 8 -> 14 (<span class="t-h">+75%</span>)</span><br>
-<span class="t-o">    +-> human_qc: 45 -> 30 min (<span class="t-h">+33%</span>)</span><br>
-<span class="t-o">    |</span><br>
-<span class="t-o">    v</span><br>
-<span class="t-o">  RPDC: 32x -> 56x (<span class="t-h">+24x</span>)</span><br>
-<span class="t-o">  Revenue: <span class="t-h">+$6,000/month</span></span><br><br>
-<span class="t-o">  CROSS-AGENT RIPPLE:</span><br>
-<span class="t-o">    outreach.meetings -> <span class="t-b">sales.close_rate</span></span><br>
-<span class="t-o">    outreach.reply_rate -> <span class="t-b">sales.deal_size</span></span>
-        </div>
+    <div class="t">
+      <div class="t-bar"><div class="t-dot" style="background:#ff5f57"></div><div class="t-dot" style="background:#ffbd2e"></div><div class="t-dot" style="background:#28c840"></div><div class="t-title">13 causal links between agents</div></div>
+      <div class="t-body" style="font-size:11px">
+<span class="th">CROSS-AGENT CAUSAL MAP</span><br>
+<span class="to">============================================</span><br><br>
+<span class="to">outreach.leads_found ---------> <span class="tb">sales.pipeline_value</span></span><br>
+<span class="to">outreach.meetings_booked -----> <span class="tb">sales.close_rate</span></span><br>
+<span class="to">outreach.reply_rate ----------> <span class="tb">sales.avg_deal_size</span></span><br>
+<span class="to">qa.bugs_found ----------------> <span class="tb">support.resolution_rate</span></span><br>
+<span class="to">qa.tests_passed --------------> <span class="tb">helpdesk.auto_resolve_rate</span></span><br>
+<span class="to">brain.search_relevance -------> <span class="tb">outreach.reply_rate</span></span><br>
+<span class="to">brain.insights_shared --------> <span class="tb">outreach.meetings_booked</span></span><br>
+<span class="to">brain.patterns_detected ------> <span class="tb">qa.regression_catch_rate</span></span><br>
+<span class="to">hr.time_per_hire -------------> <span class="tb">helpdesk.tickets_resolved</span></span><br>
+<span class="to">daily_fleet.open_rate --------> <span class="tb">outreach.reply_rate</span></span><br>
+<span class="to">finance.forecast_accuracy ----> <span class="tb">sales.pipeline_value</span></span><br>
+<span class="to">support.csat_score -----------> <span class="tb">sales.close_rate</span></span><br>
+<span class="to">support.churn_prevented ------> <span class="tb">finance.forecast_accuracy</span></span><br><br>
+<span class="th">When source improves, target improves.</span><br>
+<span class="th">Measured. Timestamped. Attributed.</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COMPLIANCE -->
-<section class="reveal divider" style="background:var(--s1)">
-  <div class="stag">Data sovereignty</div>
-  <h2>Your data <em>never</em><br>leaves your building.</h2>
-  <p class="sub">Every SaaS tool sends your data to someone else's cloud. <strong>AONXI keeps it on your desk.</strong> Access from anywhere via encrypted tunnel. Data stays local.</p>
-  <div class="grid grid-3">
-    <div class="card comp-card" style="text-align:center"><div class="comp-badge">GDPR</div><h3>Full Compliance</h3><p>Data in your jurisdiction. No third-party processing. Fines up to 4% of revenue? Not your concern.</p></div>
-    <div class="card comp-card" style="text-align:center"><div class="comp-badge">HIPAA</div><h3>Patient Data Safe</h3><p>PHI never leaves your building. No BAA needed. No cloud vendor trust required.</p></div>
-    <div class="card comp-card" style="text-align:center"><div class="comp-badge">SOC 2</div><h3>Audit-Ready</h3><p>Hardware access control. AES-256 at rest. Zero third-party exposure. One-page audit.</p></div>
+<!-- ═══════ WHAT IT REPLACES ═══════ -->
+<section id="replace" class="reveal">
+  <div class="tag">SaaS replacement</div>
+  <h2>It learns your tools.<br>Builds <em>local versions.</em><br>You cancel the <i>subscriptions.</i></h2>
+  <p class="sub">Connects via API. Watches which features you actually use. Builds local versions tuned to YOUR workflows. Why are they <b>better</b>? Because your CRM can finally see what your helpdesk knows.</p>
+
+  <div class="grid ga">
+    <div class="c"><div style="font-size:11px;color:var(--red);font-weight:600;text-decoration:line-through;opacity:.7;font-family:'JetBrains Mono',monospace">CRM &mdash; $800/mo</div><div style="font-size:17px;font-weight:800;margin:2px 0">Sales + Outreach AI</div><div style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:12px">$800/mo saved</div><div style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:8px">Pipeline, lead scoring, email sequences, deal intelligence. Every deal updates every other agent.</div><div style="font-size:11px;color:var(--blue);font-weight:500">Learns: your ICP, win patterns, deal stages</div></div>
+    <div class="c"><div style="font-size:11px;color:var(--red);font-weight:600;text-decoration:line-through;opacity:.7;font-family:'JetBrains Mono',monospace">Helpdesk &mdash; $55/seat/mo</div><div style="font-size:17px;font-weight:800;margin:2px 0">Support + IT Agent</div><div style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:12px">$550/mo saved (10 seats)</div><div style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:8px">Ticket handling, auto-resolution, CSAT tracking. Resolves 73% of Tier 1 before a human sees it.</div><div style="font-size:11px;color:var(--blue);font-weight:500">Learns: your product, common issues, tone</div></div>
+    <div class="c"><div style="font-size:11px;color:var(--red);font-weight:600;text-decoration:line-through;opacity:.7;font-family:'JetBrains Mono',monospace">Accounting &mdash; $80/mo</div><div style="font-size:17px;font-weight:800;margin:2px 0">Finance Agent</div><div style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:12px">$80/mo saved</div><div style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:8px">Invoices, MRR/ARR, forecasting, anomalies. Knows your pipeline because it shares the brain.</div><div style="font-size:11px;color:var(--blue);font-weight:500">Learns: your chart of accounts, trends</div></div>
+    <div class="c"><div style="font-size:11px;color:var(--red);font-weight:600;text-decoration:line-through;opacity:.7;font-family:'JetBrains Mono',monospace">Ad Management &mdash; $2,000/mo</div><div style="font-size:17px;font-weight:800;margin:2px 0">Omni-Outreach Agent</div><div style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:12px">$2,000/mo saved</div><div style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:8px">Ad copy, bid management, landing pages, A/B tests. Uses ad platform APIs. Mac Mini is the brain.</div><div style="font-size:11px;color:var(--blue);font-weight:500">Learns: CPA targets, winning creatives</div></div>
+    <div class="c"><div style="font-size:11px;color:var(--red);font-weight:600;text-decoration:line-through;opacity:.7;font-family:'JetBrains Mono',monospace">SEO Platform &mdash; $120/mo</div><div style="font-size:17px;font-weight:800;margin:2px 0">SEO + Content Agent</div><div style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:12px">$120/mo saved</div><div style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:8px">Keyword research, competitor analysis, rank tracking. Runs audits at 3am. Reports by breakfast.</div><div style="font-size:11px;color:var(--blue);font-weight:500">Learns: winning content, competitor gaps</div></div>
+    <div class="c"><div style="font-size:11px;color:var(--red);font-weight:600;text-decoration:line-through;opacity:.7;font-family:'JetBrains Mono',monospace">AI Assistants &mdash; $30/seat/mo</div><div style="font-size:17px;font-weight:800;margin:2px 0">Per-Employee AI</div><div style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:12px">$300/mo saved (10 seats)</div><div style="font-size:12px;color:var(--muted);line-height:1.7;margin-bottom:8px">Every employee gets role-tuned AI. CEO: strategy. Sales: pipeline. HR: compliance. Not a generic chatbot.</div><div style="font-size:11px;color:var(--blue);font-weight:500">Learns: each person's role, style, projects</div></div>
+  </div>
+
+  <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--s2);border:1.5px solid var(--gb);border-radius:10px;text-align:center;padding:32px">
+    <div><div style="font-size:36px;font-weight:900;color:var(--red);line-height:1;margin-bottom:4px">$4,050</div><div style="font-size:11px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.04em">Your monthly SaaS</div></div>
+    <div><div style="font-size:36px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:4px">$12</div><div style="font-size:11px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.04em">AONXI monthly (electricity)</div></div>
+    <div><div style="font-size:36px;font-weight:900;color:var(--green);line-height:1;margin-bottom:4px">$48,456</div><div style="font-size:11px;color:var(--dim);font-weight:600;text-transform:uppercase;letter-spacing:.04em">Annual savings</div></div>
   </div>
 </section>
 
-<!-- FULL TRANSPARENT COST BREAKDOWN -->
-<section class="reveal divider">
-  <div class="stag">Full transparency</div>
-  <h2>Every dollar.<br><em>Accounted for.</em></h2>
-  <p class="sub">No hidden costs. No surprise fees. Here's exactly what you pay, what it costs to run, and what you save. <strong>We show you everything because the math sells itself.</strong></p>
+<!-- ═══════ EVALS + RPDC ═══════ -->
+<section id="evals" class="reveal">
+  <div class="tag">Evaluation engine</div>
+  <h2>The <em>ONE</em> metric:<br>Revenue per dollar <i>spent.</i></h2>
+  <p class="sub"><b>RPDC = Revenue / (Inference Cost + Human QC Cost).</b> Every change is an experiment. Every experiment has before/after. You know exactly which change drove which improvement. No guessing. Numbers.</p>
 
-  <!-- Cloud AI inference comparison -->
-  <h3 style="font-size:18px;font-weight:800;margin-bottom:20px">Inference cost: Cloud API vs Your Mac Mini</h3>
-  <div class="tbl-wrap" style="margin-bottom:48px">
+  <div class="grid g4" style="margin-bottom:32px">
+    <div class="c" style="text-align:center"><div style="font-size:44px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:6px">559x</div><div style="font-size:14px;font-weight:700;margin-bottom:4px">RPDC</div><div style="font-size:12px;color:var(--muted)">$14K revenue / $25 cost. Every $1 generates $559.</div></div>
+    <div class="c" style="text-align:center"><div style="font-size:44px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:6px">45</div><div style="font-size:14px;font-weight:700;margin-bottom:4px">Metrics Tracked</div><div style="font-size:12px;color:var(--muted)">Across 9 agent types. All revenue-weighted.</div></div>
+    <div class="c" style="text-align:center"><div style="font-size:44px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:6px">13</div><div style="font-size:14px;font-weight:700;margin-bottom:4px">Causal Links</div><div style="font-size:12px;color:var(--muted)">Cross-agent cause-effect. Measured automatically.</div></div>
+    <div class="c" style="text-align:center"><div style="font-size:44px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:6px">CIS</div><div style="font-size:14px;font-weight:700;margin-bottom:4px">Compound Score</div><div style="font-size:12px;color:var(--muted)">One number for the whole system. Updated daily.</div></div>
+  </div>
+
+  <!-- Inference cost comparison -->
+  <h3 style="font-size:16px;font-weight:800;margin-bottom:16px">Cloud API cost vs your Mac Mini</h3>
+  <div class="tw" style="margin-bottom:32px">
     <table class="tbl">
-      <thead><tr><th>Provider</th><th>Model</th><th>Input / 1M tokens</th><th>Output / 1M tokens</th><th>1,000 queries/day cost</th></tr></thead>
+      <thead><tr><th>Provider</th><th>Model</th><th>Input/1M tokens</th><th>Output/1M tokens</th><th>1K queries/day</th></tr></thead>
       <tbody>
-        <tr><td>Cloud API</td><td class="bad">Claude Sonnet</td><td class="bad">$3.00</td><td class="bad">$15.00</td><td class="bad">~$18/day = $540/mo</td></tr>
-        <tr><td>Cloud API</td><td class="bad">Claude Opus</td><td class="bad">$15.00</td><td class="bad">$75.00</td><td class="bad">~$90/day = $2,700/mo</td></tr>
-        <tr><td>Cloud API</td><td class="bad">GPT-4o</td><td class="bad">$2.50</td><td class="bad">$10.00</td><td class="bad">~$12.50/day = $375/mo</td></tr>
-        <tr><td style="color:var(--gold);font-weight:700">Your Mac Mini</td><td class="good">Qwen 72B (local)</td><td class="good">$0.00</td><td class="good">$0.00</td><td class="good">~$0.15/day = $4.60/mo</td></tr>
+        <tr><td>Cloud API</td><td class="r">Claude Opus</td><td class="r">$15.00</td><td class="r">$75.00</td><td class="r">~$2,700/mo</td></tr>
+        <tr><td>Cloud API</td><td class="r">Claude Sonnet</td><td class="r">$3.00</td><td class="r">$15.00</td><td class="r">~$540/mo</td></tr>
+        <tr><td>Cloud API</td><td class="r">GPT-4o</td><td class="r">$2.50</td><td class="r">$10.00</td><td class="r">~$375/mo</td></tr>
+        <tr><td style="font-weight:700;color:var(--gold)">Your Mac Mini</td><td class="g">Qwen 72B (local)</td><td class="g">$0.00</td><td class="g">$0.00</td><td class="g">~$4.60/mo electricity</td></tr>
       </tbody>
     </table>
   </div>
-  <div style="padding:16px 20px;background:var(--gold-dim);border:1px solid var(--gold-b);border-radius:8px;font-size:13px;color:var(--gold);font-weight:500;margin-bottom:48px;text-align:center">Local inference cost is electricity only: Mac Studio M4 Max draws ~100W under load. At $0.16/kWh, that's $0.15/day for unlimited queries. Cloud API for the same load: $375-$2,700/month.</div>
 
-  <!-- 3-year comparison with REAL numbers -->
-  <h3 style="font-size:18px;font-weight:800;margin-bottom:20px">3-year total cost: SaaS stack vs AONXI (25-person company)</h3>
-  <div class="tbl-wrap">
-    <table class="tbl">
-      <thead><tr><th>Line item</th><th>SaaS (annual)</th><th>AONXI</th></tr></thead>
-      <tbody>
-        <tr><td>AI assistants (25 seats @ $30/mo)</td><td class="bad">$9,000/yr</td><td class="good">$0 (local Qwen 72B)</td></tr>
-        <tr><td>CRM platform (10 seats @ $80/mo)</td><td class="bad">$9,600/yr</td><td class="good">$0 (Sales Agent)</td></tr>
-        <tr><td>Helpdesk (10 seats @ $55/mo)</td><td class="bad">$6,600/yr</td><td class="good">$0 (Support Agent)</td></tr>
-        <tr><td>Marketing + SEO + Ads</td><td class="bad">$25,440/yr</td><td class="good">$0 (Omni-Outreach)</td></tr>
-        <tr><td>Accounting + PM + HR + Email</td><td class="bad">$3,360/yr</td><td class="good">$0 (Finance/HR/QA Agents)</td></tr>
-        <tr><td>Cloud API inference (1K queries/day)</td><td class="bad">$4,500/yr</td><td class="good">$0 (local inference)</td></tr>
-        <tr><td>Hardware (Mac Studio M4 Max 64GB)</td><td>$0 (not applicable)</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600">$2,499 one-time</td></tr>
-        <tr><td>AONXI setup + deployment fee</td><td>$0</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600">$2,500 one-time</td></tr>
-        <tr><td>Electricity (Mac Studio 24/7)</td><td>$0 (included in cloud)</td><td style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600">$140/yr ($12/mo)</td></tr>
-        <tr><td>Cloudflare Tunnel (global access)</td><td>$0</td><td class="good">$0 (free tier)</td></tr>
-        <tr><td>Year 2 &amp; 3 recurring cost</td><td class="bad">Same $58,500/yr</td><td class="good">$140/yr electricity only</td></tr>
-        <tr class="total"><td>3-Year Total</td><td class="bad">$175,500</td><td class="good">$5,279</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div style="margin-top:20px;font-size:14px;color:var(--muted);text-align:center;font-weight:500">3-year savings: <span style="color:var(--gold);font-weight:800;font-size:18px">$170,221</span> &mdash; and you own the hardware, the data, and the intelligence.</div>
+  <div class="box" style="text-align:center;font-size:14px;color:var(--gold);font-weight:600">Industry eval tools benchmark models in labs. We benchmark outcomes in production. They measure "which model is better." We measure "which change made the business more money." That's the difference.</div>
 </section>
 
-<!-- HARDWARE — REAL APPLE PRICES -->
-<section class="reveal divider" id="hardware">
-  <div class="stag">Hardware — real Apple prices</div>
-  <h2>Actual specs.<br><em>Actual</em> prices.</h2>
-  <p class="sub">These are real Apple retail prices. No markup. We charge a separate setup fee for deployment, not inflated hardware costs. <strong>You could buy the Mac yourself &mdash; we just make it smart.</strong></p>
-  <div class="grid grid-4">
-    <div class="hw">
-      <div class="hw-name">Mac Mini M4</div><div class="hw-price">$499 &mdash; Apple retail</div>
-      <div class="hw-specs">
-        <div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">16GB unified</span></div>
-        <div class="hw-row"><span class="hw-k">Storage</span><span class="hw-v">256GB SSD</span></div>
-        <div class="hw-row"><span class="hw-k">Best model</span><span class="hw-v">Qwen 7B-14B Q4</span></div>
-        <div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">1-2 agents</span></div>
-        <div class="hw-row"><span class="hw-k">Power draw</span><span class="hw-v">~18W avg</span></div>
-        <div class="hw-row"><span class="hw-k">Electricity</span><span class="hw-v hw-vg">~$2/mo</span></div>
-      </div>
-    </div>
-    <div class="hw">
-      <div class="hw-name">Mac Mini M4 Pro</div><div class="hw-price">$1,399-$1,799 &mdash; Apple retail</div>
-      <div class="hw-specs">
-        <div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">24-48GB unified</span></div>
-        <div class="hw-row"><span class="hw-k">Storage</span><span class="hw-v">512GB SSD</span></div>
-        <div class="hw-row"><span class="hw-k">Best model</span><span class="hw-v">Qwen 32B (24GB) / 72B Q4 (48GB)</span></div>
-        <div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">3-5 agents</span></div>
-        <div class="hw-row"><span class="hw-k">Power draw</span><span class="hw-v">~45W avg</span></div>
-        <div class="hw-row"><span class="hw-k">Electricity</span><span class="hw-v hw-vg">~$4/mo</span></div>
-      </div>
-    </div>
-    <div class="hw best">
-      <div class="hw-tag">RECOMMENDED</div>
-      <div class="hw-name">Mac Studio M4 Max</div><div class="hw-price">$2,499 (64GB) &mdash; Apple retail</div>
-      <div class="hw-specs">
-        <div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v hw-vg">64GB unified</span></div>
-        <div class="hw-row"><span class="hw-k">Storage</span><span class="hw-v">1TB SSD</span></div>
-        <div class="hw-row"><span class="hw-k">Best model</span><span class="hw-v hw-vg">Qwen 72B / Llama 70B Q4</span></div>
-        <div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v hw-vg">Full fleet (6+)</span></div>
-        <div class="hw-row"><span class="hw-k">Power draw</span><span class="hw-v">~100W under load</span></div>
-        <div class="hw-row"><span class="hw-k">Electricity</span><span class="hw-v hw-vg">~$12/mo</span></div>
-      </div>
-    </div>
-    <div class="hw">
-      <div class="hw-name">Mac Studio M4 Ultra</div><div class="hw-price">$3,999 (192GB) &mdash; Apple retail</div>
-      <div class="hw-specs">
-        <div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">192GB unified</span></div>
-        <div class="hw-row"><span class="hw-k">Storage</span><span class="hw-v">1TB SSD</span></div>
-        <div class="hw-row"><span class="hw-k">Best model</span><span class="hw-v">Any model, any size, full precision</span></div>
-        <div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">Unlimited + multi-model</span></div>
-        <div class="hw-row"><span class="hw-k">Power draw</span><span class="hw-v">~150W under load</span></div>
-        <div class="hw-row"><span class="hw-k">Electricity</span><span class="hw-v hw-vg">~$18/mo</span></div>
-      </div>
-    </div>
+<!-- ═══════ DATA SOVEREIGNTY ═══════ -->
+<section class="reveal" style="background:var(--s1)">
+  <div class="tag">Data sovereignty</div>
+  <h2>Your data <em>never</em> leaves.<br>Access from <i>everywhere.</i></h2>
+  <p class="sub">Cloudflare Tunnel (free tier) gives you HTTPS global access. Data stays on your hardware. <b>Login from any device, any country. Data stays in your building.</b></p>
+  <div class="grid g3">
+    <div class="c" style="text-align:center"><div style="font-size:28px;font-weight:800;color:var(--gold);margin-bottom:8px;font-family:'JetBrains Mono',monospace">GDPR</div><div style="font-size:15px;font-weight:700;margin-bottom:6px">Full Compliance</div><div style="font-size:13px;color:var(--muted);line-height:1.65">Data in your jurisdiction. No third-party processing. GDPR fines (4% of revenue) aren't your problem.</div></div>
+    <div class="c" style="text-align:center"><div style="font-size:28px;font-weight:800;color:var(--gold);margin-bottom:8px;font-family:'JetBrains Mono',monospace">HIPAA</div><div style="font-size:15px;font-weight:700;margin-bottom:6px">Patient Data Safe</div><div style="font-size:13px;color:var(--muted);line-height:1.65">PHI never leaves. No BAA negotiation. Your hardware, your control.</div></div>
+    <div class="c" style="text-align:center"><div style="font-size:28px;font-weight:800;color:var(--gold);margin-bottom:8px;font-family:'JetBrains Mono',monospace">SOC 2</div><div style="font-size:15px;font-weight:700;margin-bottom:6px">Audit-Ready</div><div style="font-size:13px;color:var(--muted);line-height:1.65">AES-256 at rest. Zero third-party exposure. One-page security audit.</div></div>
   </div>
 </section>
 
-<!-- PRICING — FULLY TRANSPARENT -->
-<section class="reveal divider" id="pricing">
-  <div class="stag">Pricing &mdash; fully transparent</div>
-  <h2>What you pay.<br><em>Exactly.</em></h2>
-  <p class="sub">Hardware at Apple retail. Setup fee for our work. Electricity for running. <strong>That's it. No hidden costs. No recurring fees. No per-seat pricing.</strong></p>
-  <div class="grid grid-4">
-    <div class="pc">
-      <div class="pc-tier">SOLO</div>
-      <div class="pc-amt">$1,999</div><div class="pc-per">one-time total</div>
-      <div class="pc-div"></div>
-      <div class="pc-feats">
-        <div class="pf"><span class="pf-ok">=</span>Mac Mini M4 16GB ($499)</div>
-        <div class="pf"><span class="pf-ok">=</span>AONXI setup + deploy ($1,500)</div>
-        <div class="pf"><span class="pf-ok">+</span>1-2 agents deployed</div>
-        <div class="pf"><span class="pf-ok">+</span>Qwen 7B-14B local</div>
-        <div class="pf"><span class="pf-ok">+</span>Cloudflare Tunnel (free)</div>
-        <div class="pf"><span class="pf-ok">+</span>Super Brain connected</div>
-        <div class="pf"><span class="pf-ok">+</span>30-day money-back</div>
+<!-- ═══════ PRICING — ONE SECTION, FULLY TRANSPARENT ═══════ -->
+<section id="pricing" class="reveal">
+  <div class="tag">Pricing &mdash; fully transparent</div>
+  <h2>Hardware at Apple retail.<br>Setup fee for our work.<br><em>That's it.</em></h2>
+  <p class="sub">No hidden costs. No recurring fees. No per-seat pricing. <b>Hardware ships from Apple. We make it smart. You own everything.</b></p>
+
+  <div class="grid g4">
+    <div class="c">
+      <div style="font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.15em;margin-bottom:10px">SOLO</div>
+      <div style="font-size:42px;font-weight:900;line-height:1">$1,999</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:16px">one-time total</div>
+      <div style="height:1px;background:var(--border);margin-bottom:14px"></div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--muted);margin-bottom:16px">
+        <div><span style="color:var(--gold);font-weight:700">=</span> Mac Mini M4 16GB <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)">($499 Apple retail)</span></div>
+        <div><span style="color:var(--gold);font-weight:700">=</span> AONXI setup + deploy <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)">($1,500)</span></div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> 1-2 agents (Qwen 7B-14B)</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> Super Brain + tunnel</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> 30-day money-back</div>
       </div>
-      <div style="font-size:11px;color:var(--dim);margin-bottom:12px;font-family:'JetBrains Mono',monospace">Ongoing: ~$2/mo electricity</div>
-      <a href="#start" class="pc-btn secondary">Get started</a>
+      <div style="font-size:11px;color:var(--dim);font-family:'JetBrains Mono',monospace;margin-bottom:14px">Ongoing: ~$2/mo electricity</div>
+      <a href="#cta" style="display:block;text-align:center;padding:12px;border:1px solid var(--border2);border-radius:6px;font-size:13px;font-weight:700;color:var(--muted);transition:all .2s">Get started</a>
     </div>
-    <div class="pc">
-      <div class="pc-tier">STARTUP</div>
-      <div class="pc-amt">$3,899</div><div class="pc-per">one-time total</div>
-      <div class="pc-div"></div>
-      <div class="pc-feats">
-        <div class="pf"><span class="pf-ok">=</span>Mac Mini M4 Pro 24GB ($1,399)</div>
-        <div class="pf"><span class="pf-ok">=</span>AONXI setup + deploy ($2,500)</div>
-        <div class="pf"><span class="pf-ok">+</span>3-5 agents deployed</div>
-        <div class="pf"><span class="pf-ok">+</span>Qwen 32B local</div>
-        <div class="pf"><span class="pf-ok">+</span>Cross-agent memory</div>
-        <div class="pf"><span class="pf-ok">+</span>Tool learning engine</div>
-        <div class="pf"><span class="pf-ok">+</span>30-day money-back</div>
+    <div class="c">
+      <div style="font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.15em;margin-bottom:10px">STARTUP</div>
+      <div style="font-size:42px;font-weight:900;line-height:1">$3,899</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:16px">one-time total</div>
+      <div style="height:1px;background:var(--border);margin-bottom:14px"></div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--muted);margin-bottom:16px">
+        <div><span style="color:var(--gold);font-weight:700">=</span> Mac Mini M4 Pro 24GB <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)">($1,399)</span></div>
+        <div><span style="color:var(--gold);font-weight:700">=</span> AONXI setup + deploy <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)">($2,500)</span></div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> 3-5 agents (Qwen 32B)</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> Cross-agent memory</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> Tool learning engine</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> 30-day money-back</div>
       </div>
-      <div style="font-size:11px;color:var(--dim);margin-bottom:12px;font-family:'JetBrains Mono',monospace">Ongoing: ~$4/mo electricity</div>
-      <a href="#start" class="pc-btn secondary">Get started</a>
+      <div style="font-size:11px;color:var(--dim);font-family:'JetBrains Mono',monospace;margin-bottom:14px">Ongoing: ~$4/mo electricity</div>
+      <a href="#cta" style="display:block;text-align:center;padding:12px;border:1px solid var(--border2);border-radius:6px;font-size:13px;font-weight:700;color:var(--muted);transition:all .2s">Get started</a>
     </div>
-    <div class="pc feat">
-      <div class="pc-tag">BEST VALUE</div>
-      <div class="pc-tier">BUSINESS</div>
-      <div class="pc-amt">$7,499</div><div class="pc-per">one-time total</div>
-      <div class="pc-div"></div>
-      <div class="pc-feats">
-        <div class="pf"><span class="pf-ok">=</span>Mac Studio M4 Max 64GB ($2,499)</div>
-        <div class="pf"><span class="pf-ok">=</span>AONXI setup + deploy ($5,000)</div>
-        <div class="pf"><span class="pf-ok">+</span>Full agent fleet (6+)</div>
-        <div class="pf"><span class="pf-ok">+</span>Qwen 72B / Llama 70B local</div>
-        <div class="pf"><span class="pf-ok">+</span>ALL SaaS tools replaced</div>
-        <div class="pf"><span class="pf-ok">+</span>Experiment attribution</div>
-        <div class="pf"><span class="pf-ok">+</span>Custom agent development</div>
-        <div class="pf"><span class="pf-ok">+</span>30-day money-back</div>
+    <div class="c c-hl">
+      <div style="position:absolute;top:0;right:16px;background:var(--gold);color:var(--bg);font-size:9px;font-weight:800;padding:3px 12px;border-radius:0 0 6px 6px;letter-spacing:.08em">BEST VALUE</div>
+      <div style="font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.15em;margin-bottom:10px">BUSINESS</div>
+      <div style="font-size:42px;font-weight:900;line-height:1">$7,499</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:16px">one-time total</div>
+      <div style="height:1px;background:var(--border);margin-bottom:14px"></div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--muted);margin-bottom:16px">
+        <div><span style="color:var(--gold);font-weight:700">=</span> Mac Studio M4 Max 64GB <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)">($2,499)</span></div>
+        <div><span style="color:var(--gold);font-weight:700">=</span> AONXI setup + deploy <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)">($5,000)</span></div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> Full fleet (Qwen 72B / Llama 70B)</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> ALL SaaS tools replaced</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> Experiment attribution engine</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> Custom agent development</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> 30-day money-back</div>
       </div>
-      <div style="font-size:11px;color:var(--dim);margin-bottom:12px;font-family:'JetBrains Mono',monospace">Ongoing: ~$12/mo electricity</div>
-      <a href="#start" class="pc-btn primary">Get started</a>
+      <div style="font-size:11px;color:var(--dim);font-family:'JetBrains Mono',monospace;margin-bottom:14px">Ongoing: ~$12/mo electricity</div>
+      <a href="#cta" style="display:block;text-align:center;padding:12px;background:var(--gold);border-radius:6px;font-size:13px;font-weight:700;color:var(--bg);transition:all .2s">Get started</a>
     </div>
-    <div class="pc">
-      <div class="pc-tier">ENTERPRISE</div>
-      <div class="pc-amt">$14,999+</div><div class="pc-per">one-time total</div>
-      <div class="pc-div"></div>
-      <div class="pc-feats">
-        <div class="pf"><span class="pf-ok">=</span>Mac Studio M4 Ultra 192GB ($3,999+)</div>
-        <div class="pf"><span class="pf-ok">=</span>AONXI setup + deploy ($11,000+)</div>
-        <div class="pf"><span class="pf-ok">+</span>Unlimited agents</div>
-        <div class="pf"><span class="pf-ok">+</span>Any model, any size</div>
-        <div class="pf"><span class="pf-ok">+</span>Department-siloed AI</div>
-        <div class="pf"><span class="pf-ok">+</span>On-site deployment</div>
-        <div class="pf"><span class="pf-ok">+</span>Source code access</div>
-        <div class="pf"><span class="pf-ok">+</span>Priority support</div>
+    <div class="c">
+      <div style="font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.15em;margin-bottom:10px">ENTERPRISE</div>
+      <div style="font-size:42px;font-weight:900;line-height:1">$14,999<span style="font-size:18px;font-weight:500">+</span></div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:16px">one-time total</div>
+      <div style="height:1px;background:var(--border);margin-bottom:14px"></div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--muted);margin-bottom:16px">
+        <div><span style="color:var(--gold);font-weight:700">=</span> Mac Studio M4 Ultra 192GB <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)">($3,999+)</span></div>
+        <div><span style="color:var(--gold);font-weight:700">=</span> AONXI full deploy <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)">($11,000+)</span></div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> Unlimited agents, any model</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> Department-siloed AI</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> On-site deployment</div>
+        <div><span style="color:var(--gold);font-weight:700">+</span> Source code access</div>
       </div>
-      <div style="font-size:11px;color:var(--dim);margin-bottom:12px;font-family:'JetBrains Mono',monospace">Ongoing: ~$18/mo electricity</div>
-      <a href="#start" class="pc-btn secondary">Contact us</a>
+      <div style="font-size:11px;color:var(--dim);font-family:'JetBrains Mono',monospace;margin-bottom:14px">Ongoing: ~$18/mo electricity</div>
+      <a href="#cta" style="display:block;text-align:center;padding:12px;border:1px solid var(--border2);border-radius:6px;font-size:13px;font-weight:700;color:var(--muted);transition:all .2s">Contact us</a>
     </div>
   </div>
-  <div style="margin-top:28px;padding:20px 24px;background:var(--s2);border:1px solid var(--border2);border-radius:8px">
-    <div style="font-size:14px;font-weight:700;margin-bottom:8px">What's in the setup fee?</div>
-    <div style="font-size:13px;color:var(--muted);line-height:1.8">Remote SSH deployment of Ollama + models + AONXI gateway + Cloudflare Tunnel + agent fleet + Super Brain + MemoryMesh + per-employee AI profiles + SaaS tool observation + all integrations. Takes 2-4 hours. You watch if you want. We handle everything. Hardware ships directly from Apple to you.</div>
+
+  <div style="margin-top:24px;padding:18px 24px;background:var(--s2);border:1px solid var(--border2);border-radius:8px">
+    <div style="font-size:14px;font-weight:700;margin-bottom:6px">What's in the setup fee?</div>
+    <div style="font-size:13px;color:var(--muted);line-height:1.8">Remote deployment: Ollama + models + AONXI gateway + Cloudflare Tunnel + agent fleet + Super Brain + MemoryMesh + per-employee profiles + SaaS tool observation + all integrations. 2-4 hours. Hardware ships from Apple directly to you.</div>
+  </div>
+
+  <!-- 30-day guarantee -->
+  <div style="max-width:640px;margin:48px auto 0;text-align:center;padding:48px 40px;background:var(--s1);border:1.5px solid var(--gb);border-radius:14px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(240,180,41,.05),transparent);pointer-events:none"></div>
+    <div style="font-size:56px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:14px">30</div>
+    <div style="font-size:26px;font-weight:900;margin-bottom:12px">Day <em style="font-style:normal;color:var(--gold)">money-back</em> guarantee.</div>
+    <div style="font-size:15px;color:var(--muted);line-height:1.8;font-weight:300">Agents not running? Tools not replaced? Full refund. Hardware and setup. No questions.</div>
   </div>
 </section>
 
-<!-- GUARANTEE -->
-<section class="reveal" style="border-bottom:none;padding-top:40px;padding-bottom:40px">
-  <div class="guar"><div class="guar-n">30</div><h3>Day <em>money-back</em> guarantee.</h3><p>If your agents aren't running and replacing tools within 30 days, we refund everything. Hardware and setup. No questions asked.</p><p class="fine">Hardware returned in original condition. Refund within 5 business days.</p></div>
+<!-- ═══════ CTA ═══════ -->
+<section id="cta" style="text-align:center;padding:120px 48px;background:var(--s1);position:relative;overflow:hidden;border-bottom:none">
+  <div style="position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse at center bottom,rgba(240,180,41,.06),transparent 70%);pointer-events:none"></div>
+  <h2 style="font-size:clamp(40px,6vw,80px);font-weight:900;letter-spacing:-.04em;line-height:.92;margin-bottom:24px">Own your <i style="font-family:'Playfair Display',serif;font-style:italic;color:var(--gold)">intelligence.</i><br>Cancel everything else.</h2>
+  <p style="font-size:18px;color:var(--muted);max-width:500px;margin:0 auto 40px;line-height:1.75;font-weight:300">One Mac Mini. Every tool replaced. Agents that create, test, deploy, and improve themselves. The system compounds every day you own it.</p>
+  <div style="display:flex;max-width:440px;margin:0 auto;border:1px solid var(--border2);border-radius:8px;overflow:hidden"><input type="email" placeholder="you@company.com" style="flex:1;padding:16px 18px;background:var(--s2);border:none;color:var(--text);font-family:'Inter',sans-serif;font-size:15px;outline:none"><button style="padding:16px 28px;background:var(--gold);color:var(--bg);font-size:13px;font-weight:800;border:none;cursor:pointer;letter-spacing:.04em;transition:background .2s">GET STARTED</button></div>
+  <div style="margin-top:16px;font-size:12px;color:var(--dim);font-weight:500">15-min demo. Live agents. Your savings calculated. One call.</div>
 </section>
 
-<!-- CTA -->
-<section class="cta" id="start">
-  <h2>Own your <span class="it">intelligence.</span><br>Cancel everything else.</h2>
-  <p>330 million businesses pay thousands per month for tools that don't talk to each other. One Mac Mini changes that forever.</p>
-  <div class="email-row"><input type="email" class="email-inp" placeholder="you@company.com"><button class="email-sub">GET STARTED</button></div>
-  <div style="margin-top:16px;font-size:12px;color:var(--dim);font-weight:500">15-min demo. Live agents. See your savings. Decide in one call.</div>
-</section>
-
-<footer><div class="f-logo">AONXI</div><div class="f-text">Built by Anmol Sam &middot; CTO, Aonxi &middot; github.com/originaonxi</div></footer>
+<footer style="padding:40px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center"><div style="font-size:20px;font-weight:900;color:var(--gold)">AONXI</div><div style="font-size:12px;color:var(--dim)">Built by Anmol Sam &middot; CTO, Aonxi &middot; github.com/originaonxi</div></footer>
 
 <script>
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-const T=[{id:'ai',p:30},{id:'crm',p:80},{id:'help',p:55},{id:'other',p:1,flat:1}];
-function fmt(n){return Math.abs(n).toLocaleString('en-US')}
-function calc(){let a=0,u=0;T.forEach(t=>{const s=document.getElementById('s-'+t.id),v=document.getElementById('v-'+t.id);if(!s||!v)return;const c=+s.value;v.textContent=t.flat?'$'+c:c;a+=t.flat?c*12:c*t.p*12;u+=t.flat?1:c});
-let cost=u<=5?1999:u<=15?3899:u<=50?7499:14999,ms=a/12-12,be=ms>0?Math.ceil(cost/ms):0,sv=a*3-cost-540;
-document.getElementById('c-annual').textContent=fmt(a);document.getElementById('c-once').textContent=fmt(cost);document.getElementById('c-break').textContent=be||'--';document.getElementById('c-save').textContent=fmt(Math.max(0,sv));
-const m=document.getElementById('c-msg');if(!a||be<=0)m.innerHTML='Move the sliders to see your savings.';else if(be<=6)m.innerHTML='Break even in <strong>'+be+' months</strong>. No-brainer. <strong>$'+fmt(sv)+'</strong> saved over 3 years.';else if(be<=12)m.innerHTML='Break even in <strong>'+be+' months</strong>. Then free forever. 3-year savings: <strong>$'+fmt(sv)+'</strong>.';else m.innerHTML='Break-even: <strong>'+be+' months</strong>. Start with Micro ($1,999) and scale up.'}
-document.querySelectorAll('input[type=range]').forEach(s=>s.addEventListener('input',calc));calc();
+new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06}).observe(document.querySelectorAll?undefined:undefined);
+document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06}).observe(el));
 </script>
 </body>
 </html>
