@@ -471,6 +471,94 @@ table.tbl{width:100%;border-collapse:separate;border-spacing:0 2px;min-width:640
   </div>
 </section>
 
+<!-- ═══════ HOW YOUR CLONE ACTUALLY WORKS ═══════ -->
+<section class="reveal divider" style="background:var(--s1)">
+  <div class="tag">Under the hood &mdash; the clone technology</div>
+  <h2>The internet trained the <em>base.</em><br>Your life trains the <i>fine-tune.</i></h2>
+  <p class="sub">We reverse-engineered <b>1,902 files and 380,000+ lines</b> of frontier AI architecture. Then we asked: what if all of this ran locally on a $499 Mac Mini, trained on YOUR data? Here's what powers your clone.</p>
+
+  <div class="grid g3" style="margin-bottom:32px">
+    <div class="c">
+      <div style="font-size:32px;font-weight:900;color:var(--gold);margin-bottom:8px">Fork Agents</div>
+      <div style="font-size:14px;font-weight:700;margin-bottom:8px">Parallel execution, zero overhead</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7">Your clone spots a lead → spawns 3 parallel workers: one researches the company, one checks your calendar, one drafts the email. All inherit parent context. All run simultaneously. All on your Mac Mini. <b style="color:var(--text)">0ms network overhead vs 50ms cloud roundtrip.</b> Local is faster.</div>
+    </div>
+    <div class="c">
+      <div style="font-size:32px;font-weight:900;color:var(--gold);margin-bottom:8px">3-Tier Memory</div>
+      <div style="font-size:14px;font-weight:700;margin-bottom:8px">Your clone never truly forgets</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7"><b style="color:var(--text)">Personal</b> — your writing style, health goals, communication patterns. <b style="color:var(--text)">Business</b> — your ICP, win patterns, team dynamics. <b style="color:var(--text)">Runtime</b> — today's tasks, cached computations. All files on disk. ~1ms reads. Never deleted.</div>
+    </div>
+    <div class="c">
+      <div style="font-size:32px;font-weight:900;color:var(--gold);margin-bottom:8px">2,750</div>
+      <div style="font-size:14px;font-weight:700;margin-bottom:8px">Lines of Python. That's the whole system.</div>
+      <div style="font-size:13px;color:var(--muted);line-height:1.7">Agent executor (800), memory management (300), concurrent tools (500), hook system (400), context compaction (300), agent loader (200), permissions (150), Ollama (100). <b style="color:var(--text)">Open source. Every line readable. Every decision auditable.</b></div>
+    </div>
+  </div>
+
+  <!-- The 10 breakthroughs that matter most -->
+  <div class="t">
+    <div class="t-bar"><div class="t-dot" style="background:#ff5f57"></div><div class="t-dot" style="background:#ffbd2e"></div><div class="t-dot" style="background:#28c840"></div><div class="t-title">10 breakthroughs that make your clone 10x better than cloud AI</div></div>
+    <div class="t-body">
+<span class="th">1. FORK SUBAGENTS</span><br>
+<span class="to">   Your clone spawns parallel workers. Research 5 companies simultaneously.</span><br>
+<span class="to">   All workers inherit parent context. Zero network overhead. Local = faster.</span><br><br>
+
+<span class="th">2. CONTEXT COMPACTION</span><br>
+<span class="to">   Before trimming old messages, key facts written to MEMORY.md.</span><br>
+<span class="to">   Messages gone, knowledge stays. 32K window feels infinite.</span><br><br>
+
+<span class="th">3. PROGRESSIVE TRUST</span><br>
+<span class="to">   Day 1: clone asks everything. Day 90: handles 80% autonomously.</span><br>
+<span class="to">   Trust earned via RPDC outcomes. Never assumed. Never permanent.</span><br><br>
+
+<span class="th">4. TEACHABLE VIA JSON</span><br>
+<span class="to">   Drop a JSON file → clone learns new skill. No code changes ever.</span><br>
+<span class="to">   {"description": "quarterly report", "tools": ["Read","Write"], ...}</span><br><br>
+
+<span class="th">5. HOOK SYSTEM (15 INTERCEPT POINTS)</span><br>
+<span class="to">   Before email send → check compliance. After deal close → update all agents.</span><br>
+<span class="to">   Every action validated, logged, learned from. Trust is built here.</span><br><br>
+
+<span class="th">6. CONCURRENT SAFE EXECUTION</span><br>
+<span class="to">   Read CRM + check calendar + scan inbox = parallel (safe).</span><br>
+<span class="to">   Send email + update deal = sequential (exclusive). Like a smart human.</span><br><br>
+
+<span class="th">7. DENIAL LEARNING</span><br>
+<span class="to">   You say no to emailing a CEO. Clone stores WHY, not just NO.</span><br>
+<span class="to">   Never repeats the same mistake. Learns the reason, not the rule.</span><br><br>
+
+<span class="th">8. COMPOUND SESSIONS</span><br>
+<span class="to">   Monday's learning improves Tuesday. Tuesday's success improves Friday.</span><br>
+<span class="to">   Friday's pattern shared with all agents. Next Monday: everyone is smarter.</span><br><br>
+
+<span class="th">9. MULTI-PERSONA ISOLATION</span><br>
+<span class="to">   CEO sees everything. Sales sees pipeline only. HR sees candidates only.</span><br>
+<span class="to">   Same Mac Mini. Same brain. Role-based access. Like departments, for AI.</span><br><br>
+
+<span class="th">10. BACKGROUND EXECUTION</span><br>
+<span class="to">   "Research 50 healthcare companies." Clone starts. You go live your life.</span><br>
+<span class="to">   20 minutes later: notification. 12 qualified. Emails drafted. Ready.</span><br>
+<span class="to">   <span class="tw">Your clone works while you sleep. That's the whole point.</span></span>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:10px;overflow:hidden;margin-top:32px">
+    <div style="background:var(--s2);padding:28px 24px">
+      <div style="font-size:11px;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">What cloud AI gives you</div>
+      <div style="font-size:14px;color:var(--muted);line-height:1.8">A generic model trained on everyone's data. Same brain for every human. Forgets you between sessions. Your patterns train THEIR model. You rent intelligence you'll never own.</div>
+    </div>
+    <div style="background:var(--s2);padding:28px 24px;border-left:2px solid var(--gold)">
+      <div style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">What your Mac Mini clone gives you</div>
+      <div style="font-size:14px;color:var(--muted);line-height:1.8">A model fine-tuned on YOUR emails, YOUR deals, YOUR decisions, YOUR health data. <b style="color:var(--text)">Your patterns train YOUR model.</b> Intelligence that compounds daily. Yours forever. On your desk. $2/month.</div>
+    </div>
+  </div>
+
+  <div class="box" style="margin-top:28px;text-align:center;font-size:16px;font-weight:700;line-height:1.8">
+    <span style="color:var(--gold)">The internet trained the base. Your life trains the fine-tune.</span><br>
+    <span style="color:var(--text);font-weight:400">That's the difference between a tool and a clone. Every smart human deserves a Mac Mini.</span>
+  </div>
+</section>
+
 <!-- ═══════ PRICING — ONE SECTION, FULLY TRANSPARENT ═══════ -->
 <section id="pricing" class="reveal">
   <div class="tag">Pricing &mdash; fully transparent</div>
