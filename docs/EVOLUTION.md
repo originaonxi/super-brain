@@ -254,15 +254,23 @@ Brain: Good morning. Based on your patterns:
 3. You modified aonxi-router yesterday. You typically update
    aonxi-safeguard within 24h after router changes.
    Want me to open safeguard?
+
+4. SaaS Learning Report: I've been observing your CRM for 5 days.
+   Your team uses 14% of available features. Top workflows:
+   - Deal stage updates (47 actions/week)
+   - Contact note logging (31 actions/week)
+   - Pipeline report export → manual paste into finance tool (8/week)
+   I can build a local version that handles all three workflows
+   and auto-syncs with finance. Ready to start parallel run?
 ```
 
 ---
 
-## V4: Autonomous Hippocampus
+## V4: Autonomous Hippocampus + SaaS Replacement
 
 **Status:** Planned
 
-**Biological analogy:** Hippocampus — consolidates short-term memories into long-term, decides what to keep, what to forget, and what to strengthen.
+**Biological analogy:** Hippocampus — consolidates short-term memories into long-term, decides what to keep, what to forget, and what to strengthen. Now also autonomously replaces SaaS tools.
 
 ### What It Adds
 - **Memory consolidation**: Nightly job that merges related memories, removes duplicates, strengthens important ones.
@@ -270,6 +278,9 @@ Brain: Good morning. Based on your patterns:
 - **Memory dreams**: Background process that discovers hidden connections while you sleep (literally — runs at 3 AM).
 - **Self-healing**: Detects stale memories (e.g., file paths that no longer exist) and auto-corrects or archives.
 - **Forgetting curve**: Implements Ebbinghaus forgetting — memories decay unless reinforced by retrieval or relevance.
+- **Autonomous SaaS Replacement**: The brain now builds local versions of observed SaaS tools WITHOUT human intervention. It runs them in parallel, validates outputs against the original, and when the local version matches or exceeds for 2+ weeks, it flags the SaaS subscription for cancellation.
+- **Cross-tool intelligence injection**: Local replacements automatically benefit from data in OTHER local tools. The local CRM replacement knows support ticket sentiment. The local support replacement knows deal value. No configuration required — the brain connects everything.
+- **Migration automation**: Tool-by-tool cutover with automatic rollback if the local version underperforms. Tracks subscription cancellation savings in real-time.
 
 ### Architecture
 ```
@@ -373,25 +384,38 @@ Dream Discovery #2:
             different angles."
   Similarity: 0.72
 
+SaaS Replacement Report:
+  Local CRM replacement: 18 days parallel run, 99.2% output match
+  → VALIDATED. Ready for cutover. Savings: $800/month.
+  Local CRM has cross-tool advantage: it flagged 3 deals where
+  support ticket sentiment was negative — original CRM had no idea.
+
+  Local Support Desk replacement: 12 days parallel run, 97.8% match
+  → 4 more days needed. Local version already prioritizes tickets
+  from high-value accounts (using sales data the original tool can't see).
+
 [6:30 AM — You see in your morning briefing]
-Brain discovered 2 new connections overnight. See details?
+Brain discovered 2 new connections overnight.
+SaaS replacement: CRM ready for cutover ($800/mo savings). Approve?
 ```
 
 ---
 
-## V5: Full AGI Brain
+## V5: Full Business OS — Zero External Dependencies
 
 **Status:** Vision
 
-**Biological analogy:** Prefrontal cortex — executive function, planning, decision-making, agency.
+**Biological analogy:** Prefrontal cortex — executive function, planning, decision-making, agency. The Mac Mini becomes a complete business operating system with zero external SaaS dependencies.
 
 ### What It Adds
+- **Zero external dependencies**: Every SaaS tool has been learned, replicated locally, and surpassed. No external subscriptions remain. The Mac Mini IS the business OS.
 - **Autonomous goal setting**: Brain sets its own objectives based on your patterns and stated goals.
 - **Multi-project orchestration**: Can execute coordinated changes across multiple repos.
 - **Strategic reasoning**: "Given your NeurIPS deadline, frontier-journey priority should increase. Deprioritize CI reports."
 - **Self-improvement**: Brain rewrites its own prompts, hooks, and search strategies to improve retrieval quality.
 - **Delegation**: Brain spawns sub-agents for specific tasks, coordinates results, and learns from outcomes.
 - **Theory of mind**: Models your cognitive state — "You've been in deep research mode for 3 hours. Switch to email agents for a context break?"
+- **Self-evolving tool generation**: When the business adopts a new workflow or process, the brain automatically generates a local tool for it — no SaaS evaluation, no procurement, no subscription. The Mac Mini builds what you need.
 
 ### Architecture
 ```

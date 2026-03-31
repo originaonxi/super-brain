@@ -3,652 +3,477 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AONXI — Your Mac Mini Replaces Every SaaS Tool You Pay For</title>
-<meta name="description" content="AONXI OS: One Mac Mini learns your business, builds local versions of every SaaS tool you use, and runs 50+ AI agents. One payment. Zero cloud cost. Your data never leaves your building. $200K revenue proved.">
-<meta name="keywords" content="on-premise AI, replace SaaS, local AI, own your AI, Mac Mini AI, private AI, GDPR AI, HIPAA AI, AI operating system, replace HubSpot, replace Zendesk, self-hosted AI">
+<title>AONXI — One Mac Mini. Every Tool Replaced. Intelligence You Own.</title>
+<meta name="description" content="AONXI OS: One Mac Mini learns your business, replaces every SaaS subscription, runs 50+ AI agents. One payment. $0/query forever. 559x RPDC. $200K proved.">
 <link rel="canonical" href="https://originaonxi.github.io/super-brain/">
-<meta property="og:title" content="AONXI — Your Mac Mini Replaces Every SaaS Tool You Pay For">
-<meta property="og:description" content="One Mac Mini. Every SaaS tool replaced. 50+ AI agents. One payment. Zero cloud cost forever.">
-<meta property="og:type" content="website">
+<meta property="og:title" content="AONXI — One Mac Mini. Every Tool Replaced.">
+<meta property="og:description" content="Replace $5K/month in SaaS with one Mac Mini. 50+ AI agents. Self-evolving. Data never leaves.">
 <meta property="og:url" content="https://originaonxi.github.io/super-brain/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AONXI","applicationCategory":"BusinessApplication","operatingSystem":"macOS","description":"On-Premise AI Operating System that replaces all SaaS subscriptions with locally-running AI agents on Apple Silicon.","offers":[{"@type":"Offer","name":"Micro","price":"1999","priceCurrency":"USD"},{"@type":"Offer","name":"Starter","price":"4999","priceCurrency":"USD"},{"@type":"Offer","name":"Business","price":"12900","priceCurrency":"USD"},{"@type":"Offer","name":"Enterprise","price":"24900","priceCurrency":"USD"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#05060a;--s1:#0a0c12;--s2:#0f1118;--s3:#141720;
-  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.10);
-  --text:#f2f0eb;--muted:rgba(242,240,235,0.50);--dim:rgba(242,240,235,0.22);
-  --g:#00ff94;--g2:#00cc76;--g-dim:rgba(0,255,148,0.07);--g-b:rgba(0,255,148,0.18);
-  --red:#ff4757;--amber:#ffc312;--blue:#00b4d8;--purple:#a855f7;
+  --bg:#0c1120;--s1:#111827;--s2:#1a2234;--s3:#222d42;
+  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);
+  --text:#f0eee6;--muted:rgba(240,238,230,0.55);--dim:rgba(240,238,230,0.25);
+  --gold:#f0b429;--gold-dim:rgba(240,180,41,0.08);--gold-b:rgba(240,180,41,0.22);
+  --blue:#5b9cf4;--blue-dim:rgba(91,156,244,0.08);
+  --red:#ef4444;--green:#22c55e;--purple:#a78bfa;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
-body{background:var(--bg);color:var(--text);font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:300;overflow-x:hidden;line-height:1.6}
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='3' height='3'%3E%3Crect width='1' height='1' fill='rgba(255,255,255,0.008)'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;font-weight:400;overflow-x:hidden;line-height:1.65}
 a{color:inherit;text-decoration:none}
-::selection{background:rgba(0,255,148,.2);color:var(--text)}
+::selection{background:rgba(240,180,41,.25)}
 
-/* ── NAV ── */
-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:14px 56px;background:rgba(5,6,10,0.94);backdrop-filter:blur(20px);border-bottom:.5px solid var(--border)}
-.logo{font-size:18px;font-weight:800;color:var(--g);letter-spacing:.04em}
-.logo span{color:var(--text);opacity:.4;font-weight:300;font-size:11px;margin-left:8px;letter-spacing:.12em;text-transform:uppercase}
-.nav-links{display:flex;gap:28px}
-.nav-links a{font-size:13px;color:var(--muted);transition:color .2s}
+nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(12,17,32,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-size:20px;font-weight:900;color:var(--gold);letter-spacing:.02em}
+.nav-links{display:flex;gap:32px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);transition:color .2s}
 .nav-links a:hover{color:var(--text)}
 .nav-r{display:flex;gap:10px;align-items:center}
-.nav-r a{font-family:'JetBrains Mono',monospace;font-size:11px;padding:9px 16px;border-radius:4px;transition:all .2s}
-.nav-gh{color:var(--muted);border:.5px solid var(--border2)}
+.nav-r a{font-size:12px;font-weight:600;padding:10px 18px;border-radius:6px;transition:all .2s}
+.nav-gh{color:var(--muted);border:1px solid var(--border2)}
 .nav-gh:hover{color:var(--text);border-color:var(--muted)}
-.nav-cta{color:var(--bg);background:var(--g);font-weight:500;letter-spacing:.04em}
-.nav-cta:hover{background:#33ffaa;transform:translateY(-1px)}
+.nav-cta{color:var(--bg);background:var(--gold);letter-spacing:.02em}
+.nav-cta:hover{background:#f5c842;transform:translateY(-1px)}
 
-/* ── HERO ── */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 56px 80px;position:relative;overflow:hidden}
-.hgrid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 90% 80% at 50% 50%,black 10%,transparent 100%);pointer-events:none}
-.hblob{position:absolute;top:18%;right:2%;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(0,255,148,0.05) 0%,transparent 70%);pointer-events:none}
-.hblob2{position:absolute;bottom:10%;left:5%;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,216,0.03) 0%,transparent 70%);pointer-events:none}
-.hero-top{display:grid;grid-template-columns:1fr 500px;gap:64px;align-items:center;position:relative;z-index:2}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;background:var(--g-dim);border:.5px solid var(--g-b);border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);letter-spacing:.1em;margin-bottom:28px}
-.pulse{width:6px;height:6px;background:var(--g);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
-.hero h1{font-size:clamp(42px,5.5vw,78px);font-weight:800;line-height:.93;letter-spacing:-.04em;margin-bottom:28px}
-.hero h1 .serif{font-family:'Instrument Serif',serif;font-style:italic;color:var(--g);font-weight:400}
-.hero h1 .dim{color:var(--muted);font-weight:300}
-.hero-sub{font-size:clamp(15px,1.5vw,18px);color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:36px}
-.hero-sub strong{color:var(--text);font-weight:500}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:48px}
-.btn-g{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;color:var(--bg);background:var(--g);padding:14px 28px;border-radius:4px;transition:all .2s;letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px}
-.btn-g:hover{background:#33ffaa;transform:translateY(-2px)}
-.btn-o{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);padding:14px 20px;border:.5px solid var(--border2);border-radius:4px;transition:all .2s}
-.btn-o:hover{color:var(--text);border-color:var(--muted)}
-.h-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;max-width:620px}
-.hs{background:var(--s1);padding:18px 16px}
-.hs-n{font-size:28px;font-weight:800;color:var(--g);line-height:1;margin-bottom:3px}
-.hs-l{font-size:10px;color:var(--dim);line-height:1.4}
+section{padding:100px 48px;position:relative}
+.stag{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+section h2{font-size:clamp(34px,4.5vw,62px);font-weight:900;letter-spacing:-.03em;line-height:.98;margin-bottom:18px}
+section h2 em{font-style:normal;color:var(--gold)}
+section h2 .it{font-family:'Playfair Display',serif;font-style:italic;font-weight:700}
+.sub{max-width:620px;font-size:17px;color:var(--muted);line-height:1.8;margin-bottom:52px;font-weight:300}
+.sub strong{color:var(--text);font-weight:600}
+.divider{border-bottom:1px solid var(--border)}
 
-/* ── SECTIONS ── */
-section{padding:100px 56px;border-bottom:.5px solid var(--border);position:relative;z-index:1}
-.stag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
-section h2{font-size:clamp(32px,4.5vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1.0;margin-bottom:14px}
-section h2 em{font-style:normal;color:var(--g)}
-section h2 .serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
-.section-sub{max-width:640px;font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:48px}
-.section-sub strong{color:var(--text);font-weight:500}
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:80px;position:relative;overflow:hidden}
+.hero-grad{position:absolute;top:0;right:0;width:60%;height:100%;background:radial-gradient(ellipse at 70% 40%,rgba(240,180,41,0.04),transparent 60%);pointer-events:none}
+.hero-grad2{position:absolute;bottom:0;left:0;width:40%;height:60%;background:radial-gradient(ellipse at 30% 80%,rgba(91,156,244,0.03),transparent 60%);pointer-events:none}
+.hero h1{font-size:clamp(44px,6vw,86px);font-weight:900;line-height:.92;letter-spacing:-.045em;margin-bottom:32px;max-width:900px}
+.hero h1 .it{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold)}
+.hero h1 .light{font-weight:300;color:var(--muted)}
+.hero-p{font-size:clamp(16px,1.6vw,20px);color:var(--muted);max-width:600px;line-height:1.8;margin-bottom:40px;font-weight:300}
+.hero-p strong{color:var(--text);font-weight:600}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.btn-gold{font-size:14px;font-weight:700;color:var(--bg);background:var(--gold);padding:16px 32px;border-radius:8px;transition:all .2s;letter-spacing:.01em}
+.btn-gold:hover{background:#f5c842;transform:translateY(-2px);box-shadow:0 8px 30px rgba(240,180,41,.2)}
+.btn-out{font-size:13px;font-weight:600;color:var(--muted);padding:16px 24px;border:1px solid var(--border2);border-radius:8px;transition:all .2s}
+.btn-out:hover{color:var(--text);border-color:var(--muted)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:10px;overflow:hidden;max-width:700px}
+.stat{background:var(--s1);padding:22px 20px}
+.stat-n{font-size:32px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:4px;letter-spacing:-.02em}
+.stat-l{font-size:11px;color:var(--dim);font-weight:500}
 
-/* ── MARQUEE ── */
-.marquee{border-top:.5px solid var(--border);border-bottom:.5px solid var(--border);padding:12px 0;overflow:hidden;background:var(--s1)}
-.marquee-track{display:flex;gap:0;animation:mqrun 40s linear infinite;white-space:nowrap}
-.mq-item{display:flex;align-items:center;gap:24px;padding:0 24px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-.mq-dot{width:4px;height:4px;border-radius:50%;background:var(--g);flex-shrink:0}
-@keyframes mqrun{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* TICKER */
+.ticker{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden;background:var(--s1)}
+.ticker-track{display:flex;gap:0;animation:tick 45s linear infinite;white-space:nowrap}
+.tick-item{display:flex;align-items:center;gap:20px;padding:0 20px;font-size:11px;font-weight:600;color:var(--dim);letter-spacing:.06em;text-transform:uppercase}
+.tick-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;opacity:.6}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ── SAAS REPLACEMENT GRID ── */
-.saas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--border);border-radius:8px;overflow:hidden}
-.saas-card{background:var(--s1);padding:28px 22px;transition:background .2s;position:relative}
-.saas-card:hover{background:var(--s2)}
-.saas-replaced{font-size:11px;color:var(--red);font-family:'JetBrains Mono',monospace;text-decoration:line-through;opacity:.6;margin-bottom:4px}
-.saas-new{font-size:18px;font-weight:700;margin-bottom:4px}
-.saas-save{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--g);margin-bottom:12px}
-.saas-desc{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:10px}
-.saas-learn{font-size:11px;color:var(--dim);font-style:italic}
-.saas-total{margin-top:24px;padding:28px;background:var(--s2);border:1px solid var(--g-b);border-radius:8px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;text-align:center}
-.saas-total-n{font-size:32px;font-weight:800;line-height:1;margin-bottom:4px}
-.saas-total-l{font-size:10px;color:var(--dim);font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
+/* CARDS */
+.grid{display:grid;gap:1px;background:var(--border);border-radius:10px;overflow:hidden}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-auto{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.card{background:var(--s1);padding:28px 24px;transition:background .2s}
+.card:hover{background:var(--s2)}
+.card-gold{border-top:2px solid var(--gold)}
 
-/* ── HOW IT LEARNS ── */
-.learn-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;position:relative}
-.learn-flow::before{content:'';position:absolute;top:35px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--g-b),var(--g),var(--g),var(--g-b));opacity:.3;z-index:0}
-.learn-step{text-align:center;position:relative;z-index:1}
-.learn-num{width:48px;height:48px;border-radius:50%;background:var(--s2);border:1.5px solid var(--g);color:var(--g);font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:14px}
-.learn-step h4{font-size:14px;font-weight:600;margin-bottom:6px}
-.learn-step p{font-size:12px;color:var(--muted);line-height:1.6;max-width:200px;margin:0 auto}
+/* SAAS */
+.saas-old{font-size:11px;color:var(--red);font-weight:600;text-decoration:line-through;opacity:.7;margin-bottom:2px;font-family:'JetBrains Mono',monospace}
+.saas-new{font-size:18px;font-weight:800;margin-bottom:2px}
+.saas-save{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--gold);margin-bottom:14px}
+.saas-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.saas-learn{font-size:11px;color:var(--blue);font-weight:500}
+.saas-total{margin-top:28px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;background:var(--s2);border:1.5px solid var(--gold-b);border-radius:10px;overflow:hidden;text-align:center;padding:32px 24px}
+.st-n{font-size:36px;font-weight:900;line-height:1;margin-bottom:4px;letter-spacing:-.02em}
+.st-l{font-size:11px;color:var(--dim);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 
-/* ── CALCULATOR ── */
-.calc-wrap{background:var(--s1);border-radius:12px;border:.5px solid var(--border2);padding:48px;position:relative;overflow:hidden}
-.calc-wrap::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:200px;background:radial-gradient(ellipse,rgba(0,255,148,.03),transparent);pointer-events:none}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+/* LEARN FLOW */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:48px}
+.flow-step{text-align:center}
+.flow-num{width:52px;height:52px;border-radius:50%;background:var(--gold-dim);border:1.5px solid var(--gold-b);color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px}
+.flow-step h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.flow-step p{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* TERMINAL */
+.term{background:#0a0e18;border:1px solid #1e2740;border-radius:10px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:12px}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#0e1324;border-bottom:1px solid #1e2740}
+.term-dot{width:10px;height:10px;border-radius:50%}
+.term-title{font-size:11px;color:var(--dim);margin-left:10px;font-weight:500}
+.term-body{padding:18px;line-height:1.9;max-height:450px;overflow-y:auto}
+.t-p{color:var(--gold)}.t-c{color:var(--text);font-weight:500}.t-o{color:var(--muted)}.t-h{color:var(--gold)}.t-b{color:var(--blue)}.t-w{color:#fbbf24}
+
+/* CALCULATOR */
+.calc-box{background:var(--s1);border-radius:12px;border:1px solid var(--border2);padding:48px;position:relative;overflow:hidden}
+.calc-box::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:500px;height:200px;background:radial-gradient(ellipse,rgba(240,180,41,.04),transparent);pointer-events:none}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
 .calc-sliders{display:flex;flex-direction:column;gap:28px}
 .calc-group{display:flex;flex-direction:column;gap:8px}
-.calc-label{display:flex;justify-content:space-between;align-items:baseline}
-.calc-label span:first-child{font-size:14px;font-weight:500}
-.calc-label-val{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;color:var(--g)}
-.calc-label-price{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim);margin-top:2px}
-input[type=range]{-webkit-appearance:none;width:100%;height:4px;background:var(--s3);border-radius:4px;outline:none;cursor:pointer}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--g);border-radius:50%;cursor:pointer;border:3px solid var(--bg);transition:transform .15s}
-input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
-input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--g);border-radius:50%;cursor:pointer;border:3px solid var(--bg)}
-.calc-results{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:8px;overflow:hidden}
-.calc-r{background:var(--s2);padding:24px 20px}
-.calc-r-n{font-size:36px;font-weight:800;line-height:1;margin-bottom:4px}
-.calc-r-n.green{color:var(--g)}.calc-r-n.red{color:var(--red)}.calc-r-n.amber{color:var(--amber)}.calc-r-n.blue{color:var(--blue)}
-.calc-r-l{font-size:10px;color:var(--dim);line-height:1.4;font-family:'JetBrains Mono',monospace;letter-spacing:.04em}
-.calc-r.hl{background:var(--s3);border-top:2px solid var(--g)}
-.calc-verdict{margin-top:24px;padding:20px;background:var(--g-dim);border:.5px solid var(--g-b);border-radius:8px;text-align:center;font-size:14px;color:var(--g);font-weight:500}
+.calc-lbl{display:flex;justify-content:space-between;align-items:baseline}
+.calc-lbl span:first-child{font-size:14px;font-weight:600}
+.calc-val{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:800;color:var(--gold)}
+.calc-price{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim)}
+input[type=range]{-webkit-appearance:none;width:100%;height:5px;background:var(--s3);border-radius:5px;outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;background:var(--gold);border-radius:50%;cursor:pointer;border:3px solid var(--bg);box-shadow:0 2px 8px rgba(240,180,41,.3)}
+.calc-results{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:10px;overflow:hidden}
+.cr{background:var(--s2);padding:24px 20px}
+.cr-n{font-size:36px;font-weight:900;line-height:1;margin-bottom:4px;letter-spacing:-.02em}
+.cr-l{font-size:10px;color:var(--dim);font-family:'JetBrains Mono',monospace;font-weight:500}
+.cr-hl{background:var(--s3);border-top:2px solid var(--gold)}
+.calc-msg{margin-top:20px;padding:18px;background:var(--gold-dim);border:1px solid var(--gold-b);border-radius:8px;text-align:center;font-size:14px;color:var(--gold);font-weight:600}
 
-/* ── TIMELINE ── */
-.timeline{display:flex;flex-direction:column;gap:0;max-width:700px}
-.tl-step{display:flex;gap:20px;padding:22px 0;border-bottom:.5px solid var(--border);position:relative}
-.tl-step:last-child{border-bottom:none}
-.tl-time{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);padding:5px 12px;background:var(--g-dim);border:.5px solid var(--g-b);border-radius:100px;white-space:nowrap;height:fit-content;letter-spacing:.06em;min-width:80px;text-align:center}
-.tl-content h4{font-size:15px;font-weight:600;margin-bottom:4px}
-.tl-content p{font-size:12px;color:var(--muted);line-height:1.65}
+/* AGENT */
+.ag-metric{font-size:44px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px;letter-spacing:-.03em}
+.ag-name{font-size:14px;font-weight:700;margin-bottom:2px}
+.ag-role{font-size:10px;font-weight:600;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.ag-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.ag-proof{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);font-weight:500;opacity:.7}
 
-/* ── AGENT CARDS ── */
-.agent-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border);border-radius:8px;overflow:hidden}
-.agent-card{background:var(--s1);padding:28px 22px;transition:background .2s}
-.agent-card:hover{background:var(--s2)}
-.agent-metric{font-size:40px;font-weight:800;color:var(--g);line-height:1;margin-bottom:8px}
-.agent-name{font-size:13px;font-weight:700;margin-bottom:4px}
-.agent-role{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
-.agent-outcome{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:12px}
-.agent-proof{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);opacity:.7}
+/* FAMILY */
+.fam-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.fam-steps{display:flex;flex-direction:column}
+.fam-step{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--border)}
+.fam-step:last-child{border-bottom:none}
+.fam-wk{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--gold);opacity:.5;min-width:60px;padding-top:3px}
+.fam-step h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.fam-step p{font-size:13px;color:var(--muted);line-height:1.65}
+.fam-box{margin-top:24px;padding:20px;background:var(--gold-dim);border:1px solid var(--gold-b);border-radius:8px;font-size:14px;color:var(--gold);font-weight:500;line-height:1.7}
 
-/* ── FAMILY EFFECT ── */
-.family-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.family-steps{display:flex;flex-direction:column;gap:0}
-.family-step{display:flex;gap:16px;padding:18px 0;border-bottom:.5px solid var(--border)}
-.family-step:last-child{border-bottom:none}
-.family-week{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);opacity:.6;min-width:60px;padding-top:2px}
-.family-step h4{font-size:14px;font-weight:600;margin-bottom:4px}
-.family-step p{font-size:12px;color:var(--muted);line-height:1.65}
-.family-insight{margin-top:24px;padding:20px;background:var(--g-dim);border:.5px solid var(--g-b);border-radius:8px;font-size:13px;color:var(--g);line-height:1.7}
+/* COMPLIANCE */
+.comp-badge{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:800;color:var(--gold);margin-bottom:10px;letter-spacing:.04em}
+.comp-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.comp-card p{font-size:13px;color:var(--muted);line-height:1.65}
 
-/* ── TERMINAL ── */
-.terminal{background:#080a0f;border:1px solid #1a1d24;border-radius:8px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:12px;max-width:100%}
-.terminal-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#0c0e14;border-bottom:1px solid #1a1d24}
-.terminal-dot{width:10px;height:10px;border-radius:50%}
-.terminal-title{font-size:11px;color:var(--dim);margin-left:8px}
-.terminal-body{padding:16px;line-height:1.8;max-height:420px;overflow-y:auto}
-.terminal-body .prompt{color:var(--g)}.terminal-body .cmd{color:var(--text)}.terminal-body .output{color:var(--muted)}.terminal-body .highlight{color:var(--g)}.terminal-body .category{color:var(--blue)}.terminal-body .warn{color:var(--amber)}
+/* TABLE */
+.tbl-wrap{overflow-x:auto}
+table.tbl{width:100%;border-collapse:separate;border-spacing:0 2px;min-width:600px}
+.tbl th{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:16px 20px;background:var(--s2)}
+.tbl th:first-child{border-radius:8px 0 0 0}.tbl th:last-child{border-radius:0 8px 0 0}
+.tbl td{font-size:14px;padding:14px 20px;background:var(--s1);font-weight:500}
+.tbl .bad{color:var(--red);font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
+.tbl .good{color:var(--green);font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
+.tbl .total td{background:var(--s2);font-weight:800;font-size:16px;border-top:2px solid var(--gold)}
 
-/* ── COMPLIANCE ── */
-.compliance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-bottom:48px}
-.compliance-card{background:var(--s1);padding:32px 24px;text-align:center}
-.compliance-badge{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:var(--g);margin-bottom:8px;letter-spacing:.06em}
-.compliance-card h3{font-size:14px;font-weight:600;margin-bottom:6px}
-.compliance-card p{font-size:12px;color:var(--muted);line-height:1.6}
+/* BIG NUMBERS */
+.big-n{font-size:52px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px;letter-spacing:-.03em}
+.big-label{font-size:14px;font-weight:700;margin-bottom:6px}
+.big-desc{font-size:13px;color:var(--muted);line-height:1.65}
 
-/* ── COMPARISON TABLE ── */
-.compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.compare-table{width:100%;border-collapse:separate;border-spacing:0 1px;min-width:600px}
-.compare-table th{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);letter-spacing:.12em;text-transform:uppercase;text-align:left;padding:16px 20px;background:var(--s2);font-weight:500}
-.compare-table th:first-child{border-radius:8px 0 0 0}.compare-table th:last-child{border-radius:0 8px 0 0}
-.compare-table td{font-size:13px;padding:14px 20px;background:var(--s1);border-bottom:1px solid var(--border)}
-.compare-table td:first-child{font-weight:500}
-.cloud-col{color:var(--red);font-family:'JetBrains Mono',monospace;font-size:12px}
-.aonxi-col{color:var(--g);font-family:'JetBrains Mono',monospace;font-size:12px}
-.total-row td{background:var(--s2);font-weight:700;font-size:15px;border-top:2px solid var(--g)}
-
-/* ── PATTERN GRID ── */
-.pattern-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-top:48px}
-.pattern-grid.four{grid-template-columns:repeat(4,1fr)}
-.pattern-card{background:var(--s1);padding:28px 22px}
-.pattern-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
-.pattern-card .num{font-size:36px;font-weight:800;color:var(--g);margin-bottom:4px}
-.pattern-card p{font-size:12px;color:var(--muted);line-height:1.6}
-
-/* ── PROOF ── */
-.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-top:48px}
-.proof-card{background:var(--s1);padding:36px 24px}
-.proof-num{font-size:48px;font-weight:800;color:var(--g);line-height:1;margin-bottom:8px}
-.proof-label{font-size:13px;font-weight:600;margin-bottom:6px}
-.proof-desc{font-size:12px;color:var(--muted);line-height:1.6}
-
-/* ── HARDWARE ── */
-.hw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-top:48px}
-.hw-card{background:var(--s1);padding:28px 22px;position:relative}
-.hw-card.best{background:var(--s2);border-top:2px solid var(--g)}
-.hw-best-tag{position:absolute;top:0;right:16px;background:var(--g);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:500;padding:3px 10px;border-radius:0 0 6px 6px;letter-spacing:.1em}
-.hw-name{font-size:17px;font-weight:700;margin-bottom:4px}
-.hw-price{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--g);margin-bottom:16px}
+/* HARDWARE */
+.hw{background:var(--s1);padding:28px 22px;position:relative}
+.hw.best{background:var(--s2);border-top:2px solid var(--gold)}
+.hw-tag{position:absolute;top:0;right:16px;background:var(--gold);color:var(--bg);font-size:9px;font-weight:800;padding:3px 12px;border-radius:0 0 6px 6px;letter-spacing:.08em}
+.hw-name{font-size:18px;font-weight:800;margin-bottom:4px}
+.hw-price{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--gold);margin-bottom:16px}
 .hw-specs{display:flex;flex-direction:column;gap:8px}
-.hw-spec{display:flex;justify-content:space-between;font-size:12px;padding-bottom:8px;border-bottom:.5px solid var(--border)}.hw-spec:last-child{border-bottom:none}
-.hw-k{color:var(--muted)}.hw-v{font-family:'JetBrains Mono',monospace;font-size:11px}.hw-v-g{color:var(--g)}
+.hw-row{display:flex;justify-content:space-between;font-size:13px;padding-bottom:8px;border-bottom:1px solid var(--border)}.hw-row:last-child{border-bottom:none}
+.hw-k{color:var(--muted);font-weight:400}.hw-v{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600}.hw-vg{color:var(--gold)}
 
-/* ── CASE STUDY ── */
-.case-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:48px;align-items:start}
-.case-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:8px;overflow:hidden}
-.case-m{background:var(--s1);padding:20px 16px}
-.case-m-n{font-size:28px;font-weight:800;color:var(--g);line-height:1;margin-bottom:3px}
-.case-m-l{font-size:10px;color:var(--dim);line-height:1.4}
-
-/* ── PRICING ── */
-.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:8px;overflow:hidden;margin-top:48px}
+/* PRICING */
 .pc{background:var(--s1);padding:32px 24px;display:flex;flex-direction:column;position:relative}
-.pc.feat{background:var(--s2);border-top:2px solid var(--g)}
-.pc-rec{position:absolute;top:0;right:16px;background:var(--g);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:500;padding:3px 10px;border-radius:0 0 6px 6px;letter-spacing:.1em}
-.pc-tier{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--g);letter-spacing:.15em;margin-bottom:10px}
-.pc-price{margin-bottom:16px}.pc-price .amt{font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1}.pc-price .cur{font-size:18px;font-weight:800;vertical-align:super}.pc-price .per{font-size:11px;color:var(--muted);margin-left:4px}
-.pc-hw{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);opacity:.7;margin-bottom:4px}
-.pc-monthly{font-size:12px;color:var(--muted);margin-bottom:18px}
-.pc-div{height:.5px;background:var(--border);margin-bottom:14px}
-.pc-feats{flex:1;display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
-.pf{display:flex;gap:8px;font-size:11px;color:var(--muted);line-height:1.5}.pf-ok{color:var(--g);flex-shrink:0}
-.pc-btn{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;text-align:center;padding:11px;border-radius:4px;transition:all .2s;letter-spacing:.05em;display:block;margin-top:auto}
-.pc-btn.ga{background:var(--g);color:var(--bg)}.pc-btn.ga:hover{background:#33ffaa}
-.pc-btn.oa{border:.5px solid var(--border2);color:var(--muted)}.pc-btn.oa:hover{border-color:var(--muted);color:var(--text)}
+.pc.feat{background:var(--s2);border-top:2px solid var(--gold)}
+.pc-tag{position:absolute;top:0;right:16px;background:var(--gold);color:var(--bg);font-size:9px;font-weight:800;padding:3px 12px;border-radius:0 0 6px 6px;letter-spacing:.08em}
+.pc-tier{font-size:10px;font-weight:800;color:var(--gold);letter-spacing:.15em;margin-bottom:12px}
+.pc-amt{font-size:44px;font-weight:900;letter-spacing:-.03em;line-height:1;margin-bottom:4px}.pc-per{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:4px}
+.pc-hw{font-size:11px;font-weight:600;color:var(--gold);opacity:.7;margin-bottom:16px}
+.pc-div{height:1px;background:var(--border);margin-bottom:14px}
+.pc-feats{flex:1;display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.pf{display:flex;gap:8px;font-size:12px;color:var(--muted);line-height:1.5;font-weight:500}.pf-ok{color:var(--gold);font-weight:700}
+.pc-btn{font-size:13px;font-weight:700;text-align:center;padding:13px;border-radius:6px;transition:all .2s;display:block;margin-top:auto}
+.pc-btn.primary{background:var(--gold);color:var(--bg)}.pc-btn.primary:hover{background:#f5c842}
+.pc-btn.secondary{border:1px solid var(--border2);color:var(--muted)}.pc-btn.secondary:hover{border-color:var(--muted);color:var(--text)}
 
-/* ── GUARANTEE ── */
-.guarantee{max-width:720px;margin:0 auto;text-align:center;padding:64px 48px;background:var(--s1);border:1px solid var(--g-b);border-radius:12px;position:relative;overflow:hidden}
-.guarantee::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(0,255,148,.04),transparent);pointer-events:none}
-.guarantee-shield{font-size:56px;font-weight:800;color:var(--g);margin-bottom:16px;line-height:1}
-.guarantee h3{font-size:28px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
-.guarantee h3 em{font-style:normal;color:var(--g)}
-.guarantee p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:16px}
-.guarantee .fine{font-size:11px;color:var(--dim)}
+/* GUARANTEE */
+.guar{max-width:720px;margin:0 auto;text-align:center;padding:56px 48px;background:var(--s1);border:1.5px solid var(--gold-b);border-radius:14px;position:relative;overflow:hidden}
+.guar::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(240,180,41,.05),transparent);pointer-events:none}
+.guar-n{font-size:64px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:16px}
+.guar h3{font-size:30px;font-weight:900;letter-spacing:-.02em;margin-bottom:14px}
+.guar h3 em{font-style:normal;color:var(--gold)}
+.guar p{font-size:16px;color:var(--muted);line-height:1.8;font-weight:300;margin-bottom:14px}
+.guar .fine{font-size:11px;color:var(--dim)}
 
-/* ── CTA ── */
-.cta-sec{text-align:center;padding:120px 56px;background:var(--s1);position:relative;overflow:hidden}
-.cta-sec::before{content:'';position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse at center bottom,rgba(0,255,148,.06),transparent 70%);pointer-events:none}
-.cta-sec h2{font-size:clamp(44px,7vw,88px);font-weight:800;letter-spacing:-.04em;line-height:.93;margin-bottom:20px}
-.cta-sec h2 .serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;color:var(--g)}
-.cta-sec p{font-size:17px;color:var(--muted);max-width:500px;margin:0 auto 40px;line-height:1.7}
-.email-row{display:flex;max-width:420px;margin:0 auto;border:.5px solid var(--border2);border-radius:4px;overflow:hidden}
-.email-inp{flex:1;padding:14px 16px;background:var(--s2);border:none;color:var(--text);font-family:'Bricolage Grotesque',sans-serif;font-size:14px;outline:none}
+/* CTA */
+.cta{text-align:center;padding:120px 48px;background:var(--s1);position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse at center bottom,rgba(240,180,41,.06),transparent 70%);pointer-events:none}
+.cta h2{font-size:clamp(44px,7vw,88px);font-weight:900;letter-spacing:-.04em;line-height:.92;margin-bottom:24px}
+.cta h2 .it{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold)}
+.cta p{font-size:18px;color:var(--muted);max-width:520px;margin:0 auto 44px;line-height:1.75;font-weight:300}
+.email-row{display:flex;max-width:440px;margin:0 auto;border:1px solid var(--border2);border-radius:8px;overflow:hidden}
+.email-inp{flex:1;padding:16px 18px;background:var(--s2);border:none;color:var(--text);font-family:'Inter',sans-serif;font-size:15px;outline:none;font-weight:400}
 .email-inp::placeholder{color:var(--dim)}
-.email-sub{padding:14px 24px;background:var(--g);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;border:none;cursor:pointer;letter-spacing:.06em;transition:background .2s}
-.email-sub:hover{background:#33ffaa}
+.email-sub{padding:16px 28px;background:var(--gold);color:var(--bg);font-size:13px;font-weight:800;border:none;cursor:pointer;letter-spacing:.04em;transition:background .2s}
+.email-sub:hover{background:#f5c842}
 
-/* ── FOOTER ── */
-footer{padding:40px 56px;border-top:.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-.fl{font-size:18px;font-weight:800;color:var(--g)}
-.fc{font-size:11px;color:var(--dim)}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}.reveal.vis{opacity:1;transform:translateY(0)}
+footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.f-logo{font-size:20px;font-weight:900;color:var(--gold)}
+.f-text{font-size:12px;color:var(--dim);font-weight:500}
 
-/* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .hero-top,.family-grid,.case-grid{grid-template-columns:1fr}
-  .hero-visual{display:none}
-  .hw-grid,.price-grid{grid-template-columns:1fr 1fr}
-  .pattern-grid,.pattern-grid.four,.compliance-grid,.learn-flow{grid-template-columns:1fr 1fr}
-  .proof-grid{grid-template-columns:1fr 1fr}
-  .calc-grid{grid-template-columns:1fr}
-  .learn-flow::before{display:none}
-  .saas-total{grid-template-columns:1fr}
-}
-@media(max-width:768px){
-  nav{padding:12px 20px}.nav-links{display:none}
-  section,.hero,.cta-sec{padding:64px 20px}
-  .saas-grid,.agent-grid,.hw-grid,.price-grid,.pattern-grid,.pattern-grid.four,.proof-grid,.compliance-grid,.calc-results,.case-metrics{grid-template-columns:1fr}
-  .h-stats{grid-template-columns:repeat(2,1fr)}
-  .calc-wrap{padding:24px}
-  .guarantee{padding:40px 24px;margin:0}
-  .learn-flow{grid-template-columns:1fr;gap:24px}
-  .learn-flow::before{display:none}
-  footer{flex-direction:column;text-align:center;gap:12px;padding:24px 20px}
-}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}.reveal.vis{opacity:1;transform:translateY(0)}
+
+@media(max-width:1024px){.fam-grid,.calc-grid{grid-template-columns:1fr}.grid-4,.grid-3{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr}.hero-visual{display:none}.saas-total{grid-template-columns:1fr;gap:16px}}
+@media(max-width:768px){nav{padding:12px 20px}.nav-links{display:none}section,.hero,.cta{padding:64px 20px}.grid-4,.grid-3,.grid-auto,.calc-results,.stats-row{grid-template-columns:1fr}.flow{grid-template-columns:1fr;gap:20px}.calc-box{padding:24px}.guar{padding:40px 24px;margin:0}footer{flex-direction:column;text-align:center;gap:10px;padding:24px 20px}.saas-total{grid-template-columns:1fr;gap:12px}}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">AONXI <span>Own Your Intelligence</span></div>
-  <div class="nav-links">
-    <a href="#tools">Tools Replaced</a>
-    <a href="#calculator">Calculator</a>
-    <a href="#agents">Agents</a>
-    <a href="#pricing">Pricing</a>
-  </div>
-  <div class="nav-r">
-    <a href="https://github.com/originaonxi/super-brain" class="nav-gh">GitHub</a>
-    <a href="#demo" class="nav-cta">Get Started</a>
-  </div>
+  <div class="logo">AONXI</div>
+  <div class="nav-links"><a href="#replace">What It Replaces</a><a href="#how">How It Learns</a><a href="#calc">Calculator</a><a href="#agents">Agents</a><a href="#pricing">Pricing</a></div>
+  <div class="nav-r"><a href="https://github.com/originaonxi/super-brain" class="nav-gh">GitHub</a><a href="#start" class="nav-cta">Get Started</a></div>
 </nav>
 
-<!-- ══ HERO ══ -->
 <section class="hero">
-  <div class="hgrid"></div>
-  <div class="hblob"></div>
-  <div class="hblob2"></div>
-  <div class="hero-top">
-    <div>
-      <div class="badge"><span class="pulse"></span>LIVE &mdash; 50 AGENTS &mdash; $200K PROVED &mdash; SELF-EVOLVING</div>
-      <h1>Your Mac Mini<br><span class="serif">Replaces Every</span><br><span class="dim">SaaS Tool You Pay For.</span></h1>
-      <p class="hero-sub">Your CRM. Your helpdesk. Your accounting. Your ad manager. Your SEO tools. <strong>All of them.</strong> One Mac Mini learns your business, builds local versions of every tool, and runs <strong>50+ AI agents</strong> that get smarter every day. <strong>One payment. Zero cloud cost. Forever.</strong></p>
-      <div class="hero-btns">
-        <a href="#calculator" class="btn-g">Calculate your savings</a>
-        <a href="#tools" class="btn-o">See what it replaces</a>
-        <a href="#pricing" class="btn-o">From $1,999</a>
-      </div>
-      <div class="h-stats">
-        <div class="hs"><div class="hs-n">50+</div><div class="hs-l">AI agents deployed</div></div>
-        <div class="hs"><div class="hs-n">$200K</div><div class="hs-l">Revenue proved</div></div>
-        <div class="hs"><div class="hs-n">$0</div><div class="hs-l">Per-query cost</div></div>
-        <div class="hs"><div class="hs-n">559x</div><div class="hs-l">Revenue per dollar spent</div></div>
-      </div>
-    </div>
-    <div class="hero-visual" style="position:relative;height:480px;display:flex;align-items:center;justify-content:center">
-      <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-        <defs>
-          <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          <radialGradient id="cg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00ff94" stop-opacity=".12"/><stop offset="100%" stop-color="#00ff94" stop-opacity="0"/></radialGradient>
-        </defs>
-        <circle cx="240" cy="240" r="100" fill="url(#cg)"/>
-        <circle cx="240" cy="240" r="75" fill="none" stroke="#00ff94" stroke-width=".6" opacity=".12"><animate attributeName="r" from="75" to="180" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" from=".12" to="0" dur="4s" repeatCount="indefinite"/></circle>
-        <circle cx="240" cy="240" r="75" fill="none" stroke="#00ff94" stroke-width=".6" opacity=".12"><animate attributeName="r" from="75" to="180" dur="4s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" from=".12" to="0" dur="4s" begin="2s" repeatCount="indefinite"/></circle>
-        <!-- Lines -->
-        <line x1="210" y1="216" x2="55" y2="55" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2s" repeatCount="indefinite"/></line>
-        <line x1="270" y1="216" x2="425" y2="55" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.7s" repeatCount="indefinite"/></line>
-        <line x1="200" y1="240" x2="35" y2="200" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2.2s" repeatCount="indefinite"/></line>
-        <line x1="280" y1="240" x2="445" y2="200" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.5s" repeatCount="indefinite"/></line>
-        <line x1="200" y1="260" x2="35" y2="340" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2.4s" repeatCount="indefinite"/></line>
-        <line x1="280" y1="260" x2="445" y2="340" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.9s" repeatCount="indefinite"/></line>
-        <line x1="240" y1="210" x2="240" y2="38" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2.6s" repeatCount="indefinite"/></line>
-        <line x1="240" y1="270" x2="240" y2="442" stroke="#00ff94" stroke-width=".7" opacity=".15" stroke-dasharray="4 3"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2.1s" repeatCount="indefinite"/></line>
-        <!-- Packets -->
-        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2s" repeatCount="indefinite" path="M240,240 L55,55"/><animate attributeName="opacity" values="0;.8;0" dur="2s" repeatCount="indefinite"/></circle>
-        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="1.7s" repeatCount="indefinite" path="M240,240 L425,55"/><animate attributeName="opacity" values="0;.8;0" dur="1.7s" repeatCount="indefinite"/></circle>
-        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2.2s" repeatCount="indefinite" path="M240,240 L35,200"/><animate attributeName="opacity" values="0;.8;0" dur="2.2s" repeatCount="indefinite"/></circle>
-        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="1.5s" repeatCount="indefinite" path="M240,240 L445,200"/><animate attributeName="opacity" values="0;.8;0" dur="1.5s" repeatCount="indefinite"/></circle>
-        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2.4s" repeatCount="indefinite" path="M240,240 L35,340"/><animate attributeName="opacity" values="0;.8;0" dur="2.4s" repeatCount="indefinite"/></circle>
-        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="1.9s" repeatCount="indefinite" path="M240,240 L445,340"/><animate attributeName="opacity" values="0;.8;0" dur="1.9s" repeatCount="indefinite"/></circle>
-        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2.6s" repeatCount="indefinite" path="M240,240 L240,38"/><animate attributeName="opacity" values="0;.8;0" dur="2.6s" repeatCount="indefinite"/></circle>
-        <circle r="2.5" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2.1s" repeatCount="indefinite" path="M240,240 L240,442"/><animate attributeName="opacity" values="0;.8;0" dur="2.1s" repeatCount="indefinite"/></circle>
-        <!-- Center -->
-        <rect x="178" y="204" width="124" height="72" rx="10" fill="#030806" stroke="#00ff94" stroke-width="1"/>
-        <rect x="178" y="204" width="124" height="72" rx="10" fill="none" stroke="#00ff94" stroke-width="2" opacity="0"><animate attributeName="opacity" values="0;.25;0" dur="2.5s" repeatCount="indefinite"/></rect>
-        <text x="240" y="224" font-family="'JetBrains Mono'" font-size="7" fill="#00ff94" text-anchor="middle" letter-spacing=".14em">YOUR MAC MINI</text>
-        <text x="240" y="239" font-family="'JetBrains Mono'" font-size="6.5" fill="rgba(0,255,148,.55)" text-anchor="middle">learns every tool</text>
-        <text x="240" y="252" font-family="'JetBrains Mono'" font-size="6.5" fill="rgba(0,255,148,.55)" text-anchor="middle">builds local versions</text>
-        <text x="240" y="265" font-family="'JetBrains Mono'" font-size="6" fill="rgba(0,255,148,.3)" text-anchor="middle">$0/query | all data local</text>
-        <!-- Nodes -->
-        <rect x="7" y="30" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.3)" stroke-width=".7"/><text x="57" y="48" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="#f2f0eb" text-anchor="middle">CRM</text><text x="57" y="60" font-family="'JetBrains Mono'" font-size="6" fill="#00ff94" text-anchor="middle">replaces HubSpot</text>
-        <rect x="373" y="30" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.3)" stroke-width=".7"/><text x="423" y="48" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="#f2f0eb" text-anchor="middle">Helpdesk</text><text x="423" y="60" font-family="'JetBrains Mono'" font-size="6" fill="#00ff94" text-anchor="middle">replaces Zendesk</text>
-        <rect x="-13" y="175" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.25)" stroke-width=".7"/><text x="37" y="193" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="#f2f0eb" text-anchor="middle">Accounting</text><text x="37" y="205" font-family="'JetBrains Mono'" font-size="6" fill="#00ff94" text-anchor="middle">replaces QuickBooks</text>
-        <rect x="393" y="175" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.25)" stroke-width=".7"/><text x="443" y="193" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="#f2f0eb" text-anchor="middle">Ad Manager</text><text x="443" y="205" font-family="'JetBrains Mono'" font-size="6" fill="rgba(0,255,148,.6)" text-anchor="middle">replaces agencies</text>
-        <rect x="-13" y="318" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.2)" stroke-width=".7"/><text x="37" y="336" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="rgba(242,240,235,.7)" text-anchor="middle">SEO Tools</text><text x="37" y="348" font-family="'JetBrains Mono'" font-size="6" fill="rgba(0,255,148,.5)" text-anchor="middle">replaces SEMrush</text>
-        <rect x="393" y="318" width="100" height="44" rx="6" fill="#050808" stroke="rgba(0,255,148,.2)" stroke-width=".7"/><text x="443" y="336" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="rgba(242,240,235,.7)" text-anchor="middle">QA/Projects</text><text x="443" y="348" font-family="'JetBrains Mono'" font-size="6" fill="rgba(0,255,148,.5)" text-anchor="middle">replaces Jira</text>
-        <rect x="190" y="12" width="100" height="36" rx="6" fill="#050808" stroke="rgba(0,255,148,.2)" stroke-width=".7"/><text x="240" y="28" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="rgba(242,240,235,.7)" text-anchor="middle">Email/Marketing</text><text x="240" y="40" font-family="'JetBrains Mono'" font-size="6" fill="rgba(0,255,148,.5)" text-anchor="middle">replaces Mailchimp</text>
-        <rect x="190" y="432" width="100" height="36" rx="6" fill="#050808" stroke="rgba(0,255,148,.15)" stroke-width=".7"/><text x="240" y="448" font-family="'Bricolage Grotesque'" font-size="8" font-weight="700" fill="rgba(242,240,235,.5)" text-anchor="middle">AI Assistant</text><text x="240" y="460" font-family="'JetBrains Mono'" font-size="6" fill="rgba(0,255,148,.4)" text-anchor="middle">replaces ChatGPT</text>
-      </svg>
+  <div class="hero-grad"></div><div class="hero-grad2"></div>
+  <div style="position:relative;z-index:2;max-width:900px">
+    <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:var(--gold-dim);border:1px solid var(--gold-b);border-radius:100px;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.08em;margin-bottom:28px;text-transform:uppercase"><span style="width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite"></span>Live &mdash; 50 agents &mdash; $200K proved &mdash; 559x RPDC</div>
+    <h1>One Mac Mini.<br><span class="it">Every tool</span> replaced.<br><span class="light">Intelligence you own.</span></h1>
+    <p class="hero-p">Your company pays <strong>$3,000&ndash;$5,000/month</strong> for SaaS tools that can't talk to each other. One Mac Mini replaces all of them. It <strong>learns your workflows</strong>, builds local versions of every tool, runs <strong>50+ AI agents</strong>, and gets smarter every day. <strong>One payment. $0/query. Forever.</strong></p>
+    <div class="hero-btns"><a href="#calc" class="btn-gold">Calculate your savings</a><a href="#replace" class="btn-out">See what it replaces</a><a href="#pricing" class="btn-out">From $1,999</a></div>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-n">50+</div><div class="stat-l">AI agents live</div></div>
+      <div class="stat"><div class="stat-n">$200K</div><div class="stat-l">Revenue proved</div></div>
+      <div class="stat"><div class="stat-n">559x</div><div class="stat-l">Revenue per $ spent</div></div>
+      <div class="stat"><div class="stat-n">$0</div><div class="stat-l">Per-query cost</div></div>
     </div>
   </div>
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee"><div class="marquee-track">
-  <div class="mq-item"><span class="mq-dot"></span>Replaces $5K/mo in SaaS</div><div class="mq-item"><span class="mq-dot"></span>50+ live agents</div><div class="mq-item"><span class="mq-dot"></span>Self-evolving</div><div class="mq-item"><span class="mq-dot"></span>$200K proved</div><div class="mq-item"><span class="mq-dot"></span>GDPR + HIPAA safe</div><div class="mq-item"><span class="mq-dot"></span>559x RPDC</div><div class="mq-item"><span class="mq-dot"></span>Agents teach agents</div><div class="mq-item"><span class="mq-dot"></span>30-day guarantee</div><div class="mq-item"><span class="mq-dot"></span>Login from anywhere</div><div class="mq-item"><span class="mq-dot"></span>Your data stays yours</div><div class="mq-item"><span class="mq-dot"></span>Replaces $5K/mo in SaaS</div><div class="mq-item"><span class="mq-dot"></span>50+ live agents</div><div class="mq-item"><span class="mq-dot"></span>Self-evolving</div><div class="mq-item"><span class="mq-dot"></span>$200K proved</div><div class="mq-item"><span class="mq-dot"></span>GDPR + HIPAA safe</div><div class="mq-item"><span class="mq-dot"></span>559x RPDC</div><div class="mq-item"><span class="mq-dot"></span>Agents teach agents</div><div class="mq-item"><span class="mq-dot"></span>30-day guarantee</div>
+<div class="ticker"><div class="ticker-track">
+  <div class="tick-item"><span class="tick-dot"></span>Replaces $5K/mo in SaaS</div><div class="tick-item"><span class="tick-dot"></span>50+ live agents</div><div class="tick-item"><span class="tick-dot"></span>Self-evolving</div><div class="tick-item"><span class="tick-dot"></span>GDPR + HIPAA safe</div><div class="tick-item"><span class="tick-dot"></span>559x RPDC</div><div class="tick-item"><span class="tick-dot"></span>Agents teach agents</div><div class="tick-item"><span class="tick-dot"></span>30-day guarantee</div><div class="tick-item"><span class="tick-dot"></span>Login from anywhere</div><div class="tick-item"><span class="tick-dot"></span>Mac Mini M4</div><div class="tick-item"><span class="tick-dot"></span>Replaces $5K/mo in SaaS</div><div class="tick-item"><span class="tick-dot"></span>50+ live agents</div><div class="tick-item"><span class="tick-dot"></span>Self-evolving</div><div class="tick-item"><span class="tick-dot"></span>GDPR + HIPAA safe</div><div class="tick-item"><span class="tick-dot"></span>559x RPDC</div><div class="tick-item"><span class="tick-dot"></span>Agents teach agents</div><div class="tick-item"><span class="tick-dot"></span>30-day guarantee</div>
 </div></div>
 
-<!-- ══ SAAS REPLACEMENT ══ -->
-<section id="tools" class="reveal" style="background:var(--s1)">
-  <div class="stag">One box replaces everything</div>
-  <h2>Cancel <em>Every</em> Subscription.<br>Your Mac Mini Does <span class="serif">All of It.</span></h2>
-  <p class="section-sub">Your Mac Mini connects to your existing tools, <strong>learns how YOU use them</strong>, then builds local versions that are smarter &mdash; because they share one brain. Your CRM knows what your helpdesk knows. Your accounting knows your pipeline. <strong>Siloed SaaS tools can't do that.</strong></p>
-
-  <div class="saas-grid">
-    <div class="saas-card"><div class="saas-replaced">CRM &mdash; $800/mo</div><div class="saas-new">Sales + Outreach AI</div><div class="saas-save">$800/mo &rarr; $0/mo</div><div class="saas-desc">Pipeline tracking, lead scoring, email sequences, deal intelligence, meeting booking. Learns from every interaction. Every deal updates every other agent.</div><div class="saas-learn">Learns: your ICP, win patterns, email tone, deal stages, objection handling</div></div>
-    <div class="saas-card"><div class="saas-replaced">Helpdesk &mdash; $55/seat/mo</div><div class="saas-new">Support + IT Agent</div><div class="saas-save">$550/mo (10 seats) &rarr; $0/mo</div><div class="saas-desc">Ticket handling, auto-resolution, CSAT tracking, knowledge base, escalation routing. Resolves 73% of Tier 1 tickets before a human sees them.</div><div class="saas-learn">Learns: your product, common issues, resolution patterns, customer tone preferences</div></div>
-    <div class="saas-card"><div class="saas-replaced">Accounting &mdash; $80/mo</div><div class="saas-new">Finance Agent</div><div class="saas-save">$80/mo &rarr; $0/mo</div><div class="saas-desc">Invoice categorization, MRR/ARR tracking, cash flow forecasting, anomaly detection, board-ready P&L summaries. Knows your revenue patterns because it sees your pipeline.</div><div class="saas-learn">Learns: your chart of accounts, recurring patterns, seasonal trends, vendor categories</div></div>
-    <div class="saas-card"><div class="saas-replaced">SEO Platform &mdash; $120/mo</div><div class="saas-new">SEO + Content Agent</div><div class="saas-save">$120/mo &rarr; $0/mo</div><div class="saas-desc">Keyword research, competitor analysis, content suggestions, rank tracking, backlink monitoring. Runs audits at 3am. Reports by breakfast.</div><div class="saas-learn">Learns: your domain authority, winning content patterns, competitor gaps, search intent</div></div>
-    <div class="saas-card"><div class="saas-replaced">Ad Management &mdash; $2,000/mo (agency)</div><div class="saas-new">Omni-Outreach Agent</div><div class="saas-save">$2,000/mo &rarr; $0/mo</div><div class="saas-desc">Writes ad copy, tests variants, adjusts bids, generates landing pages, A/B tests everything. Calls ad platform APIs. The Mac Mini is the brain the agency never had.</div><div class="saas-learn">Learns: your CPA targets, winning creatives, audience segments, seasonal bid patterns</div></div>
-    <div class="saas-card"><div class="saas-replaced">Project Management &mdash; $8/seat/mo</div><div class="saas-new">QA + Task Agent</div><div class="saas-save">$80/mo (10 seats) &rarr; $0/mo</div><div class="saas-desc">Task tracking, sprint planning, bug filing with evidence, test generation, deployment monitoring. Learns from every sprint retro automatically.</div><div class="saas-learn">Learns: your sprint velocity, common blockers, test coverage gaps, deployment risks</div></div>
-    <div class="saas-card"><div class="saas-replaced">Email Marketing &mdash; $60/mo</div><div class="saas-new">Daily Fleet Agent</div><div class="saas-save">$60/mo &rarr; $0/mo</div><div class="saas-desc">5 autonomous email agents on cron. Newsletters, drip campaigns, product updates, customer nurture. Tracks opens, clicks, and optimizes send times.</div><div class="saas-learn">Learns: your audience segments, optimal send times, subject line patterns, unsubscribe triggers</div></div>
-    <div class="saas-card"><div class="saas-replaced">HR Platform &mdash; $6/seat/mo</div><div class="saas-new">HR Agent</div><div class="saas-save">$60/mo (10 seats) &rarr; $0/mo</div><div class="saas-desc">Resume screening, interview scheduling, offer letters, policy Q&A, onboarding checklists. Screens 100 resumes in 3 minutes vs 2 weeks manually.</div><div class="saas-learn">Learns: your hiring criteria, culture fit signals, offer acceptance patterns, onboarding gaps</div></div>
-    <div class="saas-card"><div class="saas-replaced">AI Assistant &mdash; $30/seat/mo</div><div class="saas-new">Per-Employee AI</div><div class="saas-save">$300/mo (10 seats) &rarr; $0/mo</div><div class="saas-desc">Every employee gets a Claude-quality AI that knows their role, tools, style, and current projects. CEO gets strategy briefs. Sales gets pipeline intel. HR gets compliance checks.</div><div class="saas-learn">Learns: each person's role, writing style, tool preferences, current projects, past wins</div></div>
+<!-- SAAS REPLACEMENT -->
+<section id="replace" class="reveal divider" style="background:var(--s1)">
+  <div class="stag">What it replaces</div>
+  <h2>Cancel <em>every</em> subscription.<br>Your Mac Mini does <span class="it">all of it.</span></h2>
+  <p class="sub">It connects to your existing tools, <strong>learns how YOU actually use them</strong>, then builds local versions that are smarter. Why smarter? Because your CRM can finally see what your helpdesk knows. <strong>Siloed SaaS can't do that.</strong></p>
+  <div class="grid grid-auto">
+    <div class="card"><div class="saas-old">CRM Platform &mdash; $800/mo</div><div class="saas-new">Sales + Outreach AI</div><div class="saas-save">$800/mo saved</div><div class="saas-desc">Pipeline, lead scoring, email sequences, deal intelligence. Learns from every interaction. Every deal updates every other agent automatically.</div><div class="saas-learn">Learns your ICP, win patterns, deal stages, objection handling</div></div>
+    <div class="card"><div class="saas-old">Helpdesk &mdash; $55/seat/mo</div><div class="saas-new">Support + IT Agent</div><div class="saas-save">$550/mo saved (10 seats)</div><div class="saas-desc">Ticket handling, auto-resolution, CSAT tracking, escalation. Resolves 73% of Tier 1 tickets before a human sees them. Never sleeps.</div><div class="saas-learn">Learns your product, common issues, customer tone preferences</div></div>
+    <div class="card"><div class="saas-old">Accounting &mdash; $80/mo</div><div class="saas-new">Finance Agent</div><div class="saas-save">$80/mo saved</div><div class="saas-desc">Invoice categorization, MRR/ARR, cash flow forecasting, anomaly detection. Knows your revenue because it sees your pipeline directly.</div><div class="saas-learn">Learns your chart of accounts, seasonal trends, vendor patterns</div></div>
+    <div class="card"><div class="saas-old">SEO Platform &mdash; $120/mo</div><div class="saas-new">SEO + Content Agent</div><div class="saas-save">$120/mo saved</div><div class="saas-desc">Keyword research, competitor analysis, rank tracking, content suggestions. Runs audits at 3am. Reports by breakfast.</div><div class="saas-learn">Learns your winning content patterns, competitor gaps, search intent</div></div>
+    <div class="card"><div class="saas-old">Ad Management &mdash; $2,000/mo</div><div class="saas-new">Omni-Outreach Agent</div><div class="saas-save">$2,000/mo saved</div><div class="saas-desc">Writes ad copy, tests variants, adjusts bids, generates landing pages. Uses ad platform APIs. The Mac Mini is the brain the agency never had.</div><div class="saas-learn">Learns your CPA targets, winning creatives, audience segments</div></div>
+    <div class="card"><div class="saas-old">AI Assistant &mdash; $30/seat/mo</div><div class="saas-new">Per-Employee AI</div><div class="saas-save">$300/mo saved (10 seats)</div><div class="saas-desc">Every employee gets AI that knows their role, tools, style, projects. CEO gets strategy. Sales gets pipeline. HR gets compliance. Not a generic chatbot.</div><div class="saas-learn">Learns each person's role, writing style, current projects, past wins</div></div>
+    <div class="card"><div class="saas-old">Project Mgmt &mdash; $8/seat/mo</div><div class="saas-new">QA + Task Agent</div><div class="saas-save">$80/mo saved</div><div class="saas-desc">Task tracking, sprint planning, bug filing with evidence, test generation, deployment monitoring. Self-healing QA that learns from every failure.</div><div class="saas-learn">Learns sprint velocity, common blockers, test coverage gaps</div></div>
+    <div class="card"><div class="saas-old">Email Marketing &mdash; $60/mo</div><div class="saas-new">Daily Fleet Agent</div><div class="saas-save">$60/mo saved</div><div class="saas-desc">5 autonomous email agents. Newsletters, drip campaigns, nurture sequences. Tracks opens, clicks, optimizes send times. Fires on cron every morning.</div><div class="saas-learn">Learns optimal send times, subject line patterns, segment behavior</div></div>
+    <div class="card"><div class="saas-old">HR Platform &mdash; $6/seat/mo</div><div class="saas-new">HR Agent</div><div class="saas-save">$60/mo saved</div><div class="saas-desc">Resume screening (100 in 3 minutes), interview scheduling, offer letters, policy Q&A, onboarding. 4.2 hours saved per hire.</div><div class="saas-learn">Learns hiring criteria, culture signals, onboarding friction points</div></div>
   </div>
-
   <div class="saas-total">
-    <div><div class="saas-total-n" style="color:var(--red)">$4,050</div><div class="saas-total-l">Your current monthly SaaS spend</div></div>
-    <div><div class="saas-total-n" style="color:var(--g)">$15</div><div class="saas-total-l">AONXI monthly cost (electricity)</div></div>
-    <div><div class="saas-total-n" style="color:var(--amber)">$48,420</div><div class="saas-total-l">Your annual savings</div></div>
+    <div><div class="st-n" style="color:var(--red)">$4,050</div><div class="st-l">Your monthly SaaS spend</div></div>
+    <div><div class="st-n" style="color:var(--gold)">$15</div><div class="st-l">AONXI monthly cost</div></div>
+    <div><div class="st-n" style="color:var(--green)">$48,420</div><div class="st-l">Your annual savings</div></div>
   </div>
 </section>
 
-<!-- ══ HOW IT LEARNS ══ -->
-<section class="reveal">
-  <div class="stag">Self-learning</div>
-  <h2>It Watches How You Work.<br>Then <em>Builds</em> the <span class="serif">Tools.</span></h2>
-  <p class="section-sub">Your Mac Mini doesn't come pre-loaded with generic software. It connects to your existing tools via API, <strong>observes your actual workflows</strong>, and builds local versions tuned to how YOUR business actually operates.</p>
-
-  <div class="learn-flow">
-    <div class="learn-step"><div class="learn-num">1</div><h4>Connect</h4><p>Link your existing CRM, helpdesk, accounting, ad platforms via API. Mac Mini reads your data.</p></div>
-    <div class="learn-step"><div class="learn-num">2</div><h4>Observe</h4><p>System watches your workflows. What features you actually use. What you ignore. Your patterns.</p></div>
-    <div class="learn-step"><div class="learn-num">3</div><h4>Build</h4><p>Creates local versions of every tool. Not generic clones &mdash; tools shaped to YOUR specific usage.</p></div>
-    <div class="learn-step"><div class="learn-num">4</div><h4>Replace</h4><p>Run in parallel until confident. Then cancel the subscription. Your data stays. Your tool stays. Forever.</p></div>
+<!-- HOW IT LEARNS -->
+<section id="how" class="reveal divider">
+  <div class="stag">Self-learning engine</div>
+  <h2>It watches how you work.<br>Then <em>builds</em> the <span class="it">tools.</span></h2>
+  <p class="sub">Your Mac Mini connects to existing tools via API, <strong>observes your actual usage patterns</strong>, then builds local versions shaped to YOUR business. Not generic clones. Tools that know YOUR data.</p>
+  <div class="flow">
+    <div class="flow-step"><div class="flow-num">1</div><h4>Connect</h4><p>Link your existing SaaS tools via API. Read-only. Zero disruption to your current workflow.</p></div>
+    <div class="flow-step"><div class="flow-num">2</div><h4>Observe</h4><p>Mac Mini watches what features you actually use. Most companies use 18% of what they pay for.</p></div>
+    <div class="flow-step"><div class="flow-num">3</div><h4>Build</h4><p>Creates local versions tuned to YOUR usage. Your fields. Your workflows. Your terminology.</p></div>
+    <div class="flow-step"><div class="flow-num">4</div><h4>Replace</h4><p>Run side-by-side. Validate. Then cancel the subscription. Your data stays. Your tool stays.</p></div>
   </div>
-
-  <div class="terminal" style="margin-top:48px">
-    <div class="terminal-bar"><div class="terminal-dot" style="background:#ff5f57"></div><div class="terminal-dot" style="background:#ffbd2e"></div><div class="terminal-dot" style="background:#28c840"></div><div class="terminal-title">aonxi &mdash; tool learning engine</div></div>
-    <div class="terminal-body">
-<span class="prompt">$</span> <span class="cmd">aonxi learn --source hubspot --mode observe</span>
-<br><br>
-<span class="output">  Connecting to CRM API...</span>
-<span class="output">  Observing 847 contacts, 23 deals, 12 email sequences</span>
-<span class="output">  Learning: pipeline stages, deal properties, email templates</span>
-<span class="output">  Learning: which fields you actually use (17 of 94 = <span class="highlight">18%</span>)</span>
-<span class="output">  Learning: your custom views, filters, sort preferences</span>
-<br>
-<span class="output">  <span class="highlight">INSIGHT:</span> You use 18% of the CRM's features.</span>
-<span class="output">  <span class="highlight">INSIGHT:</span> You pay $800/mo for features you never touch.</span>
-<span class="output">  <span class="highlight">INSIGHT:</span> Your deal stages can be reduced from 7 to 4.</span>
-<br>
-<span class="prompt">$</span> <span class="cmd">aonxi build --tool crm --from-observations</span>
-<br><br>
-<span class="output">  Building local CRM tuned to your workflow...</span>
-<span class="output">  Pipeline: 4 stages (your actual pattern)</span>
-<span class="output">  Fields: 17 (the ones you use) + 3 AI-generated</span>
-<span class="output">  Email sequences: imported + improved by outreach agent</span>
-<span class="output">  <span class="warn">BONUS:</span> CRM now shares data with Finance Agent</span>
-<span class="output">  <span class="warn">BONUS:</span> Pipeline updates auto-adjust revenue forecasts</span>
-<br>
-<span class="output">  <span class="highlight">Local CRM ready. Your data never leaves this machine.</span></span>
+  <div class="term" style="margin-top:48px">
+    <div class="term-bar"><div class="term-dot" style="background:#ff5f57"></div><div class="term-dot" style="background:#ffbd2e"></div><div class="term-dot" style="background:#28c840"></div><div class="term-title">aonxi &mdash; tool learning engine</div></div>
+    <div class="term-body">
+<span class="t-p">$</span> <span class="t-c">aonxi learn --source crm --mode observe</span><br><br>
+<span class="t-o">  Connecting to CRM API...</span><br>
+<span class="t-o">  Scanning 847 contacts, 23 deals, 12 email sequences</span><br>
+<span class="t-o">  Learning: pipeline stages, deal properties, templates</span><br>
+<span class="t-o">  Fields you actually use: <span class="t-h">17 of 94 (18%)</span></span><br>
+<span class="t-o">  Custom views analyzed: <span class="t-h">6 views</span></span><br><br>
+<span class="t-o">  <span class="t-h">INSIGHT:</span> You pay $800/mo for 82% features you never touch.</span><br>
+<span class="t-o">  <span class="t-h">INSIGHT:</span> Your deal stages can collapse from 7 to 4.</span><br>
+<span class="t-o">  <span class="t-h">INSIGHT:</span> 3 email sequences have 0% reply rate &mdash; flagged.</span><br><br>
+<span class="t-p">$</span> <span class="t-c">aonxi build --tool crm --from-observations</span><br><br>
+<span class="t-o">  Building local CRM from your patterns...</span><br>
+<span class="t-o">  Pipeline: 4 stages (your actual flow)</span><br>
+<span class="t-o">  Fields: 17 (used) + 3 AI-suggested</span><br>
+<span class="t-o">  Sequences: imported, dead ones removed</span><br>
+<span class="t-o">  <span class="t-w">BONUS:</span> CRM now shares data with Finance Agent</span><br>
+<span class="t-o">  <span class="t-w">BONUS:</span> Pipeline changes auto-update revenue forecasts</span><br><br>
+<span class="t-o">  <span class="t-h">Local CRM ready. Global access via tunnel. $0/month.</span></span>
     </div>
   </div>
-
-  <div style="margin-top:32px;padding:24px;background:var(--g-dim);border:.5px solid var(--g-b);border-radius:8px;text-align:center">
-    <div style="font-size:15px;font-weight:600;margin-bottom:6px">Why the local version is <span style="color:var(--g)">better</span> than the original</div>
-    <div style="font-size:13px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.7">Your CRM can't see your helpdesk tickets. Your helpdesk can't see your pipeline. Your accounting can't see your ad spend. <strong>Your Mac Mini sees everything.</strong> Every tool it builds is smarter because it has ALL your data in one brain. Cross-tool intelligence is impossible with siloed SaaS.</div>
+  <div style="margin-top:28px;padding:20px 24px;background:var(--gold-dim);border:1px solid var(--gold-b);border-radius:8px;text-align:center">
+    <div style="font-size:16px;font-weight:700;margin-bottom:6px">Why the local version is <span style="color:var(--gold)">smarter</span> than the original</div>
+    <div style="font-size:14px;color:var(--muted);max-width:600px;margin:0 auto;line-height:1.7;font-weight:300">Your CRM can't see your support tickets. Your helpdesk can't see your pipeline. Your accounting can't see your ad spend. <strong>Your Mac Mini sees everything.</strong> Every tool shares one brain. Cross-tool intelligence is impossible with siloed SaaS.</div>
   </div>
 </section>
 
-<!-- ══ ROI CALCULATOR ══ -->
-<section id="calculator" class="reveal">
-  <div class="stag">ROI calculator</div>
-  <h2>How Much Are You<br><em>Overpaying</em> Every Month?</h2>
-  <p class="section-sub">Drag the sliders. Watch the math. <strong>Every dollar you spend on cloud SaaS is a dollar you never get back.</strong></p>
-  <div class="calc-wrap">
+<!-- CALCULATOR -->
+<section id="calc" class="reveal divider">
+  <div class="stag">ROI Calculator</div>
+  <h2>How much are you<br><em>wasting</em> every month?</h2>
+  <p class="sub">Move the sliders. Watch the math. <strong>Every SaaS dollar is a dollar you never get back.</strong></p>
+  <div class="calc-box">
     <div class="calc-grid">
       <div class="calc-sliders">
-        <div class="calc-group"><div class="calc-label"><span>Employees on AI assistants</span><span class="calc-label-val" id="sl-ai-val">10</span></div><div class="calc-label-price">ChatGPT / Claude / Copilot @ $30/user/mo</div><input type="range" id="sl-ai" min="0" max="200" value="10"></div>
-        <div class="calc-group"><div class="calc-label"><span>CRM seats</span><span class="calc-label-val" id="sl-crm-val">5</span></div><div class="calc-label-price">CRM platform @ $80/user/mo</div><input type="range" id="sl-crm" min="0" max="100" value="5"></div>
-        <div class="calc-group"><div class="calc-label"><span>Helpdesk seats</span><span class="calc-label-val" id="sl-help-val">5</span></div><div class="calc-label-price">Support platform @ $55/user/mo</div><input type="range" id="sl-help" min="0" max="100" value="5"></div>
-        <div class="calc-group"><div class="calc-label"><span>Other SaaS tools</span><span class="calc-label-val" id="sl-other-val">500</span></div><div class="calc-label-price">SEO, accounting, project mgmt, email, etc.</div><input type="range" id="sl-other" min="0" max="5000" value="500" step="50"></div>
+        <div class="calc-group"><div class="calc-lbl"><span>AI assistant seats</span><span class="calc-val" id="v-ai">10</span></div><div class="calc-price">ChatGPT / Claude / Copilot @ $30/user/mo</div><input type="range" id="s-ai" min="0" max="200" value="10"></div>
+        <div class="calc-group"><div class="calc-lbl"><span>CRM seats</span><span class="calc-val" id="v-crm">5</span></div><div class="calc-price">Sales platform @ $80/user/mo</div><input type="range" id="s-crm" min="0" max="100" value="5"></div>
+        <div class="calc-group"><div class="calc-lbl"><span>Helpdesk seats</span><span class="calc-val" id="v-help">5</span></div><div class="calc-price">Support platform @ $55/user/mo</div><input type="range" id="s-help" min="0" max="100" value="5"></div>
+        <div class="calc-group"><div class="calc-lbl"><span>Other monthly SaaS</span><span class="calc-val" id="v-other">$500</span></div><div class="calc-price">SEO, accounting, project mgmt, email, ads, etc.</div><input type="range" id="s-other" min="0" max="5000" value="500" step="50"></div>
       </div>
       <div>
         <div class="calc-results">
-          <div class="calc-r"><div class="calc-r-n red">$<span id="calc-annual">12,660</span></div><div class="calc-r-l">You pay per year (SaaS subscriptions)</div></div>
-          <div class="calc-r"><div class="calc-r-n green">$<span id="calc-onetime">4,999</span></div><div class="calc-r-l">AONXI one-time (hardware + agents + setup)</div></div>
-          <div class="calc-r hl"><div class="calc-r-n amber"><span id="calc-breakeven">5</span> <span style="font-size:18px">months</span></div><div class="calc-r-l">Break-even. After this, it's free forever.</div></div>
-          <div class="calc-r hl"><div class="calc-r-n green">$<span id="calc-savings">32,821</span></div><div class="calc-r-l">Your 3-year savings vs SaaS subscriptions</div></div>
+          <div class="cr"><div class="cr-n" style="color:var(--red)">$<span id="c-annual">12,660</span></div><div class="cr-l">You pay per year (SaaS)</div></div>
+          <div class="cr"><div class="cr-n" style="color:var(--gold)">$<span id="c-once">4,999</span></div><div class="cr-l">AONXI one-time cost</div></div>
+          <div class="cr cr-hl"><div class="cr-n" style="color:var(--text)"><span id="c-break">5</span> <span style="font-size:18px">months</span></div><div class="cr-l">Break-even. Free after this.</div></div>
+          <div class="cr cr-hl"><div class="cr-n" style="color:var(--green)">$<span id="c-save">32,821</span></div><div class="cr-l">3-year savings</div></div>
         </div>
-        <div class="calc-verdict" id="calc-verdict">You break even in <strong>5 months</strong>. Then every query, every tool, every agent is free. Forever.</div>
+        <div class="calc-msg" id="c-msg">You break even in <strong>5 months</strong>. Then it's free. Forever.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ OUTCOME AGENTS ══ -->
-<section id="agents" class="reveal">
+<!-- AGENTS -->
+<section id="agents" class="reveal divider">
   <div class="stag">The agent family</div>
-  <h2>Every Agent Has<br>One Job. One <em>Number.</em></h2>
-  <p class="section-sub">Not chatbots. <strong>Autonomous employees</strong> that work 24/7, get better every day, and teach each other what works. Each one defined by the outcome it delivers.</p>
-  <div class="agent-grid">
-    <div class="agent-card"><div class="agent-metric">$200K</div><div class="agent-name">Outreach Agent v8</div><div class="agent-role">Revenue Generation</div><div class="agent-outcome">Finds companies with buying intent, researches decision-makers, writes personalized emails with real-time signals. Human approves before send. Self-correcting.</div><div class="agent-proof">Revenue generated. Replaces 2 SDRs ($130K/yr)</div></div>
-    <div class="agent-card"><div class="agent-metric">73%</div><div class="agent-name">IT Helpdesk Agent</div><div class="agent-role">Ticket Resolution</div><div class="agent-outcome">Resolves Tier 1 tickets automatically: passwords, VPN, access, troubleshooting. Escalates P0 with root cause. Learns from every resolution.</div><div class="agent-proof">Of tickets resolved before a human sees them</div></div>
-    <div class="agent-card"><div class="agent-metric">2.3x</div><div class="agent-name">Sales Pipeline Agent</div><div class="agent-role">Deal Intelligence</div><div class="agent-outcome">Preps briefs before every call. Scores intent from 15 signals. Predicts close probability. Surfaces pipeline you didn't know existed.</div><div class="agent-proof">Close rate improvement over manual pipeline</div></div>
-    <div class="agent-card"><div class="agent-metric">559x</div><div class="agent-name">RPDC Score</div><div class="agent-role">The One Metric</div><div class="agent-outcome">Revenue Per Dollar of Cost. Every $1 on inference + human QC generates $559 in revenue. Fully attributable. End-to-end tracked. No guessing.</div><div class="agent-proof">Every change is an experiment with before/after</div></div>
-    <div class="agent-card"><div class="agent-metric">&lt;30s</div><div class="agent-name">Support Agent</div><div class="agent-role">Customer Retention</div><div class="agent-outcome">Responds instantly. Knows your product, policies, tone. Escalates complex issues with full context. Tracks CSAT. Prevents churn before it happens.</div><div class="agent-proof">Average response time, 24/7/365</div></div>
-    <div class="agent-card"><div class="agent-metric">100%</div><div class="agent-name">Finance Agent</div><div class="agent-role">P&L Intelligence</div><div class="agent-outcome">Auto-categorizes invoices. Updates forecasts daily. Flags anomalies. Generates board-ready summaries. Knows your pipeline because it shares the brain.</div><div class="agent-proof">Of invoices categorized without human touch</div></div>
+  <h2>Every agent has one job.<br>One <em>number.</em></h2>
+  <p class="sub">Not chatbots. <strong>Autonomous employees</strong> that work 24/7, never take sick days, and teach each other what works.</p>
+  <div class="grid grid-auto">
+    <div class="card"><div class="ag-metric">$200K</div><div class="ag-name">Outreach Agent v8</div><div class="ag-role">Revenue Generation</div><div class="ag-desc">Finds buying intent, researches decision-makers, writes personalized emails. Human approves before send. Self-correcting every week.</div><div class="ag-proof">Replaces 2 SDRs ($130K/yr)</div></div>
+    <div class="card"><div class="ag-metric">73%</div><div class="ag-name">IT Helpdesk Agent</div><div class="ag-role">Ticket Resolution</div><div class="ag-desc">Auto-resolves passwords, VPN, access, troubleshooting. Escalates P0 with root cause analysis. Learns from every resolution.</div><div class="ag-proof">Resolved before human sees it</div></div>
+    <div class="card"><div class="ag-metric">2.3x</div><div class="ag-name">Sales Pipeline Agent</div><div class="ag-role">Deal Intelligence</div><div class="ag-desc">Company briefs before every call. 15-signal intent scoring. Close probability prediction. Surfaces hidden pipeline.</div><div class="ag-proof">Close rate improvement</div></div>
+    <div class="card"><div class="ag-metric">559x</div><div class="ag-name">RPDC Score</div><div class="ag-role">The One Metric</div><div class="ag-desc">Revenue Per Dollar of Cost. Every change is an experiment with before/after. Full attribution chain from code change to revenue impact.</div><div class="ag-proof">$1 spent = $559 generated</div></div>
+    <div class="card"><div class="ag-metric">&lt;30s</div><div class="ag-name">Support Agent</div><div class="ag-role">Customer Retention</div><div class="ag-desc">Instant response. Knows your product and policies. Tracks CSAT. Prevents churn before it happens. Escalates with full context.</div><div class="ag-proof">Response time 24/7/365</div></div>
+    <div class="card"><div class="ag-metric">100%</div><div class="ag-name">Finance Agent</div><div class="ag-role">P&L Intelligence</div><div class="ag-desc">Auto-categorizes invoices. Daily MRR/ARR. Anomaly detection. Board-ready reports. Knows your pipeline because it shares the brain.</div><div class="ag-proof">Invoices processed automatically</div></div>
   </div>
 </section>
 
-<!-- ══ FAMILY EFFECT ══ -->
-<section class="reveal">
-  <div class="stag">The family effect</div>
-  <h2>Agents That <span class="serif">Teach</span><br>Each <em>Other.</em></h2>
-  <p class="section-sub">This is what no SaaS tool can do. <strong>When one agent learns something, every agent gets smarter.</strong> Your CRM insights improve your helpdesk. Your helpdesk insights improve your forecasts. It compounds forever.</p>
-  <div class="family-grid">
+<!-- FAMILY EFFECT -->
+<section class="reveal divider">
+  <div class="stag">Compound intelligence</div>
+  <h2>Agents that <span class="it">teach</span><br>each <em>other.</em></h2>
+  <p class="sub">When one agent learns something, every agent gets smarter. <strong>13 causal links</strong> between agents. Your SaaS tools can't do this because they don't share a brain.</p>
+  <div class="fam-grid">
     <div>
-      <div class="family-steps">
-        <div class="family-step"><div class="family-week">WEEK 1</div><div><h4>Outreach discovers a pattern</h4><p>"Healthcare leads convert 3x on Tuesdays." Stored in shared memory. Every agent can access it.</p></div></div>
-        <div class="family-step"><div class="family-week">WEEK 2</div><div><h4>Sales Agent adapts</h4><p>Prioritizes healthcare follow-ups for Tuesdays. Close rates improve. Nobody programmed this.</p></div></div>
-        <div class="family-step"><div class="family-week">WEEK 3</div><div><h4>Finance Agent predicts</h4><p>Forecasts Tuesday revenue spikes into the MRR model. Board report auto-adjusts.</p></div></div>
-        <div class="family-step"><div class="family-week">WEEK 4</div><div><h4>Support Agent prepares</h4><p>Anticipates Tuesday onboarding surge. Pre-generates FAQ responses. CSAT stays at 9.5.</p></div></div>
+      <div class="fam-steps">
+        <div class="fam-step"><div class="fam-wk">WEEK 1</div><div><h4>Outreach discovers a pattern</h4><p>"Healthcare leads convert 3x on Tuesdays." Stored in shared memory.</p></div></div>
+        <div class="fam-step"><div class="fam-wk">WEEK 2</div><div><h4>Sales Agent adapts automatically</h4><p>Prioritizes healthcare follow-ups for Tuesdays. Close rates improve. Nobody programmed this.</p></div></div>
+        <div class="fam-step"><div class="fam-wk">WEEK 3</div><div><h4>Finance Agent predicts the spike</h4><p>Forecasts Tuesday revenue bumps. Board report auto-adjusts. Cash flow model updated.</p></div></div>
+        <div class="fam-step"><div class="fam-wk">WEEK 4</div><div><h4>Support Agent prepares</h4><p>Anticipates Tuesday onboarding surge. Pre-generates FAQ responses. CSAT stays at 9.5.</p></div></div>
       </div>
-      <div class="family-insight">One insight. Four agents improved. Zero human work. This is compound intelligence. Every week the gap between you and competitors widens.</div>
+      <div class="fam-box">One insight. Four agents improved. Zero human work. Every week the gap widens. No SaaS stack can replicate this because no SaaS stack shares a brain.</div>
     </div>
-    <div style="display:flex;align-items:center;justify-content:center">
-      <svg viewBox="0 0 340 340" xmlns="http://www.w3.org/2000/svg" style="max-width:300px;width:100%">
-        <defs><radialGradient id="fg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#00ff94" stop-opacity=".08"/><stop offset="100%" stop-color="#00ff94" stop-opacity="0"/></radialGradient></defs>
-        <circle cx="170" cy="170" r="120" fill="url(#fg)"/>
-        <circle cx="170" cy="170" r="118" fill="none" stroke="#00ff94" stroke-width="1" stroke-dasharray="8 14" opacity=".2"><animateTransform attributeName="transform" type="rotate" from="0 170 170" to="360 170 170" dur="30s" repeatCount="indefinite"/></circle>
-        <circle cx="170" cy="52" r="22" fill="#080a0f" stroke="rgba(0,255,148,.25)" stroke-width=".7"/><text x="170" y="49" font-family="'JetBrains Mono'" font-size="6" fill="#00ff94" text-anchor="middle">OUTREACH</text><text x="170" y="58" font-family="'JetBrains Mono'" font-size="5.5" fill="rgba(0,255,148,.5)" text-anchor="middle">discovers</text>
-        <circle cx="288" cy="170" r="22" fill="#080a0f" stroke="rgba(0,255,148,.25)" stroke-width=".7"/><text x="288" y="167" font-family="'JetBrains Mono'" font-size="6" fill="#00ff94" text-anchor="middle">SALES</text><text x="288" y="176" font-family="'JetBrains Mono'" font-size="5.5" fill="rgba(0,255,148,.5)" text-anchor="middle">adapts</text>
-        <circle cx="170" cy="288" r="22" fill="#080a0f" stroke="rgba(0,255,148,.25)" stroke-width=".7"/><text x="170" y="285" font-family="'JetBrains Mono'" font-size="6" fill="#00ff94" text-anchor="middle">FINANCE</text><text x="170" y="294" font-family="'JetBrains Mono'" font-size="5.5" fill="rgba(0,255,148,.5)" text-anchor="middle">predicts</text>
-        <circle cx="52" cy="170" r="22" fill="#080a0f" stroke="rgba(0,255,148,.25)" stroke-width=".7"/><text x="52" y="167" font-family="'JetBrains Mono'" font-size="6" fill="#00ff94" text-anchor="middle">SUPPORT</text><text x="52" y="176" font-family="'JetBrains Mono'" font-size="5.5" fill="rgba(0,255,148,.5)" text-anchor="middle">prepares</text>
-        <line x1="170" y1="74" x2="266" y2="155" stroke="#00ff94" stroke-width=".5" opacity=".12" stroke-dasharray="3 4"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2s" repeatCount="indefinite"/></line>
-        <line x1="266" y1="185" x2="170" y2="266" stroke="#00ff94" stroke-width=".5" opacity=".12" stroke-dasharray="3 4"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2.3s" repeatCount="indefinite"/></line>
-        <line x1="148" y1="266" x2="74" y2="185" stroke="#00ff94" stroke-width=".5" opacity=".12" stroke-dasharray="3 4"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.8s" repeatCount="indefinite"/></line>
-        <line x1="74" y1="155" x2="148" y2="74" stroke="#00ff94" stroke-width=".5" opacity=".12" stroke-dasharray="3 4"><animate attributeName="stroke-dashoffset" from="0" to="-14" dur="2.5s" repeatCount="indefinite"/></line>
-        <circle r="2" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2s" repeatCount="indefinite" path="M170,74 L266,155"/><animate attributeName="opacity" values="0;.8;0" dur="2s" repeatCount="indefinite"/></circle>
-        <circle r="2" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2.3s" repeatCount="indefinite" path="M266,185 L170,266"/><animate attributeName="opacity" values="0;.8;0" dur="2.3s" repeatCount="indefinite"/></circle>
-        <circle r="2" fill="#00ff94" filter="url(#glow)"><animateMotion dur="1.8s" repeatCount="indefinite" path="M148,266 L74,185"/><animate attributeName="opacity" values="0;.8;0" dur="1.8s" repeatCount="indefinite"/></circle>
-        <circle r="2" fill="#00ff94" filter="url(#glow)"><animateMotion dur="2.5s" repeatCount="indefinite" path="M74,155 L148,74"/><animate attributeName="opacity" values="0;.8;0" dur="2.5s" repeatCount="indefinite"/></circle>
-        <circle cx="170" cy="170" r="35" fill="#030806" stroke="#00ff94" stroke-width=".7"/>
-        <circle cx="170" cy="170" r="35" fill="none" stroke="#00ff94" stroke-width="1.5" opacity="0"><animate attributeName="opacity" values="0;.2;0" dur="2.5s" repeatCount="indefinite"/></circle>
-        <text x="170" y="164" font-family="'JetBrains Mono'" font-size="6.5" fill="#00ff94" text-anchor="middle" letter-spacing=".08em">SHARED</text>
-        <text x="170" y="177" font-family="'JetBrains Mono'" font-size="6.5" fill="#00ff94" text-anchor="middle" letter-spacing=".08em">BRAIN</text>
-      </svg>
+    <div>
+      <div class="term">
+        <div class="term-bar"><div class="term-dot" style="background:#ff5f57"></div><div class="term-dot" style="background:#ffbd2e"></div><div class="term-dot" style="background:#28c840"></div><div class="term-title">evals.py &mdash; experiment attribution</div></div>
+        <div class="term-body">
+<span class="t-p">$</span> <span class="t-c">python3 evals.py experiment end exp-out-0331</span><br><br>
+<span class="t-o">  ATTRIBUTION CHAIN:</span><br>
+<span class="t-o">  Code: "switched to 1-paragraph emails"</span><br>
+<span class="t-o">    |</span><br>
+<span class="t-o">    +-> reply_rate: 3.2% -> 5.1% (<span class="t-h">+59%</span>)</span><br>
+<span class="t-o">    +-> meetings: 8 -> 14 (<span class="t-h">+75%</span>)</span><br>
+<span class="t-o">    +-> human_qc: 45 -> 30 min (<span class="t-h">+33%</span>)</span><br>
+<span class="t-o">    |</span><br>
+<span class="t-o">    v</span><br>
+<span class="t-o">  RPDC: 32x -> 56x (<span class="t-h">+24x</span>)</span><br>
+<span class="t-o">  Revenue: <span class="t-h">+$6,000/month</span></span><br><br>
+<span class="t-o">  CROSS-AGENT RIPPLE:</span><br>
+<span class="t-o">    outreach.meetings -> <span class="t-b">sales.close_rate</span></span><br>
+<span class="t-o">    outreach.reply_rate -> <span class="t-b">sales.deal_size</span></span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══ COMPLIANCE ══ -->
-<section class="reveal" style="background:var(--s1)">
+<!-- COMPLIANCE -->
+<section class="reveal divider" style="background:var(--s1)">
   <div class="stag">Data sovereignty</div>
-  <h2>Your Data <em>Never</em><br>Leaves Your Building.</h2>
-  <p class="section-sub">Every SaaS tool you use sends your data to someone else's servers. <strong>AONXI keeps everything on your desk.</strong> Login from anywhere in the world via Cloudflare Tunnel. Data stays local.</p>
-  <div class="compliance-grid">
-    <div class="compliance-card"><div class="compliance-badge">GDPR</div><h3>Full Compliance</h3><p>Data in your jurisdiction. Right to erasure guaranteed. No third-party processing. GDPR fines (4% of revenue) aren't your problem.</p></div>
-    <div class="compliance-card"><div class="compliance-badge">HIPAA</div><h3>Patient Data Safe</h3><p>PHI never leaves your building. No BAA negotiation. No cloud vendor trust. Your hardware. Your control.</p></div>
-    <div class="compliance-card"><div class="compliance-badge">SOC 2</div><h3>Audit-Ready</h3><p>Hardware access control. AES-256 at rest. Zero third-party exposure. Your security audit is one page long.</p></div>
-  </div>
-  <div class="terminal">
-    <div class="terminal-bar"><div class="terminal-dot" style="background:#ff5f57"></div><div class="terminal-dot" style="background:#ffbd2e"></div><div class="terminal-dot" style="background:#28c840"></div><div class="terminal-title">global access architecture</div></div>
-    <div class="terminal-body">
-<span class="highlight">YOUR MAC MINI (office/home)</span>
-<span class="output">  |</span>
-<span class="output">  +-- Ollama (LLM server) &mdash; all inference local</span>
-<span class="output">  +-- FastAPI gateway &mdash; JWT auth, RBAC, multi-tenant</span>
-<span class="output">  +-- MemoryMesh &mdash; local memory, FTS5 search</span>
-<span class="output">  |</span>
-<span class="output">  +-- Cloudflare Tunnel (encrypted, zero-trust)</span>
-<span class="output">  |</span>
-<span class="output">  +-- <span class="highlight">your-company.aonxi.com (HTTPS, globally accessible)</span></span>
-<span class="output">  |</span>
-<span class="output">  +-- Phone / Laptop / Tablet / Any browser / Any country</span>
-<span class="output">      No app download. No VPN. Just login.</span>
-<br>
-<span class="output">  Data sent to cloud providers: <span class="highlight">0 bytes</span></span>
-<span class="output">  <span class="highlight">Your data stays in your building. You access it from everywhere.</span></span>
-    </div>
+  <h2>Your data <em>never</em><br>leaves your building.</h2>
+  <p class="sub">Every SaaS tool sends your data to someone else's cloud. <strong>AONXI keeps it on your desk.</strong> Access from anywhere via encrypted tunnel. Data stays local.</p>
+  <div class="grid grid-3">
+    <div class="card comp-card" style="text-align:center"><div class="comp-badge">GDPR</div><h3>Full Compliance</h3><p>Data in your jurisdiction. No third-party processing. Fines up to 4% of revenue? Not your concern.</p></div>
+    <div class="card comp-card" style="text-align:center"><div class="comp-badge">HIPAA</div><h3>Patient Data Safe</h3><p>PHI never leaves your building. No BAA needed. No cloud vendor trust required.</p></div>
+    <div class="card comp-card" style="text-align:center"><div class="comp-badge">SOC 2</div><h3>Audit-Ready</h3><p>Hardware access control. AES-256 at rest. Zero third-party exposure. One-page audit.</p></div>
   </div>
 </section>
 
-<!-- ══ 3-YEAR COMPARISON ══ -->
-<section class="reveal">
-  <div class="stag">The real math</div>
-  <h2>SaaS Subscriptions vs <em>AONXI.</em><br>Three-Year <span class="serif">Truth.</span></h2>
-  <div class="compare-wrap">
-    <table class="compare-table">
+<!-- 3 YEAR COMPARISON -->
+<section class="reveal divider">
+  <div class="stag">Three-year truth</div>
+  <h2>SaaS vs <em>AONXI.</em><br>The math doesn't <span class="it">lie.</span></h2>
+  <div class="tbl-wrap">
+    <table class="tbl">
       <thead><tr><th>What you get</th><th>SaaS (annual)</th><th>AONXI (one-time)</th></tr></thead>
       <tbody>
-        <tr><td>AI for 10 employees</td><td class="cloud-col">$3,600/yr</td><td class="aonxi-col">included</td></tr>
-        <tr><td>CRM (5 seats)</td><td class="cloud-col">$4,800/yr</td><td class="aonxi-col">included</td></tr>
-        <tr><td>Helpdesk (5 seats)</td><td class="cloud-col">$3,300/yr</td><td class="aonxi-col">included</td></tr>
-        <tr><td>Accounting</td><td class="cloud-col">$960/yr</td><td class="aonxi-col">included</td></tr>
-        <tr><td>SEO + Ad management</td><td class="cloud-col">$25,440/yr</td><td class="aonxi-col">included</td></tr>
-        <tr><td>Project management</td><td class="cloud-col">$960/yr</td><td class="aonxi-col">included</td></tr>
-        <tr><td>Data privacy</td><td class="cloud-col">Their servers</td><td class="aonxi-col">Your desk</td></tr>
-        <tr><td>Cross-tool intelligence</td><td class="cloud-col">Impossible</td><td class="aonxi-col">Built-in</td></tr>
-        <tr><td>Year 2</td><td class="cloud-col">Same again</td><td class="aonxi-col">$180 (electricity)</td></tr>
-        <tr><td>Year 3</td><td class="cloud-col">Same again</td><td class="aonxi-col">$180</td></tr>
-        <tr class="total-row"><td>3-Year Total</td><td class="cloud-col">$117,180</td><td class="aonxi-col">$13,260</td></tr>
+        <tr><td>AI for 10 employees</td><td class="bad">$3,600/yr</td><td class="good">included</td></tr>
+        <tr><td>CRM + sales (5 seats)</td><td class="bad">$4,800/yr</td><td class="good">included</td></tr>
+        <tr><td>Support + helpdesk (5 seats)</td><td class="bad">$3,300/yr</td><td class="good">included</td></tr>
+        <tr><td>SEO + ads + marketing</td><td class="bad">$25,440/yr</td><td class="good">included</td></tr>
+        <tr><td>Accounting + PM + email + HR</td><td class="bad">$3,360/yr</td><td class="good">included</td></tr>
+        <tr><td>Cross-tool intelligence</td><td class="bad">Impossible</td><td class="good">Built-in</td></tr>
+        <tr><td>Data stays on your hardware</td><td class="bad">No</td><td class="good">Always</td></tr>
+        <tr><td>Year 2 cost</td><td class="bad">Same again</td><td class="good">$180 electricity</td></tr>
+        <tr class="total"><td>3-Year Total</td><td class="bad">$121,500</td><td class="good">$13,260</td></tr>
       </tbody>
     </table>
   </div>
 </section>
 
-<!-- ══ HARDWARE ══ -->
-<section class="reveal" id="hardware">
+<!-- HARDWARE -->
+<section class="reveal divider" id="hardware">
   <div class="stag">Hardware</div>
-  <h2>The Right Box for<br><em>Every Business.</em></h2>
-  <p class="section-sub">A $599 Mac Mini runs 2 agents. A $1,999 Mac Studio runs the full fleet and replaces every SaaS tool. <strong>Scale hardware only when you scale the business.</strong></p>
-  <div class="hw-grid">
-    <div class="hw-card"><div class="hw-name">Mac Mini M4</div><div class="hw-price">From $599</div><div class="hw-specs"><div class="hw-spec"><span class="hw-k">RAM</span><span class="hw-v">16GB</span></div><div class="hw-spec"><span class="hw-k">Model</span><span class="hw-v">Qwen2.5-14B</span></div><div class="hw-spec"><span class="hw-k">Agents</span><span class="hw-v">1-2</span></div><div class="hw-spec"><span class="hw-k">Monthly</span><span class="hw-v hw-v-g">~$8</span></div><div class="hw-spec"><span class="hw-k">For</span><span class="hw-v">Solo / Freelancer</span></div></div></div>
-    <div class="hw-card"><div class="hw-name">Mac Mini M4 Pro</div><div class="hw-price">From $799</div><div class="hw-specs"><div class="hw-spec"><span class="hw-k">RAM</span><span class="hw-v">24GB</span></div><div class="hw-spec"><span class="hw-k">Model</span><span class="hw-v">Qwen2.5-32B</span></div><div class="hw-spec"><span class="hw-k">Agents</span><span class="hw-v">3-4</span></div><div class="hw-spec"><span class="hw-k">Monthly</span><span class="hw-v hw-v-g">~$10</span></div><div class="hw-spec"><span class="hw-k">For</span><span class="hw-v">Small business</span></div></div></div>
-    <div class="hw-card best"><div class="hw-best-tag">MOST POPULAR</div><div class="hw-name">Mac Studio M4 Max</div><div class="hw-price">From $1,999</div><div class="hw-specs"><div class="hw-spec"><span class="hw-k">RAM</span><span class="hw-v hw-v-g">64GB</span></div><div class="hw-spec"><span class="hw-k">Model</span><span class="hw-v hw-v-g">Qwen2.5-72B</span></div><div class="hw-spec"><span class="hw-k">Agents</span><span class="hw-v hw-v-g">Full fleet</span></div><div class="hw-spec"><span class="hw-k">Monthly</span><span class="hw-v hw-v-g">~$15</span></div><div class="hw-spec"><span class="hw-k">For</span><span class="hw-v hw-v-g">Full SaaS replacement</span></div></div></div>
-    <div class="hw-card"><div class="hw-name">Enterprise Cluster</div><div class="hw-price">Custom</div><div class="hw-specs"><div class="hw-spec"><span class="hw-k">RAM</span><span class="hw-v">128GB+</span></div><div class="hw-spec"><span class="hw-k">Model</span><span class="hw-v">Fine-tuned</span></div><div class="hw-spec"><span class="hw-k">Agents</span><span class="hw-v">Unlimited</span></div><div class="hw-spec"><span class="hw-k">Monthly</span><span class="hw-v hw-v-g">Electricity</span></div><div class="hw-spec"><span class="hw-k">For</span><span class="hw-v">Full org</span></div></div></div>
+  <h2>The right box for<br><em>every</em> business.</h2>
+  <p class="sub">A $599 Mac Mini runs 2 agents. A $1,999 Mac Studio runs the full fleet and replaces every SaaS tool. <strong>Scale when you're ready.</strong></p>
+  <div class="grid grid-4">
+    <div class="hw"><div class="hw-name">Mac Mini M4</div><div class="hw-price">From $599</div><div class="hw-specs"><div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">16GB</span></div><div class="hw-row"><span class="hw-k">Model</span><span class="hw-v">Qwen 14B</span></div><div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">1-2</span></div><div class="hw-row"><span class="hw-k">Monthly</span><span class="hw-v hw-vg">~$8</span></div></div></div>
+    <div class="hw"><div class="hw-name">Mac Mini M4 Pro</div><div class="hw-price">From $799</div><div class="hw-specs"><div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">24GB</span></div><div class="hw-row"><span class="hw-k">Model</span><span class="hw-v">Qwen 32B</span></div><div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">3-4</span></div><div class="hw-row"><span class="hw-k">Monthly</span><span class="hw-v hw-vg">~$10</span></div></div></div>
+    <div class="hw best"><div class="hw-tag">POPULAR</div><div class="hw-name">Mac Studio M4 Max</div><div class="hw-price">From $1,999</div><div class="hw-specs"><div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v hw-vg">64GB</span></div><div class="hw-row"><span class="hw-k">Model</span><span class="hw-v hw-vg">Qwen 72B</span></div><div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v hw-vg">Full fleet</span></div><div class="hw-row"><span class="hw-k">Monthly</span><span class="hw-v hw-vg">~$15</span></div></div></div>
+    <div class="hw"><div class="hw-name">Enterprise Cluster</div><div class="hw-price">Custom</div><div class="hw-specs"><div class="hw-row"><span class="hw-k">RAM</span><span class="hw-v">128GB+</span></div><div class="hw-row"><span class="hw-k">Model</span><span class="hw-v">Fine-tuned</span></div><div class="hw-row"><span class="hw-k">Agents</span><span class="hw-v">Unlimited</span></div><div class="hw-row"><span class="hw-k">Monthly</span><span class="hw-v hw-vg">Electricity</span></div></div></div>
   </div>
 </section>
 
-<!-- ══ PRICING ══ -->
-<section class="reveal" id="pricing">
+<!-- PRICING -->
+<section class="reveal divider" id="pricing">
   <div class="stag">Own it</div>
-  <h2>One Payment.<br><em>Forever.</em></h2>
-  <p class="section-sub">Hardware + setup + every agent + every tool replacement + Super Brain. <strong>No subscription. No per-seat pricing. No usage limits.</strong></p>
-  <div class="price-grid">
-    <div class="pc"><div class="pc-tier">MICRO</div><div class="pc-price"><span class="cur">$</span><span class="amt">1,999</span><span class="per">one-time</span></div><div class="pc-hw">Mac Mini M4 16GB</div><div class="pc-monthly">~$8/mo electricity</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>1-2 agents deployed</div><div class="pf"><span class="pf-ok">+</span>1-2 SaaS tools replaced</div><div class="pf"><span class="pf-ok">+</span>Super Brain connected</div><div class="pf"><span class="pf-ok">+</span>Global access via tunnel</div><div class="pf"><span class="pf-ok">+</span>30-day money-back guarantee</div></div><a href="#demo" class="pc-btn oa">Get started</a></div>
-    <div class="pc"><div class="pc-tier">STARTER</div><div class="pc-price"><span class="cur">$</span><span class="amt">4,999</span><span class="per">one-time</span></div><div class="pc-hw">Mac Mini M4 Pro 24GB</div><div class="pc-monthly">~$10/mo electricity</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>3-4 agents deployed</div><div class="pf"><span class="pf-ok">+</span>4-5 SaaS tools replaced</div><div class="pf"><span class="pf-ok">+</span>Cross-agent memory sharing</div><div class="pf"><span class="pf-ok">+</span>Tool learning engine</div><div class="pf"><span class="pf-ok">+</span>Weekly health reports</div><div class="pf"><span class="pf-ok">+</span>30-day money-back guarantee</div></div><a href="#demo" class="pc-btn oa">Get started</a></div>
-    <div class="pc feat"><div class="pc-rec">RECOMMENDED</div><div class="pc-tier">BUSINESS</div><div class="pc-price"><span class="cur">$</span><span class="amt">12,900</span><span class="per">one-time</span></div><div class="pc-hw">Mac Studio M4 Max 64GB</div><div class="pc-monthly">~$15/mo electricity</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>Full agent fleet (6+)</div><div class="pf"><span class="pf-ok">+</span>ALL SaaS tools replaced</div><div class="pf"><span class="pf-ok">+</span>Self-evolving automation</div><div class="pf"><span class="pf-ok">+</span>Experiment attribution engine</div><div class="pf"><span class="pf-ok">+</span>Custom agent development</div><div class="pf"><span class="pf-ok">+</span>30-day money-back guarantee</div></div><a href="#demo" class="pc-btn ga">Get started</a></div>
-    <div class="pc"><div class="pc-tier">ENTERPRISE</div><div class="pc-price"><span class="cur">$</span><span class="amt">24,900</span><span class="per">one-time</span></div><div class="pc-hw">Multi-node cluster</div><div class="pc-monthly">Electricity only</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>Unlimited agents</div><div class="pf"><span class="pf-ok">+</span>Department-siloed AI</div><div class="pf"><span class="pf-ok">+</span>Custom fine-tuned models</div><div class="pf"><span class="pf-ok">+</span>On-site deployment</div><div class="pf"><span class="pf-ok">+</span>Priority support forever</div><div class="pf"><span class="pf-ok">+</span>Source code access</div><div class="pf"><span class="pf-ok">+</span>30-day money-back guarantee</div></div><a href="#demo" class="pc-btn oa">Contact us</a></div>
+  <h2>One payment.<br><em>Forever.</em></h2>
+  <p class="sub">Hardware + every agent + every tool replacement + Super Brain. <strong>No subscription. No per-seat. No limits.</strong></p>
+  <div class="grid grid-4">
+    <div class="pc"><div class="pc-tier">MICRO</div><div class="pc-amt">$1,999</div><div class="pc-per">one-time</div><div class="pc-hw">Mac Mini M4 16GB</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>1-2 agents</div><div class="pf"><span class="pf-ok">+</span>1-2 SaaS tools replaced</div><div class="pf"><span class="pf-ok">+</span>Super Brain</div><div class="pf"><span class="pf-ok">+</span>Global access</div><div class="pf"><span class="pf-ok">+</span>30-day guarantee</div></div><a href="#start" class="pc-btn secondary">Get started</a></div>
+    <div class="pc"><div class="pc-tier">STARTER</div><div class="pc-amt">$4,999</div><div class="pc-per">one-time</div><div class="pc-hw">Mac Mini M4 Pro 24GB</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>3-4 agents</div><div class="pf"><span class="pf-ok">+</span>4-5 SaaS tools replaced</div><div class="pf"><span class="pf-ok">+</span>Cross-agent memory</div><div class="pf"><span class="pf-ok">+</span>Tool learning engine</div><div class="pf"><span class="pf-ok">+</span>Weekly reports</div><div class="pf"><span class="pf-ok">+</span>30-day guarantee</div></div><a href="#start" class="pc-btn secondary">Get started</a></div>
+    <div class="pc feat"><div class="pc-tag">RECOMMENDED</div><div class="pc-tier">BUSINESS</div><div class="pc-amt">$12,900</div><div class="pc-per">one-time</div><div class="pc-hw">Mac Studio M4 Max 64GB</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>Full agent fleet</div><div class="pf"><span class="pf-ok">+</span>ALL SaaS replaced</div><div class="pf"><span class="pf-ok">+</span>Experiment attribution</div><div class="pf"><span class="pf-ok">+</span>Self-evolving</div><div class="pf"><span class="pf-ok">+</span>Custom agents</div><div class="pf"><span class="pf-ok">+</span>30-day guarantee</div></div><a href="#start" class="pc-btn primary">Get started</a></div>
+    <div class="pc"><div class="pc-tier">ENTERPRISE</div><div class="pc-amt">$24,900</div><div class="pc-per">one-time</div><div class="pc-hw">Multi-node cluster</div><div class="pc-div"></div><div class="pc-feats"><div class="pf"><span class="pf-ok">+</span>Unlimited agents</div><div class="pf"><span class="pf-ok">+</span>Department-siloed AI</div><div class="pf"><span class="pf-ok">+</span>Custom models</div><div class="pf"><span class="pf-ok">+</span>On-site deployment</div><div class="pf"><span class="pf-ok">+</span>Source code access</div><div class="pf"><span class="pf-ok">+</span>Priority support</div></div><a href="#start" class="pc-btn secondary">Contact us</a></div>
   </div>
 </section>
 
-<!-- ══ GUARANTEE ══ -->
-<section class="reveal" style="border-bottom:none;padding-top:48px;padding-bottom:48px">
-  <div class="guarantee"><div class="guarantee-shield">30</div><h3>Day <em>Money-Back</em> Guarantee.</h3><p>If your agents aren't running and replacing SaaS tools within 30 days, we refund everything. Hardware and setup. No questions. We've never had to.</p><p class="fine">Hardware returned in original condition. Full refund within 5 business days.</p></div>
+<!-- GUARANTEE -->
+<section class="reveal" style="border-bottom:none;padding-top:40px;padding-bottom:40px">
+  <div class="guar"><div class="guar-n">30</div><h3>Day <em>money-back</em> guarantee.</h3><p>If your agents aren't running and replacing tools within 30 days, we refund everything. Hardware and setup. No questions asked.</p><p class="fine">Hardware returned in original condition. Refund within 5 business days.</p></div>
 </section>
 
-<!-- ══ CTA ══ -->
-<section class="cta-sec" id="demo">
-  <h2>Own Your <span class="serif">Intelligence.</span><br>Cancel Everything Else.</h2>
-  <p>330 million businesses pay thousands per month for tools that don't talk to each other and don't learn. One Mac Mini changes that. The question is whether you do it now or watch your competitors do it first.</p>
+<!-- CTA -->
+<section class="cta" id="start">
+  <h2>Own your <span class="it">intelligence.</span><br>Cancel everything else.</h2>
+  <p>330 million businesses pay thousands per month for tools that don't talk to each other. One Mac Mini changes that forever.</p>
   <div class="email-row"><input type="email" class="email-inp" placeholder="you@company.com"><button class="email-sub">GET STARTED</button></div>
-  <div style="margin-top:14px;font-size:11px;color:var(--dim)">15-min demo. Live agents. See your SaaS savings calculated. Decide in one call.</div>
+  <div style="margin-top:16px;font-size:12px;color:var(--dim);font-weight:500">15-min demo. Live agents. See your savings. Decide in one call.</div>
 </section>
 
-<footer><div class="fl">AONXI</div><div class="fc">Built by Anmol Sam | CTO, Aonxi | github.com/originaonxi</div></footer>
+<footer><div class="f-logo">AONXI</div><div class="f-text">Built by Anmol Sam &middot; CTO, Aonxi &middot; github.com/originaonxi</div></footer>
 
 <script>
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.08});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis')})},{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-const TOOLS=[{id:'ai',price:30},{id:'crm',price:80},{id:'help',price:55},{id:'other',price:1,isFlat:true}];
+const T=[{id:'ai',p:30},{id:'crm',p:80},{id:'help',p:55},{id:'other',p:1,flat:1}];
 function fmt(n){return Math.abs(n).toLocaleString('en-US')}
-function updateCalc(){
-  let annual=0,total=0;
-  TOOLS.forEach(t=>{
-    const sl=document.getElementById('sl-'+t.id),vl=document.getElementById('sl-'+t.id+'-val');
-    if(!sl||!vl)return;const c=parseInt(sl.value);vl.textContent=t.isFlat?'$'+c:c;
-    annual+=t.isFlat?c*12:c*t.price*12;total+=t.isFlat?1:c;
-  });
-  let cost=total<=5?1999:total<=15?4999:total<=50?12900:24900;
-  const elec=15,ms=annual/12-elec,be=ms>0?Math.ceil(cost/ms):0,save=annual*3-cost-elec*36;
-  document.getElementById('calc-annual').textContent=fmt(annual);
-  document.getElementById('calc-onetime').textContent=fmt(cost);
-  document.getElementById('calc-breakeven').textContent=be||'--';
-  document.getElementById('calc-savings').textContent=fmt(Math.max(0,save));
-  const v=document.getElementById('calc-verdict');
-  if(!annual||be<=0)v.innerHTML='Move the sliders to see how much you could save.';
-  else if(be<=6)v.innerHTML='You break even in <strong>'+be+' months</strong>. This is a no-brainer. You\'re leaving <strong>$'+fmt(save)+'</strong> on the table over 3 years.';
-  else if(be<=12)v.innerHTML='You break even in <strong>'+be+' months</strong>. After that, every tool is free forever. 3-year savings: <strong>$'+fmt(save)+'</strong>.';
-  else v.innerHTML='Break-even in <strong>'+be+' months</strong>. Consider the Micro tier ($1,999) to start.';
-}
-document.querySelectorAll('input[type=range]').forEach(s=>s.addEventListener('input',updateCalc));
-updateCalc();
+function calc(){let a=0,u=0;T.forEach(t=>{const s=document.getElementById('s-'+t.id),v=document.getElementById('v-'+t.id);if(!s||!v)return;const c=+s.value;v.textContent=t.flat?'$'+c:c;a+=t.flat?c*12:c*t.p*12;u+=t.flat?1:c});
+let cost=u<=5?1999:u<=15?4999:u<=50?12900:24900,ms=a/12-15,be=ms>0?Math.ceil(cost/ms):0,sv=a*3-cost-540;
+document.getElementById('c-annual').textContent=fmt(a);document.getElementById('c-once').textContent=fmt(cost);document.getElementById('c-break').textContent=be||'--';document.getElementById('c-save').textContent=fmt(Math.max(0,sv));
+const m=document.getElementById('c-msg');if(!a||be<=0)m.innerHTML='Move the sliders to see your savings.';else if(be<=6)m.innerHTML='Break even in <strong>'+be+' months</strong>. No-brainer. <strong>$'+fmt(sv)+'</strong> saved over 3 years.';else if(be<=12)m.innerHTML='Break even in <strong>'+be+' months</strong>. Then free forever. 3-year savings: <strong>$'+fmt(sv)+'</strong>.';else m.innerHTML='Break-even: <strong>'+be+' months</strong>. Start with Micro ($1,999) and scale up.'}
+document.querySelectorAll('input[type=range]').forEach(s=>s.addEventListener('input',calc));calc();
 </script>
 </body>
 </html>
