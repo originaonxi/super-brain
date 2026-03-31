@@ -572,6 +572,126 @@ footer{padding:32px 56px;border-top:.5px solid var(--border);display:flex;justif
   </div>
 </section>
 
+<!-- REPLACES EVERYTHING -->
+<section class="reveal" style="background:var(--s1)">
+  <div class="stag">One box. Every tool.</div>
+  <h2>Your Mac Mini <em>Replaces</em><br>Every SaaS Tool You Pay For.</h2>
+  <p class="section-sub">QuickBooks. HubSpot. Zendesk. Mailchimp. SEMrush. Google Ads manager. Jira. <strong>All of them.</strong> One Mac Mini generates its own versions of every app your business runs — tuned to YOUR data, learning from YOUR results.</p>
+
+  <div class="agent-grid">
+    <div class="agent-card">
+      <div class="agent-metric" style="font-size:28px">QuickBooks</div>
+      <div class="agent-name">Finance Agent replaces it</div>
+      <div class="agent-role">$30/mo saved &rarr; $0</div>
+      <div class="agent-outcome">Auto-categorizes invoices, tracks MRR/ARR, generates P&L, forecasts cash flow, flags anomalies. Learns YOUR accounting patterns. No subscription.</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-metric" style="font-size:28px">HubSpot</div>
+      <div class="agent-name">Sales + Outreach agents replace it</div>
+      <div class="agent-role">$800/mo saved &rarr; $0</div>
+      <div class="agent-outcome">CRM, pipeline tracking, lead scoring, email sequences, meeting booking — all running locally. Your sales data never touches HubSpot's servers.</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-metric" style="font-size:28px">Zendesk</div>
+      <div class="agent-name">Support Agent replaces it</div>
+      <div class="agent-role">$55/seat/mo saved &rarr; $0</div>
+      <div class="agent-outcome">Inbound ticket handling, auto-resolution, escalation routing, CSAT tracking. Knows your product better than any support rep because it has perfect memory.</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-metric" style="font-size:28px">SEMrush</div>
+      <div class="agent-name">SEO + Outreach agents replace it</div>
+      <div class="agent-role">$120/mo saved &rarr; $0</div>
+      <div class="agent-outcome">Keyword research, competitor analysis, backlink monitoring, content suggestions — all from local LLM analysis. Runs SEO audits at 3am while you sleep.</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-metric" style="font-size:28px">Google Ads</div>
+      <div class="agent-name">Omni-Outreach manages it</div>
+      <div class="agent-role">Agency fees saved &rarr; $0</div>
+      <div class="agent-outcome">Writes ad copy, tests variants, adjusts bids based on conversion data, generates landing pages, A/B tests everything. Uses API calls — the Mac Mini is the brain.</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-metric" style="font-size:28px">Jira</div>
+      <div class="agent-name">QA Agent replaces ticketing</div>
+      <div class="agent-role">$8/seat/mo saved &rarr; $0</div>
+      <div class="agent-outcome">Task tracking, sprint planning, bug filing with evidence, test case generation, deployment monitoring. Learns from every sprint retro automatically.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;padding:24px;background:var(--g-dim);border:.5px solid var(--g-b);border-radius:8px;text-align:center">
+    <div style="font-size:15px;font-weight:600;margin-bottom:8px">Total SaaS replaced: <span style="color:var(--g)">$2,000-$5,000/month</span></div>
+    <div style="font-size:13px;color:var(--muted)">Every tool runs locally. Every tool learns from every other tool. Every tool gets smarter every day. And you own all of it.</div>
+  </div>
+</section>
+
+<!-- EXPERIMENT TRACKING + RPDC -->
+<section class="reveal">
+  <div class="stag">Experiment attribution</div>
+  <h2>Know <em>Exactly</em> Which Change<br>Drove the <span class="serif">Improvement.</span></h2>
+  <p class="section-sub">Every change is an experiment. Every experiment has a before/after. <strong>You know which code change generated how much revenue.</strong> No guessing. Full attribution.</p>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="terminal-dot" style="background:#ff5f57"></div>
+      <div class="terminal-dot" style="background:#ffbd2e"></div>
+      <div class="terminal-dot" style="background:#28c840"></div>
+      <div class="terminal-title">evals.py &mdash; experiment attribution</div>
+    </div>
+    <div class="terminal-body">
+<span class="prompt">$</span> <span class="cmd">python3 evals.py experiment start outreach "switched to 1-paragraph emails"</span>
+<br>
+<span class="output">  EXPERIMENT STARTED</span>
+<span class="output">  ID: <span class="highlight">exp-out-0331-a4f2bc</span></span>
+<span class="output">  Baseline: 7 metrics captured</span>
+<br>
+<span class="output"><span class="category">  ... agent runs for 1 week with the change ...</span></span>
+<br>
+<span class="prompt">$</span> <span class="cmd">python3 evals.py experiment end exp-out-0331-a4f2bc "shorter emails work"</span>
+<br>
+<span class="output">  EXPERIMENT COMPLETED</span>
+<br>
+<span class="output">  ATTRIBUTION CHAIN:</span>
+<span class="output">    Code change: "switched to 1-paragraph emails"</span>
+<span class="output">         |</span>
+<span class="output">         +-> reply_rate: 3.2% -> 5.1% (<span class="highlight">+59.4%</span>)</span>
+<span class="output">         +-> meetings_booked: 8 -> 14 (<span class="highlight">+75.0%</span>)</span>
+<span class="output">         +-> human_qc_minutes: 45 -> 30 (<span class="highlight">+33.3%</span>)</span>
+<span class="output">         |</span>
+<span class="output">         v</span>
+<span class="output">    RPDC: 32.1x -> 55.9x (<span class="highlight">+23.8x</span>)</span>
+<span class="output">         |</span>
+<span class="output">         v</span>
+<span class="output">    Revenue impact: <span class="highlight">+$6,000/month</span></span>
+<br>
+<span class="output">  CROSS-AGENT RIPPLE:</span>
+<span class="output">    outreach.meetings_booked (+75%) -> <span class="highlight">sales.close_rate improves</span></span>
+<span class="output">    outreach.reply_rate (+59%) -> <span class="highlight">sales.avg_deal_size improves</span></span>
+    </div>
+  </div>
+
+  <div class="pattern-grid" style="grid-template-columns:repeat(4,1fr)">
+    <div class="pattern-card">
+      <div class="num">RPDC</div>
+      <h3>The ONE Metric</h3>
+      <p>Revenue Per Dollar of Cost. Every $1 on inference + human QC generates $X in revenue. Fully attributable end-to-end.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="num">CIS</div>
+      <h3>Compound Score</h3>
+      <p>One number for the whole system. Individual improvement + cross-agent lift + experiment velocity + memory compound rate.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="num">13</div>
+      <h3>Causal Links</h3>
+      <p>13 defined cause-effect relationships between agents. When outreach improves, we measure if sales improves too. Automatically.</p>
+    </div>
+    <div class="pattern-card">
+      <div class="num" style="font-size:24px">Leaderboard</div>
+      <h3>Rank Every Change</h3>
+      <p>Every experiment ranked by RPDC impact. You know which changes actually worked and which didn't. No opinions. Numbers.</p>
+    </div>
+  </div>
+</section>
+
 <!-- LIVE TERMINAL PROOF -->
 <section class="reveal" id="brain">
   <div class="stag">Live proof</div>
