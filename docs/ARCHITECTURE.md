@@ -1,8 +1,61 @@
-# Architecture: Super Brain
+# Architecture: AONXI OS — The Complete System
 
 ## System Overview
 
-Super Brain is a **distributed memory architecture and SaaS replacement engine** that unifies 55+ autonomous projects into a single queryable intelligence layer. It operates on three planes: **Ingestion** (how memories and SaaS tool observations enter), **Storage** (how they're organized, including workflow patterns), and **Retrieval** (how they're surfaced with cross-tool intelligence).
+AONXI OS is a **6-layer AI operating system** running on a single Mac Mini. It replaces your entire SaaS stack with locally-running AI agents that create, test, deploy, and improve themselves. Every agent shares one brain. Every improvement compounds.
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│  LAYER 6: INTELLIGENCE — evals.py                                  │
+│  RPDC | Experiments | Attribution | CIS | 45 metrics | Leaderboard │
+├─────────────────────────────────────────────────────────────────────┤
+│  LAYER 5: SAAS REPLACEMENT — tool learning engine                  │
+│  Connect SaaS → Observe workflows → Build local → Cancel subs      │
+├─────────────────────────────────────────────────────────────────────┤
+│  LAYER 4: GATEWAY — gateway.py                                     │
+│  FastAPI | JWT | RBAC | WebSocket | Per-employee AI | CF Tunnel     │
+├─────────────────────────────────────────────────────────────────────┤
+│  LAYER 3: AGENTS + CLAW V2 — agents/*.py + claw.py                │
+│  9 agent types | Decision engine | Trust scoring | Human gates     │
+│  13 causal links | Insight propagation | Audit trail               │
+├─────────────────────────────────────────────────────────────────────┤
+│  LAYER 2: MEMORY — brain.py + MemoryMesh + Mem0                   │
+│  Shared memory | Semantic search | Pattern detection | 63+ memories│
+├─────────────────────────────────────────────────────────────────────┤
+│  LAYER 1: MODELS — Ollama (localhost:11434)                        │
+│  Qwen2.5-7B/32B/72B | Llama 70B | $0/query | OpenAI-compatible    │
+├─────────────────────────────────────────────────────────────────────┤
+│  LAYER 0: HARDWARE — Mac Mini M4 / Mac Studio M4 Max              │
+│  Apple Silicon unified memory | $2-$12/mo electricity              │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+## How Agents Work Together (Claw V2)
+
+```
+Agent proposes action
+    │
+    ▼
+Claw checks trust score (0.0 → 1.0)
+    │
+    ├── Trust ≥ 0.85 → AUTO-APPROVE (earned autonomy)
+    ├── Trust 0.40-0.85 → EXECUTE + NOTIFY human
+    └── Trust < 0.40 → SUGGEST ONLY (human must approve)
+    │
+    ▼
+Some actions ALWAYS need human: send_email, close_deal, deploy_agent
+    │
+    ▼
+Agent executes → Outcome recorded → Trust updated
+    │
+    ▼
+Insight shared via 13 causal links → Connected agents adapt
+    │
+    ▼
+RPDC calculated → Experiment leaderboard updated
+```
+
+## Memory Architecture (Three Planes)
 
 ---
 
